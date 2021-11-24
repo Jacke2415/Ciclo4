@@ -9,6 +9,7 @@ export default function Login() {
     <>
     
     <Panel/>
+    
     <div className="Login">
       <header className="Login-header">
         <div class="header">
