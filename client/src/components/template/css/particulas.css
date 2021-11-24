@@ -1,0 +1,13 @@
+/* ---- particles.js container ---- */
+.particulas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #100788;
+    background-image: url("https://fondosmil.com/fondo/41677.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
