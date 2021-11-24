@@ -1,5 +1,5 @@
 import React from 'react';
-import "./template/css/panel.css";
+import "../../public/css/panel.css";
 
 
 class Panel extends React.Component {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Particles from "react-tsparticles";
-import "./template/css/particulas.css";
+import "../../public/css/particulas.css";
 
 class Particulas extends React.Component {
 
