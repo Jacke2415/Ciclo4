@@ -14,10 +14,7 @@ export default function Login() {
         <div class="header">
           <div>Nominas</div>
         </div>
-        <FormLogin />
-        <div id="particles-js">
-
-        </div>
+          <FormLogin />
       </header>
     </div>
     <Particulas />
