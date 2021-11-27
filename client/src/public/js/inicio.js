@@ -1,5 +1,4 @@
-import $ from "jquery";
-
+/* const $ = require("jquery"); */
 // ---------vertical-menu with-inner-menu-active-animation-----------
 
 var tabsVerticalInner = $('#accordian');
@@ -37,7 +36,7 @@ $(document).ready(function() {
     var path = window.location.pathname.split("/").pop();
 
     // Account for home page with empty path
-    if (path == '') {
+    if (path === '') {
         path = 'inicio.html';
     }
 
