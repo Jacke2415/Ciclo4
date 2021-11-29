@@ -3,7 +3,7 @@ import nomina from '../../public/img/nominas.png';
 import '../../public/js/inicio'
 
 
-export default function Plantilla1(){ 
+export function Plantilla(){ 
       
     return (              
     <div className="accordian" id="accordian"> 

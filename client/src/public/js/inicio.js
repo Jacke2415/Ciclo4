@@ -1,4 +1,4 @@
-/* const $ = require("jquery"); */
+const $ = require("jquery");
 // ---------vertical-menu with-inner-menu-active-animation-----------
 
 var tabsVerticalInner = $('#accordian');
