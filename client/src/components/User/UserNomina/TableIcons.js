@@ -36,4 +36,4 @@ const tableIcons = {
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
   };
 
-export default TableIcons
+export default tableIcons

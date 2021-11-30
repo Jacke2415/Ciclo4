@@ -10,11 +10,10 @@ import {TablaNominas} from './components/User/UserNomina/TablaNominas'
 
 ReactDOM.render(
   <React.StrictMode>
-    //<CrearNomina />
     <SupMisNominas />
+    
     <TablaFuncionario />
     <TablaNominas />
-   // {/*<Login />*/ }   
   </React.StrictMode>,
   document.getElementById('root')
 );
