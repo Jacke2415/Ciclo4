@@ -3,16 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import CrearNomina from './components/User/UserNomina/CrearNomina';
-import { DataTableDemo } from './components/User/UserNomina/DataTableDemo';
-
+import SupMisNominas from './components/User/UserNomina/SupMisNominas'
+import {TablaFuncionario} from './components/User/UserNomina/TablaFuncionario'
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <CrearNomina />
-    
+    //<CrearNomina />
+    <SupMisNominas />
+    <TablaFuncionario />
 
-    {/*<Login />*/ }   
+   // {/*<Login />*/ }   
   </React.StrictMode>,
   document.getElementById('root')
 );
