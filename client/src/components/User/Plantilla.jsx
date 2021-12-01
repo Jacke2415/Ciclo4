@@ -1,6 +1,6 @@
 import '../../public/css/inicio.css';
 import nomina from '../../public/img/nominas.png';
-import '../../public/js/inicio'
+/* import '../../public/js/inicio' */
 
 
 export function Plantilla(){ 
