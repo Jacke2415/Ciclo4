@@ -1,5 +1,5 @@
 import MaterialTable from "material-table";
-import { AddBox, ArrowDownward, Remove } from "@material-ui/icons";
+//import { AddBox, ArrowDownward, Remove } from "@material-ui/icons";
 import tableIcons from "./TableIcons";
 
 const columns=[
@@ -18,5 +18,47 @@ const data=[
 ];
 
 export const TablaNominas = () => {
-  return <MaterialTable title="Listado de Nominas" columns={columns} data={data} icons={tableIcons} />;
-};
+  return(
+  <div>
+    <div class="container-md">
+       <MaterialTable title="Listado de Nominas"
+      columns={columns}
+      data={data}
+      icons={tableIcons} 
+      actions={[
+        {
+            icon : tableIcons.Edit,
+            tooltip : 'Editar Funcionario',
+            onClick : (event, rowData)=>alert('Editar al Funcionario: '+rowData.nombre+" "+rowData.apellido)
+        },
+        {
+            icon : tableIcons.Delete,
+            tooltip : 'Eliminar Funcionario',
+            onClick : (event, rowData)=>window.confirm('Esta seguro de eliminar este funcionario: '+rowData.nombre+" "+rowData.apellido)
+        }
+        
+      ]}
+
+        options={{
+            actionsColumnIndex: -1,
+            headerStyle: {
+                backgroundColor: '#01579b',
+                color: '#FFF',
+                },
+                //selection: true
+
+            
+            
+
+        }}
+        localization={{
+            header:{
+                actions: 'Acciones'
+            }
+        }}
+      />
+
+        </div>
+      </div>
+  )
+  };

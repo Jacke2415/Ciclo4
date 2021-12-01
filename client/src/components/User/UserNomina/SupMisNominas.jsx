@@ -1,5 +1,4 @@
 
-import { Container } from '@material-ui/core';
 import React, {Component, Fragment} from 'react';
 
 
@@ -9,6 +8,7 @@ class SupMisNominas extends Component{
                 <div className="container">
                     <div className="row">
                         <div className="col-6">
+                            <div><br /></div>
                             <h1>Creación de Nominas</h1>
                         </div>
                     </div>

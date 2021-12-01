@@ -29,6 +29,7 @@ export const TablaFuncionario = () => {
   return (
      
   <div>
+      <br />
       <div class="container-md">
         <MaterialTable title="Listado de Funcionarios" 
             columns={columns} 
@@ -54,7 +55,7 @@ export const TablaFuncionario = () => {
                     backgroundColor: '#01579b',
                     color: '#FFF',
                     },
-                    //selection: true
+                selection: true
 
                 
                 
