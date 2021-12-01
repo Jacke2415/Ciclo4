@@ -2,9 +2,7 @@ import MaterialTable,{ MTableToolbar } from "material-table";
 //import { AddBox, ArrowDownward, Edit, Event, Remove, DeleteIcon} from "@material-ui/icons";
 import { AddBox, ArrowDownward, Edit, Event, Remove, DeleteIcon} from "./TableIcons";
 import tableIcons from "./TableIcons";
-import { Avatar, Grid, Tooltip } from "@material-ui/core";
-
-
+import { Avatar, Container, Grid, Table, Tooltip } from "@material-ui/core";
 
 
 const columns=[
@@ -29,42 +27,51 @@ const data=[
 
 export const TablaFuncionario = () => {
   return (
+     
   <div>
-    <MaterialTable title="Listado de Funcionarios" 
-    columns={columns} 
-    data={data} 
-    icons={tableIcons}
-    actions={[
-        {
-            icon : tableIcons.Edit,
-            tooltip : 'Editar Funcionario',
-            onClick : (event, rowData)=>alert('Editar al Funcionario: '+rowData.nombre+" "+rowData.apellido)
-        },
-        {
-            icon : tableIcons.Delete,
-            tooltip : 'Eliminar Funcionario',
-            onClick : (event, rowData)=>window.confirm('Esta seguro de eliminar este funcionario: '+rowData.nombre+" "+rowData.apellido)
-        }
-        
-    ]}
+      <div class="container-md">
+        <MaterialTable title="Listado de Funcionarios" 
+            columns={columns} 
+            data={data} 
+            icons={tableIcons}
+            actions={[
+                {
+                    icon : tableIcons.Edit,
+                    tooltip : 'Editar Funcionario',
+                    onClick : (event, rowData)=>alert('Editar al Funcionario: '+rowData.nombre+" "+rowData.apellido)
+                },
+                {
+                    icon : tableIcons.Delete,
+                    tooltip : 'Eliminar Funcionario',
+                    onClick : (event, rowData)=>window.confirm('Esta seguro de eliminar este funcionario: '+rowData.nombre+" "+rowData.apellido)
+                }
+                
+            ]}
+            
+            options={{
+                actionsColumnIndex: -1,
+                headerStyle: {
+                    backgroundColor: '#01579b',
+                    color: '#FFF',
+                    },
+                    //selection: true
+
+                
+                
+
+            }}
+            localization={{
+                header:{
+                    actions: 'Acciones'
+                }
+            }}
+            />
+        </div> 
     
-    options={{
-        actionsColumnIndex: -1,
-        headerStyle: {
-            backgroundColor: '#01579b',
-            color: '#FFF'},
-            //selection: true
-
-        
-        
-
-    }}
-    localization={{
-        header:{
-            actions: 'Acciones'
-        }
-    }}
-    />
   </div>
   );
 };
+
+
+
+
