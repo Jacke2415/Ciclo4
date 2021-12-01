@@ -1,5 +1,6 @@
 
 import React, {Component, Fragment} from 'react';
+import {Link} from 'react-router-dom'
 
 
 class SupMisNominas extends Component{
@@ -15,7 +16,7 @@ class SupMisNominas extends Component{
                     <div className="row">
                         <div className="col-4">
                             
-                        <button type="button" class="btn btn-primary">Crear Nomina</button>
+                        <Link to='/singin/userNomina/liquidarNomina' type="button" class="btn btn-primary">Crear Nomina</Link>
                         </div>
                     </div>
                 </div>

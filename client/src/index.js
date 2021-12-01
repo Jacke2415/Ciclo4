@@ -9,16 +9,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Plantilla } from './components/User/Plantilla';
 import Login from './pages/Login';
 import LiquidarNomina from './pages/LiquidarNomina';
+import CrearNomina from './pages/CrearNomina';
+
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* <Routes>
+      <Routes>
         <Route path = '/' element = {<Login />} />
         <Route path = '/singin' element = {<Login />} />
-        <Route path = '/singin/user' element = {<Plantilla />} />    
-      </Routes> */}
-      <LiquidarNomina />
+        <Route path = '/singin/user' element = {<Plantilla />} />
+        <Route path = '/singin/userNomina/crearNomina' element = {<CrearNomina />} />    
+        <Route path = '/singin/userNomina/liquidarNomina' element = {<LiquidarNomina />} />
+      </Routes>
+      
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
