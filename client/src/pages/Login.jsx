@@ -1,8 +1,8 @@
 
-import '../../public/css/Login.css'
-import FormLogin from './formLogin';
-import Particulas from './particulas';
-import Panel from './panel';
+import '../../src/public/css/Login.css'
+import FormLogin from '../components/Login/FormLogin';
+import Particulas from '../components/Login/Particulas';
+import Panel from '../components/Login/Panel';
 
 export default function Login() {
   return (
