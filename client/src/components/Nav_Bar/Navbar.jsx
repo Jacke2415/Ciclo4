@@ -1,6 +1,6 @@
 import React from 'react';
-import './style.css';
-import nominas from './nominas.png';
+import '../../public/css/navbar.css';
+
 
 
 class Navbar extends React.Component {
