@@ -11,7 +11,7 @@ import { Calendar } from 'primereact/calendar';
 import { MultiSelect } from 'primereact/multiselect';
 import { Slider } from 'primereact/slider';
 import { CustomerService } from '../service/CustomerService';
-import './DataTableDemo.css';
+/* import './DataTableDemo.css'; */
 
 export class DataTableDemo extends Component {
 
