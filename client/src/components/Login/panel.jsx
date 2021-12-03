@@ -7,7 +7,7 @@ class Panel extends React.Component {
     render() {
 
         return (
-                <><input className="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" /><label for="menu-icon"></label><nav className="nav">
+                <> <input className="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" /><label for="menu-icon"></label><nav className="nav">
                 <ul className="pt-5">
 
                     <img className="navbar-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Amazon_logo.jpg/1200px-Amazon_logo.jpg" width="20%" height="20%" alt=""></img>
@@ -23,7 +23,7 @@ class Panel extends React.Component {
                             construir una plataforma donde sea posible gestionar la nómina de sus empleados.</h5>
                     </li>
                 </ul>
-            </nav></>
+            </nav> </>
         );
     }
 }
