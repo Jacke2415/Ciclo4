@@ -1,5 +1,5 @@
 
-import '../../public/css/Login.css'
+
 import FormLogin from './formLogin';
 import Particulas from './particulas';
 import Panel from './panel';
