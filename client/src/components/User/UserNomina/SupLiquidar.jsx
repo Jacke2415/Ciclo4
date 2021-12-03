@@ -4,6 +4,7 @@ import React, {Component, Fragment} from 'react';
 class SupLiquidar extends Component{
     render(){
         return(
+            <>
                 <div className="container">
                     <div className="row">
                         <div className="col-6">
@@ -63,6 +64,7 @@ class SupLiquidar extends Component{
                         </div>
                     </div>
                 </div>
+            </>
            
         );
     }
