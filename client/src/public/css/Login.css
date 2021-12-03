@@ -62,14 +62,14 @@ form input[type=password] {
     margin-top: 10px;
 }
 
-form input[type=button] {
+.btn-secondary {
     width: 260px;
     height: 35px;
     background: #fff;
     border: 1px solid #fff;
     cursor: pointer;
     border-radius: 2px;
-    color: #a18d6c;
+    color: rgba(12, 11, 11, 0.452);
     font-family: 'Exo', sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -77,11 +77,11 @@ form input[type=button] {
     margin-top: 10px;
 }
 
-.login input[type=button]:hover {
+.btn-secondary:hover {
     opacity: 0.8;
 }
 
-.login input[type=button]:active {
+.btn-secondary:active {
     opacity: 0.6;
 }
 
