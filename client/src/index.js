@@ -10,7 +10,7 @@ import { Plantilla } from './components/User/Plantilla';
 import Login from './pages/Login';
 import LiquidarNomina from './pages/LiquidarNomina';
 import CrearNomina from './pages/CrearNomina';
-
+import Formulario from './components/User/UserNomina/Formulario'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,7 +22,7 @@ ReactDOM.render(
         <Route path = '/singin/userNomina/crearNomina' element = {<CrearNomina />} />    
         <Route path = '/singin/userNomina/liquidarNomina' element = {<LiquidarNomina />} />
       </Routes>
-      
+     
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

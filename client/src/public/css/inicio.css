@@ -126,3 +126,9 @@ h6 {
     bottom: -25px;
     left: -25px;
 }
+.error{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: crimson;
+    font-style: italic;
+    font-size: x-small;
+}
