@@ -6,7 +6,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 /* import CrearNomina from './components/User/UserNomina/CrearNomina'; */
 /* import { DataTableDemo } from './components/User/UserNomina/DataTableDemo'; */
-import { Plantilla } from './components/User/Plantilla';
+import Navbar from './components/Nav_Bar/Navbar';
 import Login from './pages/Login';
 
 ReactDOM.render(
@@ -15,7 +15,7 @@ ReactDOM.render(
       <Routes>
         <Route path = '/' element = {<Login />} />
         <Route path = '/singin' element = {<Login />} />
-        <Route path = '/singin/user' element = {<Plantilla />} />    
+        <Route path = '/singin/user' element = {<Navbar />} />    
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

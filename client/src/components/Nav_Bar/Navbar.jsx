@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../public/css/navbar.css';
 
 
@@ -12,12 +13,12 @@ class Navbar extends React.Component {
                 <div class="area"></div><nav class="main-menu">
                     <ul>
                         <li>
-                            <a href="#">
-                                <i className="fa fa-home fa-2x"></i>
+                            <Link to='../components/UserEmpleado/Perfil_User'>
+                                <i class="bi bi-person-circle"></i>
                                 <span class="nav-text">
-                                    Dashboard
+                                    Perfil del usuario
                                 </span>
-                            </a>
+                            </Link>
 
                         </li>
                         <li className="has-subnav">
