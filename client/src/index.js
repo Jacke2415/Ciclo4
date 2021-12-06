@@ -24,7 +24,7 @@ ReactDOM.render(
   <React.StrictMode>
     
     <BrowserRouter>
-     // <Navbar />
+     
        <Routes>
         <Route path = '/singin/userNomina/crearNomina' element = {<CrearNomina />} />    
         <Route path = '/singin/userNomina/liquidarNomina' element = {<LiquidarNomina />}/>

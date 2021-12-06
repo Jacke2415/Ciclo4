@@ -10,7 +10,7 @@ class SupMisNominas extends Component{
                     <div className="row">
                         <div className="col-6">
                             <div><br /></div>
-                            <h1>Creación de Nominas</h1>
+                            <h2>Creación de Nominas</h2>
                         </div>
                     </div>
                     <div className="row">
