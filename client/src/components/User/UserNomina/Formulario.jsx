@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { ValidacionForm } from "./ValidacionForm";
+import "../../../public/css/Formulario.css"
+
 const salariomin=908526;
 const initialForm = {
     nombre:"",
@@ -96,7 +98,7 @@ const Formulario = () => {
         <>
             <div className='container '>
                 <p> <h2>Informacion Empleado</h2></p>
-                <form>
+                <div className="">
                     <div className="row">
                         <div className="col">
                             <div className="form-floating mb-3">
@@ -251,7 +253,7 @@ const Formulario = () => {
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </>
     )

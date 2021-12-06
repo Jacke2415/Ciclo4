@@ -10,6 +10,9 @@ import { Plantilla } from './components/User/Plantilla';
 import Login from './pages/Login';
 import LiquidarNomina from './pages/LiquidarNomina';
 import CrearNomina from './pages/CrearNomina';
+import CrearEmpleado from './pages/CrearEmpleado';
+import VacacionesNomina from './pages/VacacionesNomina';
+import PermisosNomina from './pages/PermisosNomina';
 
 
 ReactDOM.render(
@@ -19,8 +22,11 @@ ReactDOM.render(
         <Route path = '/' element = {<Login />} />
         <Route path = '/singin' element = {<Login />} />
         <Route path = '/singin/user' element = {<Plantilla />} />
+        <Route path = '/singin/userNomina/crearEmpleado' element = {<CrearEmpleado />} /> 
         <Route path = '/singin/userNomina/crearNomina' element = {<CrearNomina />} />    
         <Route path = '/singin/userNomina/liquidarNomina' element = {<LiquidarNomina />} />
+        <Route path = '/singin/userNomina/GestionarVacaciones' element = {<VacacionesNomina />} />
+        <Route path = '/singin/userNomina/GestionarPermisos' element = {<PermisosNomina />} />
       </Routes>
       
     </BrowserRouter>
