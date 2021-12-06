@@ -8,11 +8,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 /* import { DataTableDemo } from './components/User/UserNomina/DataTableDemo'; */
 /* import Navbar from './components/Nav_Bar/Navbar';
 import Login from './pages/Login'; */
-import PerfilUser from './components/User/UserEmpleado/PerfilUser'
+import SoliVac from './components/User/UserEmpleado/SolicitarVac'
 
 ReactDOM.render(
   <React.StrictMode>
-    <PerfilUser/>
+    <SoliVac/>
     {/* <BrowserRouter>
       <Routes>
         <Route path = '/' element = {<Login />} />
