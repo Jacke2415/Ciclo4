@@ -14,11 +14,11 @@
   font-size: 20px;
 }
 
-.main-menu:hover,
+/* .main-menu:hover,
 nav.main-menu.expanded {
   width: 250px;
   overflow: visible;
-}
+}  */
 
 .main-menu {
   background: #00113b;
@@ -28,7 +28,7 @@ nav.main-menu.expanded {
   bottom: 0;
   height: 100%;
   left: 0;
-  width: 60px;
+  width: 250px;
   overflow: hidden;
   -webkit-transition: width 0.05s linear;
   transition: width 0.05s linear;
@@ -84,14 +84,14 @@ nav.main-menu.expanded {
   bottom: 0;
 }
 
-.no-touch .scrollable.hover {
+/* .no-touch .scrollable.hover {
   overflow-y: hidden;
 }
 
 .no-touch .scrollable.hover:hover {
   overflow-y: auto;
   overflow: visible;
-}
+} */
 
 a:hover,
 a:focus {
