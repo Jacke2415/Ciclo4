@@ -35,3 +35,11 @@ body {
 .labels {
     font-size: 11px
 }
+
+.content{
+    padding-left: 4em;
+    padding-top: 2em;
+}
+.holamundo{
+    color: black;
+}

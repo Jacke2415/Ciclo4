@@ -10,7 +10,7 @@ class Navbar extends React.Component {
 
         return (
             <>
-                <div class="area"></div><nav class="main-menu">
+                <nav class="main-menu">
                     <ul>
                         <li>
                             <Link to='../components/UserEmpleado/Perfil_User'>
