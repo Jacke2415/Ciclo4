@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { ValidacionForm } from "./ValidacionForm";
-import '../../../public/css/inicio.css'
+import { ValidacionForm } from "../components/User/UserNomina/ValidacionForm";
+import '../public/css/bootstrap.min.css'
 const salariomin=908526;
 const initialForm = {
     nombre:"",
@@ -96,6 +96,7 @@ const Formulario = () => {
     return(
         <>
             <div className='container-md '>
+                
                 <p> <h2>Informacion Empleado</h2></p>
                 <div className="form">
                 
