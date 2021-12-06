@@ -1,5 +1,6 @@
 import React from "react";
 import '../../../public/css/SoliVac.css';
+/* import '../../../public/js/SoliVac.js'; */
 
 class SoliVac extends React.Component {
 
@@ -39,16 +40,32 @@ class SoliVac extends React.Component {
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-6">
-                                   
+                                    <div class="md-form">
+                                        <label for="inputMDEx">Fecha de inicio</label>
+                                        <input type="date" id="inputMDEx" class="form-control" />
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="labels">ciudad</label>
-                                    <input type="text" class="form-control" value="" placeholder="Ciudad" />
+                                    <div class="md-form">
+                                        <label for="inputMDEx">Fecha de Finalizacion</label>
+                                        <input type="date" id="inputMDEx" class="form-control" />
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="row-mt-5">
+                                <div class="col-md-5">
+                                    <div class="boton">
+                                        <a class="btn btn-lg" href="#">
+                                            <span>Confirmar</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
 
