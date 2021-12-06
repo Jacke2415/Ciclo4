@@ -1,0 +1,45 @@
+body {
+    background: #0a2e8c;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #0a2e8c
+}
+
+.profile-button {
+    background: rgb(0, 17, 59);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #0a2e8c
+}
+
+.profile-button:focus {
+    background: #0a2e8c;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #0a2e8c;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #0a2e8c;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.content{
+    padding-left: 4em;
+    padding-top: 2em;
+}
+.holamundo{
+    color: black;
+}

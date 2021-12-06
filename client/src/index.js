@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {BrowserRouter, Routes, Route} from 'react-router-dom' 
 import './index.css';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LiquidarNomina from './pages/LiquidarNomina';
 import CrearNomina from './pages/CrearNomina';
 import ReporteSalario from './pages/ReporteSalario';
-import Navbar from './'
+
 import Login from './pages/Login';
+
+import Navbar from './components/Nav_Bar/Navbar.jsx';
+
+import PerfilUser from './components/User/UserEmpleado/PerfilUser.jsx'
+import SoliVac from './components/User/UserEmpleado/SolicitarVac'
 
 import Formulario from './pages/Formulario';
 
@@ -17,6 +22,7 @@ import Formulario from './pages/Formulario';
 
 ReactDOM.render(
   <React.StrictMode>
+    
     <BrowserRouter>
       <Navbar />
        <Routes>
@@ -26,9 +32,10 @@ ReactDOM.render(
         <Route path = '/singin/userNomina/formulario' element = {<Formulario />}/>
         <Route path = '/' element = {<Login />} />
         <Route path = '/singin' element = {<Login />}/>
-        
-        
-      </Routes>
+        <Route path = '/' element = {<PerfilUser />} />
+        <Route path = '/singin/user' element = {<Navbar />} />   
+      </Routes> 
+      
       
      
     </BrowserRouter>

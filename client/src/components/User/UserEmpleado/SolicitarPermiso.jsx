@@ -1,13 +1,13 @@
 import React from "react";
 
-class Perfil_User extends React.Component {
+class SolicitarPer extends React.Component {
     render() {
         return (
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="..." alt="Card image cap" />
+                        <div class="card" style={{"width: 18rem":"auto"}}>
+                            <img class="card-img-top" src="..." aria-hidden alt="Card image cap" />
                             <div class="card-body">
                                 <h5 class="card-title">juancho perez</h5>
                                 <p class="card-text">
@@ -32,4 +32,4 @@ class Perfil_User extends React.Component {
         );
     }
 }
-export default Perfil_User;
+export default SolicitarPer;
