@@ -13,7 +13,7 @@ import Login from './pages/Login';
 import Navbar from './components/Nav_Bar/Navbar.jsx';
 
 import PerfilUser from './components/User/UserEmpleado/PerfilUser.jsx'
-import SoliVac from './components/User/UserEmpleado/SolicitarVac'
+/* import SoliVac from './components/User/UserEmpleado/SolicitarVac' */
 
 import Formulario from './pages/Formulario';
 
@@ -31,13 +31,16 @@ ReactDOM.render(
         <Route path = '/singin/userNomina/reporteSalario' element = {<ReporteSalario />}/>
         <Route path = '/singin/userNomina/formulario' element = {<Formulario />}/>
         <Route path = '/' element = {<Login />} />
-        <Route path = '/singin' element = {<Login />}/>
-        <Route path = '/' element = {<PerfilUser />} />
+        <Route path = '/' element = {< PerfilUser/>} />
+        <Route path = '/singin' element = {<Login />} />
         <Route path = '/singin/user' element = {<Navbar />} />   
       </Routes> 
       
       
      
+      <Routes>
+          
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
