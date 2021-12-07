@@ -11,6 +11,7 @@ import ReporteSalario from './pages/ReporteSalario';
 import Login from './pages/Login';
 
 import Navbar from './components/Nav_Bar/Navbar.jsx';
+import NavbarNomina from './components/Nav_Bar/Navbar.jsx';
 
 import PerfilUser from './components/User/UserEmpleado/PerfilUser.jsx'
 /* import SoliVac from './components/User/UserEmpleado/SolicitarVac' */
