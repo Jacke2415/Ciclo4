@@ -17,7 +17,7 @@ import PermisosNomina from './pages/PermisosNomina';
 import ReporteSalario from './pages/ReporteSalario';
 import PerfilUser from './components/User/UserEmpleado/PerfilUser.jsx'
 import SoliRep from './components/User/UserEmpleado/SolicitaRep'
-import Formulario from './pages/Formulario';
+import Formulario from './components/User/UserNomina/Formulario.jsx';
 import PerfilUserNomina from './pages/PerfilUserNomina.jsx';
 import SoliVac from './components/User/UserEmpleado/SolicitarVac'; 
 
@@ -26,8 +26,7 @@ ReactDOM.render(
     
     <BrowserRouter>
       <Routes>
-        <Route path = '/' element = {< SoliRep/>} />
-        <Route path = '/singin' element = {<Login />} />
+        <Route path = '/' element = {<Login />} />
         <Route path = '/singin/user' element = {<Navbar />} />    
         <Route path = '/singin/userNomina/crearNomina' element = {<CrearNomina />} />    
         <Route path = '/singin/userNomina/liquidarNomina' element = {<LiquidarNomina />}/>
