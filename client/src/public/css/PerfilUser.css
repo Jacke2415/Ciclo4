@@ -1,3 +1,6 @@
+body {
+    background:white;
+}
 
 .form-control:focus {
     box-shadow: none;

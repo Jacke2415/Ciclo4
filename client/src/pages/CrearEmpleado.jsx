@@ -1,9 +1,7 @@
-//import '../../../public/css/Login.css'
+import Formulario from '../components/User/UserNomina/Formulario';
 import NavbarNomina from '../components/Nav_Bar/NavbarNomina';
-import SupMisNominas from '../components/User/UserNomina/SupMisNominas';
-import {TablaNominas} from '../components/User/UserNomina/TablaNominas';
 
-export default function CrearNomina() {
+export default function CrearEmpleado() {
     return (
       <>
         <div className="container-lg">
@@ -12,15 +10,13 @@ export default function CrearNomina() {
               <NavbarNomina />
             </div>
             <div className="col-10">
-              <SupMisNominas />
-              <TablaNominas />
+              <Formulario />
             </div>
-
           </div>
-        </div>        
-
+        </div>
+        
       </>
     );
 }
 
-  
+      
