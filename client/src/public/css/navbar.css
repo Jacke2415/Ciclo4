@@ -13,22 +13,20 @@ svg{
   font-size: 18px;
 }
 
-/* .main-menu:hover,
+.main-menu:hover,
 nav.main-menu.expanded {
   width: 250px;
   overflow: visible;
-}  */
+} 
 
 .main-menu {
   background: #00113b;
-  border-right: 1px solid #e5e5e5;
   position: absolute;
   top: 0;
   bottom: 0;
-  padding: 10px;
   height: 100%;
   left: 0;
-  width: 250px;
+  width: 60px;
   overflow: hidden;
   -webkit-transition: width 0.05s linear;
   transition: width 0.05s linear;
@@ -91,7 +89,7 @@ nav.main-menu.expanded {
 .no-touch .scrollable.hover:hover {
   overflow-y: auto;
   overflow: visible;
-} */
+}  */
 
 a:hover,
 a:focus {
