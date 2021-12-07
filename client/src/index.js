@@ -9,14 +9,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
  import Navbar from './components/Nav_Bar/Navbar.jsx';
 import Login from './pages/Login'; 
 import PerfilUser from './components/User/UserEmpleado/PerfilUser.jsx'
-/* import SoliVac from './components/User/UserEmpleado/SolicitarVac' */
+import SoliVac from './components/User/UserEmpleado/SolicitarVac'
 
 ReactDOM.render(
   <React.StrictMode>
     
     <BrowserRouter>
       <Routes>
-        <Route path = '/' element = {< PerfilUser/>} />
+        <Route path = '/' element = {< SoliVac/>} />
         <Route path = '/singin' element = {<Login />} />
         <Route path = '/singin/user' element = {<Navbar />} />    
       </Routes>
