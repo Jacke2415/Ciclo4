@@ -8,7 +8,7 @@ class SupReporteSalario extends Component{
                 <div className="container">
                     <div className="row">
                         <div className="col-6">
-                            <h1>Reporte de Salarios</h1>
+                            <h2>Reporte de Salarios</h2>
                         </div>
                     </div>
                     <div>
@@ -36,7 +36,7 @@ class SupReporteSalario extends Component{
                             
                     <br />
                     <div className="row">
-                        <div className="col-2">
+                        <div className="col-3">
                             <button type="button" class="btn btn-primary">Generar Reporte</button>
                         </div>
                         <div className="col-2">

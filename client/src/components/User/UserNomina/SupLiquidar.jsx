@@ -8,7 +8,7 @@ class SupLiquidar extends Component{
                 <div className="container">
                     <div className="row">
                         <div className="col-6">
-                            <h1>Liquidar Nominas</h1>
+                            <h2>Liquidar Nominas</h2>
                         </div>
                     </div>
                     <div>
@@ -53,7 +53,7 @@ class SupLiquidar extends Component{
                     </div>
                     <br />
                     <div className="row">
-                        <div className="col-2">
+                        <div className="col-3">
                             <button type="button" class="btn btn-primary">Liquidar Nomina</button>
                         </div>
                         <div className="col-2">
