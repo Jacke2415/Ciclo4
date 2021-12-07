@@ -1,6 +1,17 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 
+svg{
+  font-size: 2em;
+  position: relative;
+  display: table-cell;
+  width: 60px;
+  height: 36px;
+  padding: 5px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+}
 .fa-2x {
   font-size: 2em;
 }
@@ -26,6 +37,7 @@ nav.main-menu.expanded {
   position: absolute;
   top: 0;
   bottom: 0;
+  padding: 10px;
   height: 100%;
   left: 0;
   width: 250px;

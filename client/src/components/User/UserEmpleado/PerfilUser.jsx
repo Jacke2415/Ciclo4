@@ -4,13 +4,9 @@ import Navbar from "../../Nav_Bar/Navbar.jsx";
 class Perfil extends React.Component {
   render() {
     return (
-      <div className="contenedor">
-        <div className="row">
-          <div className="col-3">
-            <Navbar />
-          </div>
+      
 
-          <div className="col-9">
+          
             <div className="content">
               <div className="row">
                 <div className="col-md-3 bg-white border-right">
@@ -108,9 +104,8 @@ class Perfil extends React.Component {
               </div>
 
             </div>
-          </div>
-        </div>
-      </div>
+          
+     
     );
   }
 }
