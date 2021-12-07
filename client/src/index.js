@@ -5,9 +5,6 @@ import './index.css';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Navbar from './components/Nav_Bar/Navbar.jsx';
-import NavbarNomina from './components/Nav_Bar/Navbar.jsx';
-
 import Login from './pages/Login'; 
 import LiquidarNomina from './pages/LiquidarNomina';
 import CrearNomina from './pages/CrearNomina';
@@ -15,11 +12,13 @@ import CrearEmpleado from './pages/CrearEmpleado';
 import VacacionesNomina from './pages/VacacionesNomina';
 import PermisosNomina from './pages/PermisosNomina';
 import ReporteSalario from './pages/ReporteSalario';
-import PerfilUser from './components/User/UserEmpleado/PerfilUser.jsx'
-import SoliRep from './components/User/UserEmpleado/SolicitaRep'
-import Formulario from './components/User/UserNomina/Formulario.jsx';
+import Formulario from '../src/components/User/UserNomina/Formulario';
 import PerfilUserNomina from './pages/PerfilUserNomina.jsx';
-import SoliVac from './components/User/UserEmpleado/SolicitarVac'; 
+import PerfilEmpleado from './components/User/UserEmpleado/PerfilUser.jsx';
+import SoliRep from './components/User/UserEmpleado/SolicitaRep'; 
+import SolicitarPermiso from './components/User/UserEmpleado/SolicitarPermiso';
+import SolicitarVacaciones from './components/User/UserEmpleado/SolicitarVac';
+/* import SolicitarCertificado from './components/User/UserEmpleado/SolicitarCertificado'; */
 
 ReactDOM.render(
   <React.StrictMode>
@@ -27,7 +26,14 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path = '/' element = {<Login />} />
-        <Route path = '/singin/user' element = {<Navbar />} />    
+        <Route path = '/singin' element = {<Login />} />
+        
+        <Route path = '/singin/userEmpleado/perfilEmpleado' element = {< PerfilEmpleado/>} />
+        <Route path = '/singin/userEmpleado/reporteNomina' element = {< SoliRep/>} />
+        <Route path = '/singin/userEmpleado/solicitarPermiso' element = {< SolicitarPermiso/>} />
+        <Route path = '/singin/userEmpleado/solicitarVaciones' element = {< SolicitarVacaciones/>} />
+        <Route path = '/singin/userEmpleado/solicitarCertificado' element = {< SoliRep/>} />    
+        
         <Route path = '/singin/userNomina/crearNomina' element = {<CrearNomina />} />    
         <Route path = '/singin/userNomina/liquidarNomina' element = {<LiquidarNomina />}/>
         <Route path = '/singin/userNomina/reporteSalario' element = {<ReporteSalario />}/>
@@ -35,9 +41,9 @@ ReactDOM.render(
         <Route path = '/singin/userNomina/Perfil' element = {<PerfilUserNomina />} /> 
         <Route path = '/singin/userNomina/crearEmpleado' element = {<CrearEmpleado />} /> 
         <Route path = '/singin/userNomina/liquidarNomina' element = {<LiquidarNomina />} />
-        <Route path = '/singin/userNomina/GestionarVacaciones' element = {<VacacionesNomina />} />
-        <Route path = '/singin/userNomina/GestionarPermisos' element = {<PermisosNomina />} />
-        <Route path = '/singin/userNomina/ReporteSalario' element = {<ReporteSalario />} />
+        <Route path = '/singin/userNomina/gestionarVacaciones' element = {<VacacionesNomina />} />
+        <Route path = '/singin/userNomina/gestionarPermisos' element = {<PermisosNomina />} />
+        <Route path = '/singin/userNomina/reporteSalario' element = {<ReporteSalario />} />
                 
         <Route path = '/singin/administrador/crearNomina' element = {<CrearNomina />} />    
         <Route path = '/singin/administrador/liquidarNomina' element = {<LiquidarNomina />}/>
@@ -55,3 +61,4 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
