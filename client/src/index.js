@@ -14,7 +14,7 @@ import Navbar from './components/Nav_Bar/Navbar.jsx';
 import NavbarNomina from './components/Nav_Bar/Navbar.jsx';
 
 import PerfilUser from './components/User/UserEmpleado/PerfilUser.jsx'
-/* import SoliVac from './components/User/UserEmpleado/SolicitarVac' */
+import SoliVac from './components/User/UserEmpleado/SolicitarVac'
 
 import Formulario from './pages/Formulario';
 
@@ -25,6 +25,7 @@ ReactDOM.render(
   <React.StrictMode>
     
     <BrowserRouter>
+<<<<<<< HEAD
      
        <Routes>
         <Route path = '/singin/userNomina/crearNomina' element = {<CrearNomina />} />    
@@ -33,6 +34,10 @@ ReactDOM.render(
         <Route path = '/singin/userNomina/formulario' element = {<Formulario />}/>
         <Route path = '/' element = {<Login />} />
         <Route path = '/' element = {< PerfilUser/>} />
+=======
+      <Routes>
+        <Route path = '/' element = {< SoliVac/>} />
+>>>>>>> 51b08c3ecf40d9b5b9cb126387e3a80f4241880e
         <Route path = '/singin' element = {<Login />} />
         <Route path = '/singin/user' element = {<Navbar />} />   
       </Routes> 
