@@ -1,6 +1,6 @@
 
 import '../../src/public/css/Login.css'
-import FormLogin from '../components/Login/formLogin';
+import FormLogin from '../components/Login/formLogin.jsx';
 import Particulas from '../components/Login/particulas';
 import Panel from '../components/Login/panel';
 
