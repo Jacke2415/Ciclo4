@@ -33,13 +33,24 @@ ReactDOM.render(
         <Route path = '/singin/userNomina/liquidarNomina' element = {<LiquidarNomina />}/>
         <Route path = '/singin/userNomina/reporteSalario' element = {<ReporteSalario />}/>
         <Route path = '/singin/userNomina/formulario' element = {<Formulario />}/>   
-        <Route path = '/singin/user' element = {<Navbar />} />   
         <Route path = '/singin/userNomina/Perfil' element = {<PerfilUserNomina />} /> 
         <Route path = '/singin/userNomina/crearEmpleado' element = {<CrearEmpleado />} /> 
         <Route path = '/singin/userNomina/liquidarNomina' element = {<LiquidarNomina />} />
         <Route path = '/singin/userNomina/GestionarVacaciones' element = {<VacacionesNomina />} />
         <Route path = '/singin/userNomina/GestionarPermisos' element = {<PermisosNomina />} />
-        <Route path = '/singin/userNomina/ReporteSalario' element = {<ReporteSalario />} />          
+        <Route path = '/singin/userNomina/ReporteSalario' element = {<ReporteSalario />} />
+                
+        <Route path = '/singin/administrador/crearNomina' element = {<CrearNomina />} />    
+        <Route path = '/singin/administrador/liquidarNomina' element = {<LiquidarNomina />}/>
+        <Route path = '/singin/administrador/reporteSalario' element = {<ReporteSalario />}/>
+        <Route path = '/singin/administrador/formulario' element = {<Formulario />}/>   
+        <Route path = '/singin/administrador/Perfil' element = {<PerfilUserNomina />} /> 
+        <Route path = '/singin/administrador/crearEmpleado' element = {<CrearEmpleado />} /> 
+        <Route path = '/singin/administrador/liquidarNomina' element = {<LiquidarNomina />} />
+        <Route path = '/singin/administrador/GestionarVacaciones' element = {<VacacionesNomina />} />
+        <Route path = '/singin/administrador/GestionarPermisos' element = {<PermisosNomina />} />
+        <Route path = '/singin/administrador/ReporteSalario' element = {<ReporteSalario />} />
+                
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
