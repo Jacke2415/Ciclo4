@@ -79,32 +79,16 @@ class NavbarNomina extends React.Component {
                                 </span>
                             </Link>
                         </li>
-                        <li>
-                            <a href="#">
-                                <i className="fa fa-map-marker fa-2x"></i>
-                                <span className="nav-text">
-                                    Maps
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i className="fa fa-info fa-2x"></i>
-                                <span className="nav-text">
-                                    Documentation
-                                </span>
-                            </a>
-                        </li>
                     </ul>
 
                     <ul className="logout">
                         <li>
-                            <a href="#">
+                            <Link to="/">
                                 <i className="fa fa-power-off fa-2x"></i>
                                 <span className="nav-text">
                                     Logout
                                 </span>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </nav>

@@ -9,17 +9,13 @@ export default function CrearNomina() {
       <>
         <div className="container-lg">
           <div className="row">
-            <div className="col-3">
+            <div className="col-2">
               <NavbarNomina />
             </div>
-            <div className="col">
-              
+            <div className="col-10">
                   <SupReporteSalario />
                   <TablaReporte />
-                
-                            
             </div>
-
           </div>
         </div>
         
