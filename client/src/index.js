@@ -25,7 +25,6 @@ ReactDOM.render(
   <React.StrictMode>
     
     <BrowserRouter>
-<<<<<<< HEAD
      
        <Routes>
         <Route path = '/singin/userNomina/crearNomina' element = {<CrearNomina />} />    
@@ -34,17 +33,11 @@ ReactDOM.render(
         <Route path = '/singin/userNomina/formulario' element = {<Formulario />}/>
         <Route path = '/' element = {<Login />} />
         <Route path = '/' element = {< PerfilUser/>} />
-=======
-      <Routes>
+      
         <Route path = '/' element = {< SoliVac/>} />
->>>>>>> 51b08c3ecf40d9b5b9cb126387e3a80f4241880e
-        <Route path = '/singin' element = {<Login />} />
+      
         <Route path = '/singin/user' element = {<Navbar />} />   
-      </Routes> 
       
-      
-     
-      <Routes>
           
       </Routes>
     </BrowserRouter>
