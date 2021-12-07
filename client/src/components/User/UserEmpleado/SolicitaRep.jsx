@@ -10,7 +10,7 @@ class SoliRep extends React.Component {
             <div class="container">
                 <div class="row">
                     <div className="col-3">
-                        <Navbar />
+                        <Navbar /> 
                     </div>
 
                     <div class="col-9">
@@ -49,7 +49,7 @@ class SoliRep extends React.Component {
                                                 <div class="row-mt-5">
                                                     <div class="col-md-5">
                                                         <div class="boton">
-                                                            <a class="btn btn-lg" href="#">
+                                                            <a type="button" class="btn btn-primary btn-lg" href="#">
                                                                 <span>Confirmar</span>
                                                             </a>
                                                         </div>
@@ -67,9 +67,6 @@ class SoliRep extends React.Component {
                     </div>
                 </div>
             </div>
-
-
-
         );
     }
 }
