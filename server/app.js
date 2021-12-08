@@ -1,8 +1,13 @@
-import express from "express";
-import mongoose from "./database";
-import userRoutes from './routes/User'
+const express = require("express");
+/* const dotenv = require("dotenv"); */
+const userRoutes = require("./routes/User");
+const cors = require("cors");
+const morgan = require("morgan");
+import './database'
+
 
 //initialization
+/* dotenv.config(); */
 const app = express();
 
 
@@ -10,27 +15,14 @@ const app = express();
 app.set('port', process.env.PORT || 5000);
 
 // Middlewares
-/* app.use(morgan('dev')); */
+app.use(morgan("dev"));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+
 
 //Routes
-app.use('/users', userRoutes);
-
-/* app.get('/', (req, res) => {
-
-    const Usuario = new usuario({
-            nombre : 'daniel',
-            fecha_nacimiento :  new Date('11-30-1996'),
-            cedula: '1143458598',
-            telefono: '3002603634',
-            sexo: 'M',
-            estado: 'activo'
-    });
-
-    Usuario.save();
-    res.status(201).send(Usuario);
-}); */
-
+app.use("/users", userRoutes);
 
 // Starting the server
 app.listen(app.get('port'), () => {
