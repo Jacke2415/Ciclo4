@@ -1,19 +1,22 @@
-const express = require( 'express');
-const path = require('path');
-const morgan = require('morgan');
+import express from "express";
+import mongoose from "./database";
+import userRoutes from './routes/User'
+
+//initialization
 const app = express();
 
-const { mongoose } = require('./database.js');
-const usuario = require('./model/usuario.js');
+
 // Settings 
 app.set('port', process.env.PORT || 5000);
 
 // Middlewares
-app.use(morgan('dev'));
+/* app.use(morgan('dev')); */
 app.use(express.json());
 
 //Routes
-app.get('/', (req, res) => {
+app.use('/users', userRoutes);
+
+/* app.get('/', (req, res) => {
 
     const Usuario = new usuario({
             nombre : 'daniel',
@@ -26,7 +29,7 @@ app.get('/', (req, res) => {
 
     Usuario.save();
     res.status(201).send(Usuario);
-});
+}); */
 
 
 // Starting the server
