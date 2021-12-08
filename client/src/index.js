@@ -32,8 +32,8 @@ ReactDOM.render(
         <Route path = '/singin/userNomina/GestionarVacaciones' element = {<VacacionesNomina />} />
         <Route path = '/singin/userNomina/GestionarPermisos' element = {<PermisosNomina />} />
         <Route path = '/singin/userNomina/ReporteSalario' element = {<ReporteSalario />} />
-        <Route path = '/singin/user' element = {<NavbarNomina />} />    
-        <Route path = '/' element = {< SoliVac/>} />
+          
+        
       
           
       

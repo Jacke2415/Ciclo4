@@ -96,23 +96,24 @@ const Formulario = () => {
   
     return(
         <>
-            <div className='container '>
-                <p> <h2>Informacion Empleado</h2></p>
-                <div className="">
-                    <div className="row">
-                        <div className="col">
+            
+                
+                <form className="card">
+                    <h2>Informacion Empleado</h2>
+                    <div class="row">
+                        <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
+                                <input type="email" className="form-control" 
                                 id="nombre" placeholder="Nombre" required
                                 onBlur= {handleBlur} onChange= {handleChange} 
                                 value ={form.name} />
-                                {errors.nombre && <p className="error"> {errors.nombre} </p>}
                                 <label for="">Nombre</label>
+                                {errors.nombre && <p className="error"> {errors.nombre} </p>}
                             </div>
                         </div>
-                        <div className="col">
+                        <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
+                                <input type="email" className="form-control" 
                                 id="apellido" placeholder="Apellido" required
                                 onBlur= {handleBlur} onChange= {handleChange} 
                                 value ={form.apellido}/>
@@ -121,19 +122,21 @@ const Formulario = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col">
-                            <select className="form-select mb-3" aria-label="Default select example"
-                            id="tidentificacion">
+                    <div class="row">
+                        <div class="col">
+                            <div className="">
+                                <select className="form-select mb-3" aria-label="Default select example"
+                                id="tidentificacion">
                                 <option selected>Tipo Identificación</option>
                                 <option value="CC">Cedula de Ciudadania</option>
                                 <option value="CE">Cedula de Extranjeria</option>
                                 <option value="Pasaporte">Pasaporte</option>
-                            </select>
-                        </div>   
-                        <div className="col">
+                                </select>
+                            </div>   
+                        </div>
+                        <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
+                                <input type="email" className="form-control" 
                                 id="identificacion" placeholder="No Identificación" 
                                 required onBlur= {handleBlur} onChange= {handleChange} 
                                 value ={form.identificacion}/>
@@ -142,9 +145,10 @@ const Formulario = () => {
                                 {errors.identificacion && <p className="error"> {errors.identificacion} </p>}
                             </div>
                         </div>
+                       
                     </div>
-                    <div className="row">
-                        <div className="col">
+                    <div class="row">
+                        <div class="col">
                             <div className="form-floating mb-3">
                                 <input type="date" className="form-control" 
                                 id="fnacimiento" placeholder="Fecha Nacimiento" 
@@ -154,7 +158,7 @@ const Formulario = () => {
                                 {errors.fnacimiento && <p className="error"> {errors.fnacimiento} </p>}
                             </div>
                         </div>
-                        <div className="col">
+                        <div class="col">
                             <div className="form-floating mb-3">
                                 <div className="form-check form-check-inline">
                                     <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value= {form.masculino} />
@@ -166,32 +170,36 @@ const Formulario = () => {
                                 </div>
                             </div>
                         </div>
+                       
                     </div>
-                    <div className="row">
-                        <div className="col">
+                    <div class="row">
+                        <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
+                                <input type="email" className="form-control" 
                                 id="telefono" placeholder="Telefono" required
                                 onBlur= {handleBlur} onChange= {handleChange} 
                                 value ={form.telefono}/>
                                 <label for="">Telefono</label>
                                 {errors.telefono && <p className="error"> {errors.telefono} </p>}
                             </div>
+                            
                         </div>
-                        <div className="col">
+                        <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
+                                <input type="email" className="form-control" 
                                 id="direccion" placeholder="Direccion" required
                                 onBlur= {handleBlur} onChange= {handleChange} 
                                 value ={form.direccion}/>
                                 <label for="">Dirección</label>
                                 {errors.direccion && <p className="error"> {errors.direccion} </p>}
-                            </div>
+                            
+                            </div> 
+                            
                         </div>
-                        
+                       
                     </div>
-                    <div className="row">
-                        <div className="col">
+                    <div class="row">
+                        <div class="col">
                             <div className="form-floating mb-3">
                                 <input type="email" className="form-control" 
                                 id="email" placeholder="Email" required
@@ -200,8 +208,9 @@ const Formulario = () => {
                                 <label for="">Email</label>
                                 {errors.email && <p className="error"> {errors.email} </p>}
                             </div>
+                            
                         </div>
-                        <div className="col">
+                        <div class="col">
                             <div className="form-floating mb-3">
                                 <input type="date" className="form-control" 
                                 id="fingreso" placeholder="Fecha De Ingreso" required
@@ -209,11 +218,13 @@ const Formulario = () => {
                                 value ={form.fingreso}/>
                                 <label for="">Fecha De Ingreso</label>
                                 {errors.fingreso && <p className="error"> {errors.fingreso} </p>}
-                            </div>
+                            </div> 
+                            
                         </div>
+                       
                     </div>
-                    <div className="row"> 
-                        <div className="col">
+                    <div class="row">
+                        <div class="col">
                             <select className="form-select  mb-3" aria-label=" "
                             id="tcontrato">
                                 <option selected>Tipo De Contrato</option>
@@ -221,40 +232,46 @@ const Formulario = () => {
                                 <option value="Fijo">A Temino Fijo</option>
                                 <option value="ObraLabor">Por Obra o Labor</option>
                                 <option value="Temporal">Temporal</option>
-                            </select>
-                        </div> 
-                        <div className="col">
+                            </select> 
+                            
+                        </div>
+                        <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
+                                <input type="email" className="form-control" 
                                 id="salario" placeholder="Salario" required
                                 onBlur= {handleBlur} onChange= {handleChange} 
                                 value ={form.salario}/>
                                 <label for="">Salario</label>
                                 {errors.salario && <p className="error"> {errors.salario} </p>}
-                            </div>
+                            </div>  
+                            
                         </div>
+                       
                     </div>
-                    <div className="row"> 
-                        <div className="col">
+                    <div class="row">
+                        <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
+                                <input type="email" className="form-control" 
                                 id="cargo" placeholder="Cargo" required
                                 onBlur= {handleBlur} onChange= {handleChange} 
                                 value ={form.cargo}/>
                                 <label for="">Cargo</label>
                                 {errors.cargo && <p className="error"> {errors.cargo} </p>}
-                            </div>
+                            </div> 
                             
-                        </div> 
-                        <div className="col">
+                        </div>
+                        <div class="col">
                             <div className="d-grid gap-2">
                                 <button type="submit" 
                                 className="btn btn-primary">Crear Empleado</button>
-                            </div>
+                            </div>    
+                            
                         </div>
+                       
                     </div>
-                </div>
-            </div>
+           
+        </form>
+            
         </>
     )
 }

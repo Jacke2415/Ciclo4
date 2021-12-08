@@ -27,8 +27,6 @@ export const ValidacionForm = (initialForm,validateForm) =>{
     return {
         form,
         errors,
-        loading,
-        response,
         handleChange,
         handleSubmit,
         handleBlur,
