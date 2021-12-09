@@ -6,6 +6,6 @@ const router = Router();
 
 router.get('/', User.getUser);
 router.post('/', User.createUser);
-router.delete('/:id', User.deleteUser);
+router.delete('/:cedula', User.deleteUser);
 
 module.exports = router;
