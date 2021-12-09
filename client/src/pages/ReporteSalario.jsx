@@ -16,10 +16,7 @@ export default function CrearNomina() {
               
                   <SupReporteSalario />
                   <TablaReporte />
-                
-                            
             </div>
-
           </div>
         </div>
         

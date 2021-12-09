@@ -107,14 +107,13 @@ export default function Formulario () {
   
     return(
         <>
-            <div className='container '>
-                <p> <h2>Informacion Empleado</h2></p>
-                <form onSubmit={createUser}>
-                    <div className="row">
-                        <div className="col">
+                <form className="card" onSubmit={createUser}>
+                    <h2>Informacion Empleado</h2>
+                    <div class="row">
+                        <div class="col">
                             <div className="form-floating mb-3">
                                 <input 
-                                type="text" 
+                                type="email" 
                                 className="form-control" 
                                 id="nombre" 
                                 placeholder="Nombre" 
@@ -123,12 +122,13 @@ export default function Formulario () {
                                 required />
                                 {/* {errors.nombre && <p className="error"> {errors.nombre} </p>} */}
                                 <label for="">Nombre</label>
+                                
                             </div>
                         </div>
-                        <div className="col">
+                        <div class="col">
                             <div className="form-floating mb-3">
                                 <input 
-                                type="text" 
+                                type="email" 
                                 className="form-control" 
                                 id="apellido" 
                                 placeholder="Apellido" 
@@ -141,21 +141,21 @@ export default function Formulario () {
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col">
+                    <div class="row">
+                        <div class="col">
                             <select className="form-select mb-3" aria-label="Default select example"
-                            id="tipo_identificacion" value ={user.tipo_identificacion} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                id="tipo_identificacion" value ={user.tipo_identificacion} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                 setUser({...user, tipo_identificacion: event.target.value})
-                            }}>
+                                }}>
                                 <option selected>Tipo Identificación</option>
                                 <option value="CC">Cedula de Ciudadania</option>
                                 <option value="CE">Cedula de Extranjeria</option>
                                 <option value="Pasaporte">Pasaporte</option>
                             </select>
-                        </div>   
-                        <div className="col">
+                        </div>
+                        <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
+                                <input type="email" className="form-control" 
                                 id="cedula" placeholder="No Identificación" 
                                 value ={user.cedula} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                     setUser({...user, cedula: event.target.value})
@@ -163,22 +163,23 @@ export default function Formulario () {
                                 <label for="NoIdentificacion">
                                 Numero Identificación</label>
                                 {/* {errors.identificacion && <p classNameName="error"> {errors.identificacion} </p>} */}
-                            </div>
+                            </div> 
+                            
                         </div>
+                       
                     </div>
-                    <div className="col">
+                    <div class="row">
+                        <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="password" className="form-control" 
+                                <input type="email" className="form-control" 
                                 id="password" placeholder="Password" value ={user.password} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                     setUser({...user, password: event.target.value})
                                 }} />
-{/*                                 {errors.password && <p className="error"> {errors.password} </p>} */}
+                                {/*{errors.password && <p className="error"> {errors.password} </p>} */}
                                 <label for="">Password</label>
                             </div>
-                    </div>
-                        
-                    <div className="row">
-                        <div className="col">
+                        </div>
+                        <div class="col">
                             <div className="form-floating mb-3">
                                 <input type="date" className="form-control" 
                                 id="fecha_nacimiento" placeholder="Fecha Nacimiento" 
@@ -188,28 +189,31 @@ export default function Formulario () {
                                 <label for="">Fecha De Nacimiento</label>
                                 {/* {errors.fnacimiento && <p classNameName="error"> {errors.fnacimiento} </p>} */}
                             </div>
+                                
                         </div>
-                        <div className="col">
+                       
+                    </div>
+                    <div class="row">
+                        <div class="col">
                             <div className="form-floating mb-3">
                                 <div className="form-check form-check-inline" value ={user.sexo} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                     setUser({...user, sexo: event.target.value})
-                                }} >
+                                    }} >
                                     <input className="form-check-input" type="radio" name="myRadio" value="Masculino" />
                                     <label className="form-check-label" for="inlineRadio1">Masculino</label>
                                 </div>
                                 <div className="form-check form-check-inline" value ={user.sexo} onChange= {(event) => {
                                     setUser({...user, sexo: event.target.value})
-                                }} >
+                                    }} >
                                     <input className="form-check-input" type="radio" name="myRadio" value="Femenino" />
                                     <label className="form-check-label" for="inlineRadio2">Femenino</label>
                                 </div>
                             </div>
+                            
                         </div>
-                    </div>
-                    <div className="row">
-                        <div className="col">
+                        <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
+                                <input type="email" className="form-control" 
                                 placeholder="Telefono" required
                                 value ={user.telefono} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                     setUser({...user, telefono: event.target.value})
@@ -217,10 +221,14 @@ export default function Formulario () {
                                 <label for="">Telefono</label>
                                 {/* {errors.telefono && <p className="error"> {errors.telefono} </p>} */}
                             </div>
+                            
                         </div>
-                        <div className="col">
+                       
+                    </div>
+                    <div class="row">
+                        <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
+                                <input type="email" className="form-control" 
                                 id="direccion" placeholder="Direccion" required
                                 value ={user.direccion} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                     setUser({...user, direccion: event.target.value})
@@ -228,11 +236,9 @@ export default function Formulario () {
                                 <label for="">Dirección</label>
                                 {/* {errors.direccion && <p className="error"> {errors.direccion} </p>} */}
                             </div>
+                            
                         </div>
-                        
-                    </div>
-                    <div className="row">
-                        <div className="col">
+                        <div class="col">
                             <div className="form-floating mb-3">
                                 <input type="email" className="form-control" 
                                 id="email" placeholder="Email" required
@@ -243,7 +249,10 @@ export default function Formulario () {
                                 {/* {errors.email && <p className="error"> {errors.email} </p>} */}
                             </div>
                         </div>
-                        <div className="col">
+                       
+                    </div>
+                    <div class="row">
+                        <div class="col">
                             <div className="form-floating mb-3">
                                 <input type="date" className="form-control" 
                                 id="fingreso" placeholder="Fecha De Ingreso" required
@@ -253,10 +262,9 @@ export default function Formulario () {
                                 <label for="">Fecha De Ingreso</label>
                                 {/* {errors.fingreso && <p className="error"> {errors.fingreso} </p>} */}
                             </div>
+                            
                         </div>
-                    </div>
-                    <div className="row"> 
-                        <div className="col">
+                        <div class="col">
                             <select className="form-select  mb-3" aria-label=" "
                             id="tcontrato" value ={user.tipo_contrato} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                 setUser({...user, tipo_contrato: event.target.value})
@@ -266,11 +274,15 @@ export default function Formulario () {
                                 <option value="Fijo">A Temino Fijo</option>
                                 <option value="ObraLabor">Por Obra o Labor</option>
                                 <option value="Temporal">Temporal</option>
-                            </select>
-                        </div> 
-                        <div className="col">
+                            </select> 
+                            
+                        </div>
+                       
+                    </div>
+                    <div class="row">
+                        <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
+                                <input type="email" className="form-control" 
                                 id="salario" placeholder="Salario" required
                                 value ={user.salario} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                     setUser({...user, salario: event.target.value})
@@ -279,11 +291,9 @@ export default function Formulario () {
                                 {/* {errors.salario && <p className="error"> {errors.salario} </p>} */}
                             </div>
                         </div>
-                    </div>
-                    <div className="row"> 
-                        <div className="col">
+                        <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
+                                <input type="email" className="form-control" 
                                 id="cargo" placeholder="Cargo" required
                                 value ={user.cargo} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                     setUser({...user, cargo: event.target.value})
@@ -292,16 +302,21 @@ export default function Formulario () {
                                 {/* {errors.cargo && <p className="error"> {errors.cargo} </p>} */}
                             </div>
                             
-                        </div> 
-                        <div className="col">
+                        </div>
+                       
+                    </div>
+                    <div class="row">
+                        <div class="col">
                             <div className="d-grid gap-2">
                                 <button type="submit" 
                                 className="btn btn-primary" onClick = {createUser}>Crear Empleado</button>
-                            </div>
+                            </div>         
                         </div>
                     </div>
                 </form>
-            </div>
+
+            
+            
         </>
     )
 }

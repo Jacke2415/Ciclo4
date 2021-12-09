@@ -58,7 +58,7 @@ body {
     color: #ffffff;
     background: radial-gradient(circle, rgb(0, 17, 59) 0.25em, transparent 0.25em) center/0.1em 0.1em;
     box-shadow: 4px 4px rgba(255, 255, 255, 0.2);
-} */
+} 
 @media only screen and (max-width: 767px){
     .btn{ margin-bottom: 20px; }
-}
+}*/
