@@ -23,6 +23,7 @@ class SupReporteSalario extends Component{
                                 </select>
                                 <div class="invalid-feedback">
                                    Por favor escoja el reporte que necesita
+                                   
                                 </div>
                             </div>
                             <div className="col-3">
@@ -33,7 +34,7 @@ class SupReporteSalario extends Component{
                         </div>
                     </div>
                     </div>    
-                            
+                          
                     <br />
                     <div className="row">
                         <div className="col-3">

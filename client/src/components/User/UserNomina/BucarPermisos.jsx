@@ -4,6 +4,7 @@ const Style = {
     width: '18rem',
 };
 
+
 const BuscarPermisos = () =>{
     return(
         <>

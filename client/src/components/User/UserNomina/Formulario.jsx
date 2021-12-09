@@ -1,27 +1,10 @@
 import React, { useState } from "react";
-import { ValidacionForm } from "./ValidacionForm";
+/* import { ValidacionForm } from "./ValidacionForm"; */
 import "../../../public/css/Formulario.css"
+import axios from 'axios'
 
-const salariomin=908526;
-const initialForm = {
-    nombre:"",
-    apellido:"",
-    tidentificacion:"",
-    identificacion:"",
-    fnacimiento:"",
-    masculino:"",
-    femenino:"",
-    telefono:"",
-    direccion:"",
-    email:"",
-    fingreso:"",
-    tcontrato:"",
-    cargo:"",
-    salario:"",
-
-};
-
-const validationsForm = (form) => {
+/*const salariomin=908526;
+ const validationsForm = (form) => {
     let errors={};
     const expletras=(/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/);
     const expemail=(/^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/);
@@ -40,12 +23,12 @@ const validationsForm = (form) => {
         errors.apellido="Solo debe contener letras y espacios";
     }
     
-    if(form.identificacion.length===0){
-        errors.identificacion="Debe Ingresar un 'No Identificación' Valido";
-    }else if(!expnumerica.test(form.identificacion)){
-        errors.identificacion="Su identificacion no es valida, solo debe contener numeros";
-    }else if(!explongitud.test(form.identificacion)){
-        errors.identificacion="Su identificacion no es valida, solo debe tener un maximo de 10 digitos";
+    if(form.cedula.length===0){
+        errors.cedula="Debe Ingresar un 'No Identificación' Valido";
+    }else if(!expnumerica.test(form.cedula)){
+        errors.cedula="Su identificación no es valida, solo debe contener numeros";
+    }else if(!explongitud.test(form.cedula)){
+        errors.cedula="Su identificación no es valida, solo debe tener un maximo de 10 digitos";
     }
 
     if(form.telefono.length===0){
@@ -81,91 +64,146 @@ const validationsForm = (form) => {
     }
                         
     return errors;
-}
+} */
 
-const Formulario = () => {
-    const {
-        form,
+export default function Formulario () {
+        
+    const [user, setUser] = useState({
+        tipo_usuario:'',
+        nombre:'',
+        apellido:'',
+        tipo_identificacion:'',
+        cedula:'',
+        password: '',
+        fecha_nacimiento:'',
+        sexo:'',
+        telefono:'',
+        direccion:'',
+        email:'',
+        fecha_ingreso:'',
+        tipo_contrato:'',
+        salario:'',
+        cargo:'',
+        estado:''
+    });
+
+   /*  const {
         errors,
-        loading,
-        response,
-        handleChange,
-        handleSubmit,
         handleBlur,
-    } = ValidacionForm(initialForm,validationsForm);
+    } = ValidacionForm(user,validationsForm); */
+
+    const createUser = (e) => {
+        e.preventDefault();
+        axios
+            .post("http://localhost:5000/users", user)
+            .then(() => {
+                window.location.reload(false)
+                console.log(user)
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
   
     return(
         <>
-            
-                
-                <form className="card">
-                    <h2>Informacion Empleado</h2>
-                    <div class="row">
-                        <div class="col">
+            <div className='container '>
+                <p> <h2>Informacion Empleado</h2></p>
+                <form onSubmit={createUser}>
+                    <div className="row">
+                        <div className="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className="form-control" 
-                                id="nombre" placeholder="Nombre" required
-                                onBlur= {handleBlur} onChange= {handleChange} 
-                                value ={form.name} />
+                                <input 
+                                type="text" 
+                                className="form-control" 
+                                id="nombre" 
+                                placeholder="Nombre" 
+                                value ={user.nombre}  /* onBlur= {handleBlur} */ 
+                                onChange= {(event) => setUser({...user, nombre: event.target.value})}   
+                                required />
+                                {/* {errors.nombre && <p className="error"> {errors.nombre} </p>} */}
                                 <label for="">Nombre</label>
-                                {errors.nombre && <p className="error"> {errors.nombre} </p>}
+                                
                             </div>
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className="form-control" 
-                                id="apellido" placeholder="Apellido" required
-                                onBlur= {handleBlur} onChange= {handleChange} 
-                                value ={form.apellido}/>
+                                <input 
+                                type="text" 
+                                className="form-control" 
+                                id="apellido" 
+                                placeholder="Apellido" 
+                                value ={user.apellido} /* onBlur= {handleBlur} */ 
+                                onChange= {(event) =>
+                                    setUser({...user, apellido: event.target.value})}
+                                required />
                                 <label for="">Apellido</label>
-                                {errors.apellido && <p className="error"> {errors.apellido} </p>}
+                                {/* {errors.apellido && <p className="error"> {errors.apellido} </p>} */}
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div className="">
-                                <select className="form-select mb-3" aria-label="Default select example"
-                                id="tidentificacion">
+                    <div className="row">
+                        <div className="col">
+                            <select className="form-select mb-3" aria-label="Default select example"
+                                id="tipo_identificacion" value ={user.tipo_identificacion} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                setUser({...user, tipo_identificacion: event.target.value})
+                                }}>
                                 <option selected>Tipo Identificación</option>
                                 <option value="CC">Cedula de Ciudadania</option>
                                 <option value="CE">Cedula de Extranjeria</option>
                                 <option value="Pasaporte">Pasaporte</option>
-                                </select>
-                            </div>   
+                            </select>
+                              
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className="form-control" 
-                                id="identificacion" placeholder="No Identificación" 
-                                required onBlur= {handleBlur} onChange= {handleChange} 
-                                value ={form.identificacion}/>
+                                <input type="text" className="form-control" 
+                                id="cedula" placeholder="No Identificación" 
+                                value ={user.cedula} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                    setUser({...user, cedula: event.target.value})
+                                }} />
                                 <label for="NoIdentificacion">
                                 Numero Identificación</label>
-                                {errors.identificacion && <p className="error"> {errors.identificacion} </p>}
+                                {/* {errors.identificacion && <p classNameName="error"> {errors.identificacion} </p>} */}
                             </div>
                         </div>
                        
                     </div>
-                    <div class="row">
-                        <div class="col">
+                    <div className="col">
+                            <div className="form-floating mb-3">
+                                <input type="password" className="form-control" 
+                                id="password" placeholder="Password" value ={user.password} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                    setUser({...user, password: event.target.value})
+                                }} />
+                                {/*{errors.password && <p className="error"> {errors.password} </p>} */}
+                                <label for="">Password</label>
+                            </div>
+                    </div>
+                        
+                    <div className="row">
+                        <div className="col">
                             <div className="form-floating mb-3">
                                 <input type="date" className="form-control" 
-                                id="fnacimiento" placeholder="Fecha Nacimiento" 
-                                onBlur= {handleBlur} onChange= {handleChange} 
-                                value ={form.fnacimiento}/>
+                                id="fecha_nacimiento" placeholder="Fecha Nacimiento" 
+                                value ={user.fecha_nacimiento} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                    setUser({...user, fecha_nacimiento: event.target.value})
+                                }} />
                                 <label for="">Fecha De Nacimiento</label>
-                                {errors.fnacimiento && <p className="error"> {errors.fnacimiento} </p>}
+                                {/* {errors.fnacimiento && <p classNameName="error"> {errors.fnacimiento} </p>} */}
                             </div>
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <div className="form-check form-check-inline">
-                                    <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value= {form.masculino} />
+                                <div className="form-check form-check-inline" value ={user.sexo} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                    setUser({...user, sexo: event.target.value})
+                                    }} >
+                                    <input className="form-check-input" type="radio" name="myRadio" value="Masculino" />
                                     <label className="form-check-label" for="inlineRadio1">Masculino</label>
                                 </div>
-                                <div className="form-check form-check-inline">
-                                    <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value= {form.femenino} />
+                                <div className="form-check form-check-inline" value ={user.sexo} onChange= {(event) => {
+                                    setUser({...user, sexo: event.target.value})
+                                    }} >
+                                    <input className="form-check-input" type="radio" name="myRadio" value="Femenino" />
                                     <label className="form-check-label" for="inlineRadio2">Femenino</label>
                                 </div>
                             </div>
@@ -175,12 +213,13 @@ const Formulario = () => {
                     <div class="row">
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className="form-control" 
-                                id="telefono" placeholder="Telefono" required
-                                onBlur= {handleBlur} onChange= {handleChange} 
-                                value ={form.telefono}/>
+                                <input type="text" className="form-control" 
+                                placeholder="Telefono" required
+                                value ={user.telefono} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                    setUser({...user, telefono: event.target.value})
+                                }} />
                                 <label for="">Telefono</label>
-                                {errors.telefono && <p className="error"> {errors.telefono} </p>}
+                                {/* {errors.telefono && <p className="error"> {errors.telefono} </p>} */}
                             </div>
                             
                         </div>
@@ -188,13 +227,12 @@ const Formulario = () => {
                             <div className="form-floating mb-3">
                                 <input type="email" className="form-control" 
                                 id="direccion" placeholder="Direccion" required
-                                onBlur= {handleBlur} onChange= {handleChange} 
-                                value ={form.direccion}/>
+                                value ={user.direccion} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                    setUser({...user, direccion: event.target.value})
+                                }} />
                                 <label for="">Dirección</label>
-                                {errors.direccion && <p className="error"> {errors.direccion} </p>}
-                            
-                            </div> 
-                            
+                                {/* {errors.direccion && <p className="error"> {errors.direccion} </p>} */}
+                            </div>
                         </div>
                        
                     </div>
@@ -203,10 +241,11 @@ const Formulario = () => {
                             <div className="form-floating mb-3">
                                 <input type="email" className="form-control" 
                                 id="email" placeholder="Email" required
-                                onBlur= {handleBlur} onChange= {handleChange} 
-                                value ={form.email}/>
+                                value ={user.email} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                    setUser({...user, email: event.target.value})
+                                }} />
                                 <label for="">Email</label>
-                                {errors.email && <p className="error"> {errors.email} </p>}
+                                {/* {errors.email && <p className="error"> {errors.email} </p>} */}
                             </div>
                             
                         </div>
@@ -214,19 +253,21 @@ const Formulario = () => {
                             <div className="form-floating mb-3">
                                 <input type="date" className="form-control" 
                                 id="fingreso" placeholder="Fecha De Ingreso" required
-                                onBlur= {handleBlur} onChange= {handleChange} 
-                                value ={form.fingreso}/>
+                                value ={user.fecha_ingreso} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                    setUser({...user, fecha_ingreso: event.target.value})
+                                }} />
                                 <label for="">Fecha De Ingreso</label>
-                                {errors.fingreso && <p className="error"> {errors.fingreso} </p>}
-                            </div> 
-                            
+                                {/* {errors.fingreso && <p className="error"> {errors.fingreso} </p>} */}
+                            </div>
                         </div>
                        
                     </div>
                     <div class="row">
                         <div class="col">
                             <select className="form-select  mb-3" aria-label=" "
-                            id="tcontrato">
+                            id="tcontrato" value ={user.tipo_contrato} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                setUser({...user, tipo_contrato: event.target.value})
+                            }} >
                                 <option selected>Tipo De Contrato</option>
                                 <option value="Indefinido">A Termino Indefinido</option>
                                 <option value="Fijo">A Temino Fijo</option>
@@ -239,12 +280,12 @@ const Formulario = () => {
                             <div className="form-floating mb-3">
                                 <input type="email" className="form-control" 
                                 id="salario" placeholder="Salario" required
-                                onBlur= {handleBlur} onChange= {handleChange} 
-                                value ={form.salario}/>
+                                value ={user.salario} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                    setUser({...user, salario: event.target.value})
+                                }} />
                                 <label for="">Salario</label>
-                                {errors.salario && <p className="error"> {errors.salario} </p>}
-                            </div>  
-                            
+                                {/* {errors.salario && <p className="error"> {errors.salario} </p>} */}
+                            </div>
                         </div>
                        
                     </div>
@@ -253,26 +294,24 @@ const Formulario = () => {
                             <div className="form-floating mb-3">
                                 <input type="email" className="form-control" 
                                 id="cargo" placeholder="Cargo" required
-                                onBlur= {handleBlur} onChange= {handleChange} 
-                                value ={form.cargo}/>
+                                value ={user.cargo} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                    setUser({...user, cargo: event.target.value})
+                                }} />
                                 <label for="">Cargo</label>
-                                {errors.cargo && <p className="error"> {errors.cargo} </p>}
-                            </div> 
+                                {/* {errors.cargo && <p className="error"> {errors.cargo} </p>} */}
+                            </div>
                             
                         </div>
                         <div class="col">
                             <div className="d-grid gap-2">
                                 <button type="submit" 
-                                className="btn btn-primary">Crear Empleado</button>
-                            </div>    
-                            
+                                className="btn btn-primary" onClick = {createUser}>Crear Empleado</button>
+                            </div>
                         </div>
                        
                     </div>
-           
-        </form>
-            
+                </form>
+            </div>
         </>
     )
 }
-export default Formulario
