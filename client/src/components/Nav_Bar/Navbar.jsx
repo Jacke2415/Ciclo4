@@ -3,9 +3,15 @@ import { Link } from 'react-router-dom';
 import '../../public/css/navbar.css';
 
 const DNavbar = (props) => {
+    const menuitems = props.items;
     return(
         <nav className="main-menu">
-            
+            <Link to={menuitems.url}>
+
+            </Link>
+            <span className="nav-text">
+                {menuitems.name}
+            </span>
         </nav>
     );
 }
