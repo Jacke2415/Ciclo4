@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import '../../public/css/navbar.css';
 
 const DNavbar = (props) => {
-    
+    return(
+        <nav className="main-menu">
+            
+        </nav>
+    );
 }
 
 class Navbar extends React.Component {
