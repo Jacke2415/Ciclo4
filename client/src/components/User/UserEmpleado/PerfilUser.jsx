@@ -1,6 +1,5 @@
 import React from "react";
 import "../../../public/css/PerfilUser.css";
-import Navbar from "../../Nav_Bar/Navbar.jsx";
 class Perfil extends React.Component {
   render() {
     return (
