@@ -29,8 +29,11 @@ module.exports.createUser = async (req, res) => {
         cargo: req.body.cargo,
         estado: 'activo',
     });
+    
+    /*newUser.password = await newUser.encryptPassword(password);*/
     try {
         await newUser.save();
+        /* req.flash('success_msg', 'You are registered!!') */
         res.status(201).json(newUser);
     } catch (error) {
         res.status(409).json({ message: error.message});

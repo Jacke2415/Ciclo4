@@ -1,6 +1,28 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-const URL = 'mongodb+srv://teamreload:treload2021@cluster0.t2gcs.mongodb.net/dbnomina?retryWrites=true&w=majority';
+mongoose
+  .connect(
+    "mongodb+srv://" +
+      process.env.DB_USERNAME +
+      ":" +
+      process.env.DB_PASSWORD +
+      "@" +
+      process.env.DB_HOST +
+      "/" +
+      process.env.DB_NAME +
+      "?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => {
+    console.log("Conected to Mongo at: " + process.env.DB_HOST);
+  })
+  .catch((err) => console.log(err));
+
+/* const URL = 'mongodb+srv://teamreload:treload2021@cluster0.t2gcs.mongodb.net/dbnomina?retryWrites=true&w=majority';
 
 (async () => {
     try {
@@ -14,3 +36,4 @@ const URL = 'mongodb+srv://teamreload:treload2021@cluster0.t2gcs.mongodb.net/dbn
         }
     })();
 
+ */
