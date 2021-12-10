@@ -1,6 +1,6 @@
 import React from "react";
 import '../../../public/css/SoliRep.css';
-import Navbar from "../../Nav_Bar/Navbar.jsx";
+import NavbarN from "../../Nav_Bar/NavbarNomina.jsx";
 /* import '../../../public/js/Solirep.js'; */
 class SoliRep extends React.Component {
 
@@ -10,7 +10,7 @@ class SoliRep extends React.Component {
             <div class="container">
                 <div class="row">
                     <div className="col-3">
-                        <Navbar />
+                        <NavbarN />
                     </div>
 
                     <div class="col-9">

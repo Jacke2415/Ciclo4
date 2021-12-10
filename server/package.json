@@ -2,9 +2,15 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && node ./build/app.js",
+    "dev": "nodemon --exec ./node_modules/.bin/babel-node app.js",
+    "build:babel": "babel -d ./build ./src -s",
+    "build": "npm run build:babel",
+    "prettier": "prettier src/**/*.js",
+    "prettier:fix": "prettier --write src/**/*.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +22,16 @@
     "mongoose": "^6.0.13",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "eslint": "^8.4.1",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
   }
 }
