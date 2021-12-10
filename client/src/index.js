@@ -19,9 +19,9 @@ import PerfilEmpleado from './components/User/UserEmpleado/PerfilUser.jsx';
 import SoliRep from './components/User/UserEmpleado/SolicitaRep'; 
 import SolicitarPermiso from './components/User/UserEmpleado/SolicitarPermiso';
 import SolicitarVacaciones from './components/User/UserEmpleado/SolicitarVac';
-import AllEmpleados from './pages/AllEmpleados';
 import PerfilUserAdmin from './pages/PerfilUserAdmin';
 import GestinarEmpleadoAdmin from './pages/GestionarEmpleadoAdmin';
+import LiquidarNominaAdmin from './pages/LiquidarNominaAdmin';
 /* import SolicitarCertificado from './components/User/UserEmpleado/SolicitarCertificado'; */
 
 ReactDOM.render(
@@ -48,11 +48,10 @@ ReactDOM.render(
         <Route path = '/singin/userNomina/gestionarVacaciones' element = {<VacacionesNomina />} />
         <Route path = '/singin/userNomina/gestionarPermisos' element = {<PermisosNomina />} />
         <Route path = '/singin/userNomina/reporteSalario' element = {<ReporteSalario />} />
-        <Route path = '/singin/userNomina/allEmpleados' element = {<AllEmpleados />} />
-         
+                 
         <Route path = '/singin/administrador/perfilAdministrador' element = {< PerfilUserAdmin/>} />       
         <Route path = '/singin/administrador/gestionarEmpleado' element = {<GestinarEmpleadoAdmin />} />    
-        <Route path = '/singin/administrador/gestionarNomina' element = {<LiquidarNomina />}/>
+        <Route path = '/singin/administrador/gestionarNomina' element = {<LiquidarNominaAdmin />}/>
         <Route path = '/singin/administrador/gestionarVacaciones' element = {<ReporteSalario />}/>
         <Route path = '/singin/administrador/gestionarPermiso' element = {<Formulario />}/>   
         <Route path = '/singin/administrador/generarReportes' element = {<PerfilUserNomina />} /> 

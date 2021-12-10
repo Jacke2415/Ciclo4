@@ -2,6 +2,7 @@ import React from "react";
 import "../public/css/PerfilUser.css";
 import NavbarAdmin from "../components/Nav_Bar/NavbarAdmin";
 import {TablaFuncionario} from "../components/User/UserNomina/TablaFuncionario";
+import SupGestionarEmpleados from "../components/User/UserAdmin/SupGestionarEmpleados";
 
 class GestionarEmpleadoAdmin extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class GestionarEmpleadoAdmin extends React.Component {
               <NavbarAdmin />
             </div>
             <div className="col-10">
+              <SupGestionarEmpleados />
               <TablaFuncionario />
             </div>
           </div>

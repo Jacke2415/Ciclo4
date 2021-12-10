@@ -113,7 +113,7 @@ export default function Formulario () {
                         <div class="col">
                             <div className="form-floating mb-3">
                                 <input 
-                                type="email" 
+                                type="text" 
                                 className="form-control" 
                                 id="nombre" 
                                 placeholder="Nombre" 
@@ -128,7 +128,7 @@ export default function Formulario () {
                         <div class="col">
                             <div className="form-floating mb-3">
                                 <input 
-                                type="email" 
+                                type="text" 
                                 className="form-control" 
                                 id="apellido" 
                                 placeholder="Apellido" 
@@ -155,7 +155,7 @@ export default function Formulario () {
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className="form-control" 
+                                <input type="text" className="form-control" 
                                 id="cedula" placeholder="No Identificación" 
                                 value ={user.cedula} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                     setUser({...user, cedula: event.target.value})
@@ -171,7 +171,7 @@ export default function Formulario () {
                     <div class="row">
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className="form-control" 
+                                <input type="password" className="form-control" 
                                 id="password" placeholder="Password" value ={user.password} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                     setUser({...user, password: event.target.value})
                                 }} />
@@ -213,7 +213,7 @@ export default function Formulario () {
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className="form-control" 
+                                <input type="text" className="form-control" 
                                 placeholder="Telefono" required
                                 value ={user.telefono} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                     setUser({...user, telefono: event.target.value})
@@ -228,7 +228,7 @@ export default function Formulario () {
                     <div class="row">
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className="form-control" 
+                                <input type="text" className="form-control" 
                                 id="direccion" placeholder="Direccion" required
                                 value ={user.direccion} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                     setUser({...user, direccion: event.target.value})
