@@ -2,7 +2,9 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import '../../public/css/navbar.css';
 
-
+const DNavbar = (props) => {
+    
+}
 
 class Navbar extends React.Component {
 

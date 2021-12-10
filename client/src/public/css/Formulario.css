@@ -1,0 +1,26 @@
+.principal{
+    width: 60vw;
+    padding: 20px;
+    min-width: 350px;
+    background-color:whitesmoke;
+    position: absolute;
+    left: 25vw;
+    top: 2vw;
+}
+
+.error{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: crimson;
+    font-style: italic;
+    font-size: x-small;
+}
+
+.card{
+    width: 60vw;
+    padding: 20px;
+    min-width: 350px;
+    background-color:whitesmoke;
+    position: absolute;
+    left: 30vw;
+    top: 2vw;
+}
