@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React /* { useState } */ from "react";
 import { ValidacionForm } from "./ValidacionForm";
 import "../../../public/css/Formulario.css"
 
@@ -87,10 +87,10 @@ const Formulario = () => {
     const {
         form,
         errors,
-        loading,
-        response,
+        /* loading,
+        response, */
         handleChange,
-        handleSubmit,
+       /*  handleSubmit, */
         handleBlur,
     } = ValidacionForm(initialForm,validationsForm);
   
