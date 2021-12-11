@@ -4,6 +4,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './index.css';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.bundle.js";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 import Login from './pages/Login'; 
 import LiquidarNomina from './pages/LiquidarNomina';
@@ -18,6 +20,9 @@ import PerfilEmpleado from './components/User/UserEmpleado/PerfilUser.jsx';
 import SoliRep from './components/User/UserEmpleado/SolicitaRep'; 
 import SolicitarPermiso from './components/User/UserEmpleado/SolicitarPermiso';
 import SolicitarVacaciones from './components/User/UserEmpleado/SolicitarVac';
+import PerfilUserAdmin from './pages/PerfilUserAdmin';
+import GestinarEmpleadoAdmin from './pages/GestionarEmpleadoAdmin';
+import LiquidarNominaAdmin from './pages/LiquidarNominaAdmin';
 /* import SolicitarCertificado from './components/User/UserEmpleado/SolicitarCertificado'; */
 
 ReactDOM.render(
@@ -44,18 +49,14 @@ ReactDOM.render(
         <Route path = '/singin/userNomina/gestionarVacaciones' element = {<VacacionesNomina />} />
         <Route path = '/singin/userNomina/gestionarPermisos' element = {<PermisosNomina />} />
         <Route path = '/singin/userNomina/reporteSalario' element = {<ReporteSalario />} />
-                
-        <Route path = '/singin/administrador/crearNomina' element = {<CrearNomina />} />    
-        <Route path = '/singin/administrador/liquidarNomina' element = {<LiquidarNomina />}/>
-        <Route path = '/singin/administrador/reporteSalario' element = {<ReporteSalario />}/>
-        <Route path = '/singin/administrador/formulario' element = {<Formulario />}/>   
-        <Route path = '/singin/administrador/Perfil' element = {<PerfilUserNomina />} /> 
-        <Route path = '/singin/administrador/crearEmpleado' element = {<CrearEmpleado />} /> 
-        <Route path = '/singin/administrador/liquidarNomina' element = {<LiquidarNomina />} />
-        <Route path = '/singin/administrador/GestionarVacaciones' element = {<VacacionesNomina />} />
-        <Route path = '/singin/administrador/GestionarPermisos' element = {<PermisosNomina />} />
-        <Route path = '/singin/administrador/ReporteSalario' element = {<ReporteSalario />} />
-                
+                 
+        <Route path = '/singin/administrador/perfilAdministrador' element = {< PerfilUserAdmin/>} />       
+        <Route path = '/singin/administrador/gestionarEmpleado' element = {<GestinarEmpleadoAdmin />} />    
+        <Route path = '/singin/administrador/gestionarNomina' element = {<LiquidarNominaAdmin />}/>
+        <Route path = '/singin/administrador/gestionarVacaciones' element = {<ReporteSalario />}/>
+        <Route path = '/singin/administrador/gestionarPermiso' element = {<Formulario />}/>   
+        <Route path = '/singin/administrador/generarReportes' element = {<PerfilUserNomina />} /> 
+                        
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
