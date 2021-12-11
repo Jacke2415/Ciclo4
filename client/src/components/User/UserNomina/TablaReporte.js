@@ -42,7 +42,7 @@ export const TablaReporte = () => {
             options={{
                 hidden: true,
                 headerStyle: {
-                    backgroundColor: '#01579b',
+                    backgroundColor: '#00113b',
                     color: '#FFF',
                     },
                 exportButton: true
