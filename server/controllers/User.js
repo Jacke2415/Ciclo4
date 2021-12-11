@@ -12,7 +12,7 @@ module.exports.getUser = async (req, res) => {
 
 module.exports.createUser = async (req, res) => {
     const newUser = new UserData ({
-        tipo_usuario: 2,
+        tipo_usuario: 0,
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         tipo_identificacion: req.body.tipo_identificacion,
@@ -30,7 +30,7 @@ module.exports.createUser = async (req, res) => {
         estado: 'activo',
     });
     
-    /*newUser.password = await newUser.encryptPassword(password);*/
+    newUser.password = await newUser.encryptPassword(newUser.password);
     try {
         await newUser.save();
         /* req.flash('success_msg', 'You are registered!!') */

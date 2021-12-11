@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 const userRoutes = require("./routes/User");
 const cors = require("cors");
 const morgan = require("morgan");
-import './database'
+const database = require('./database');
 
 
 //initialization
