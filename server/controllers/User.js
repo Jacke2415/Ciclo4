@@ -30,10 +30,9 @@ module.exports.createUser = async (req, res) => {
         estado: 'activo',
     });
     
-    /*newUser.password = await newUser.encryptPassword(password);*/
+    newUser.password = await newUser.encryptPassword(newUser.password);
     try {
         await newUser.save();
-        /* req.flash('success_msg', 'You are registered!!') */
         res.status(201).json(newUser);
     } catch (error) {
         res.status(409).json({ message: error.message});

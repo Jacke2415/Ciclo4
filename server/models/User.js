@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-/* const bcrypt = require("bcryptjs"); */
+const bcrypt = require("bcryptjs");
 
 const Schema = mongoose.Schema;
 
@@ -20,22 +20,21 @@ const userSchema = new Schema({
     salario: {type: String, required: true},
     cargo: {type: String, required: true},
     estado: {type: String, required: true},
-    }
-    /* {
+    },
+    {
         timestamps: true,
         versionKey: false,
-    } */
+    }
     );
 
-/* userSchema.methods.encryptPassword = async (password) => {
-    console.log(password);
+userSchema.methods.encryptPassword = async (password) => {
     const salt = await bcrypt.genSalt(10);
     return await bcrypt.hash(password, salt);
   };
   
 userSchema.methods.matchPassword = async function (password) {
     return await bcrypt.compare(password, this.password);
-  }; */
+  };
   
 const users = mongoose.model('users', userSchema);
 
