@@ -1,7 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../public/css/navbar.css';
+import DNavbar from './Navbar.jsx';
 
+
+const NavbarN = () => {
+    const items = [
+        {"name": "Perfil de Usuario", "url": "../components/UserEmpleado/Perfil_User"},
+        {"name": 'Solicitar Permisos', 'url': "#"},
+        {"name": 'Solicitar Vacaciones', 'url': "#"},
+        {"name": 'Certificados Laborales', 'url': "#"}
+
+    ]
+    return(
+        <DNavbar items={items}/>
+    );
+}
 
 
 class NavbarNomina extends React.Component {
@@ -103,4 +117,4 @@ class NavbarNomina extends React.Component {
     }
 }
 
-export default NavbarNomina;
+export default NavbarN;
