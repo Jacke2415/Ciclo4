@@ -14,11 +14,11 @@ import PermisosNomina from './pages/PermisosNomina';
 import ReporteSalario from './pages/ReporteSalario';
 import Formulario from '../src/components/User/UserNomina/Formulario';
 import PerfilUserNomina from './pages/PerfilUserNomina.jsx';
-import PerfilEmpleado from './components/User/UserEmpleado/PerfilUser.jsx';
-import SoliRep from './components/User/UserEmpleado/SolicitaRep'; 
-import SolicitarPermiso from './components/User/UserEmpleado/SolicitarPermiso';
-import SolicitarVacaciones from './components/User/UserEmpleado/SolicitarVac';
-/* import SolicitarCertificado from './components/User/UserEmpleado/SolicitarCertificado'; */
+import PerfilEmpleado from './pages/PerfilUserEmpleado.jsx';
+import SoliRep from './pages/SolicitarReporPago.jsx'; 
+import SolicitarPermiso from './pages/SolicitarPermiso.jsx';
+import SolicitarVacaciones from './pages/SolicitaVaca.jsx';
+import SolicitarCertificado from './pages/SolicitarCertificado.jsx'; 
 
 ReactDOM.render(
   <React.StrictMode>
@@ -32,7 +32,7 @@ ReactDOM.render(
         <Route path = '/singin/userEmpleado/reporteNomina' element = {< SoliRep/>} />
         <Route path = '/singin/userEmpleado/solicitarPermiso' element = {< SolicitarPermiso/>} />
         <Route path = '/singin/userEmpleado/solicitarVaciones' element = {< SolicitarVacaciones/>} />
-        <Route path = '/singin/userEmpleado/solicitarCertificado' element = {< SoliRep/>} />    
+        <Route path = '/singin/userEmpleado/solicitarCertificado' element = {< SolicitarCertificado/>} />    
         
         <Route path = '/singin/userNomina/crearNomina' element = {<CrearNomina />} />    
         <Route path = '/singin/userNomina/liquidarNomina' element = {<LiquidarNomina />}/>

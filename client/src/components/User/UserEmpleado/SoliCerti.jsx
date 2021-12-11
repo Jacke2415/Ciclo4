@@ -1,6 +1,6 @@
 import React from "react";
 import '../../../public/css/SoliRep.css';
-class SoliRep extends React.Component {
+class SoliCerti extends React.Component {
 
     render() {
 
@@ -10,7 +10,7 @@ class SoliRep extends React.Component {
                     <div class="col-sd-5 border-right">
                         <div class="p-2 py-5">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="text-right">Solicitar Reportes de Pago</h4>
+                                <h4 class="text-right">Solicitar Certificado Laborales</h4>
                             </div>
                             <div class="row mt-2">
                                 <div class="col-md-4">
@@ -26,13 +26,6 @@ class SoliRep extends React.Component {
                                 <div class="col-md-12">
                                     <label class="labels">Identificacion</label>
                                     <input type="text" className="form-control" placeholder="Numero de Telefono" value="" />
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-md-6">
-                                        <label action="/action_page.php" >
-                                            <input type="month" id="bdaymonth" name="bdaymonth" />
-                                        </label>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row-mt-5">
@@ -54,4 +47,4 @@ class SoliRep extends React.Component {
         );
     }
 }
-export default SoliRep;
+export default SoliCerti;

@@ -3,9 +3,6 @@ import "../../../public/css/PerfilUser.css";
 class Perfil extends React.Component {
   render() {
     return (
-      
-
-          
             <div className="content">
               <div className="row">
                 <div className="col-md-3 bg-white border-right">
