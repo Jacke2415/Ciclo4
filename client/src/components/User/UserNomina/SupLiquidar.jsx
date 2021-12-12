@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react';
+import { Link } from 'react-router-dom';
 
 
 class SupLiquidar extends Component{
@@ -52,12 +53,17 @@ class SupLiquidar extends Component{
                         </div>
                     </div>
                     <br />
-                    <div className="row">
+                    <div className="row d-flex justify-content-around">
                         <div className="col-3">
                             <button type="button" class="btn btn-primary">Liquidar Nomina</button>
                         </div>
                         <div className="col-2">
                             <button type="button" class="btn btn-primary">Cancelar</button>
+                        </div>
+                        <div className="col-2">
+                            <Link to="/singin/administrador/graficaNomina" className='btn btn-primary'>
+                                Ver Grafico
+                            </Link>
                         </div>
                     </div>
                 </div>

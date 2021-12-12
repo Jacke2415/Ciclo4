@@ -1,8 +1,10 @@
+import React, {useState, useEffect}from 'react';
 import MaterialTable,{ MTableToolbar } from "material-table";
 //import { AddBox, ArrowDownward, Edit, Event, Remove, DeleteIcon} from "@material-ui/icons";
-import { AddBox, ArrowDownward, Edit, Event, Remove, DeleteIcon} from "./TableIcons";
+/* import { AddBox, ArrowDownward, Edit, Event, Remove, DeleteIcon} from "./TableIcons"; */
 import tableIcons from "./TableIcons";
 import { Avatar, Container, Grid, Table, Tooltip } from "@material-ui/core";
+import axios from 'axios';
 
 
 const columns=[
@@ -16,18 +18,31 @@ const columns=[
         </Grid>
         </Grid>},        
     {title:'Apellido', field:'apellido'  },
-    {title:'Identificación',field:'identificacion',type:"numeric"},
-    {title:'No. Contrato', field:'contrato'},
-    {title:'Tipo de Contrato', field:'tipocontrato'},
+    {title:'Identificación',field:'cedula',type:"numeric"},
+    /* {title:'No. Contrato', field:'contrato'}, */
+    {title:'Tipo de Contrato', field:'tipo_contrato'},
     {title:'Salario', field:'salario', type:"numeric"}
     
 ];
-const data=[
-{nombre:'Luis', apellido:'Mercado' , identificacion:1111111, contrato:"2021-0001", tipocontrato:'fijo', salario:20000},
-{nombre:'Luis', apellido:'Eduardo' , identificacion:1111111, contrato:"2021-0001", tipocontrato:'fijo', salario:200000}
-];
+
+const baseUrl="http://localhost:5000/users"
+
+
+
+/* {nombre:'Luis', apellido:'Mercado' , identificacion:1111111, contrato:"2021-0001", tipocontrato:'fijo', salario:20000},
+{nombre:'Luis', apellido:'Eduardo' , identificacion:1111111, contrato:"2021-0001", tipocontrato:'fijo', salario:200000} */
 
 export const TablaFuncionario = () => {
+    const [data, setData]=useState([ ]);
+    const peticionGet=async()=>{
+        await axios.get(baseUrl).then(response=>{
+            setData(response.data)
+        })
+    }
+
+    useEffect(()=>{
+        peticionGet();
+    },[])
   return (
      <>
   <div>
@@ -52,13 +67,13 @@ export const TablaFuncionario = () => {
             ]}
             
             options={{
-                selection: true,
+                //selection: true,
                 headerStyle: {
                     backgroundColor: '#01579b',
                     color: '#FFF',
                     },
                 exportButton: true,
-                filtering: true
+               
 
             }}
             
