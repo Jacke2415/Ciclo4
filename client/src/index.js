@@ -30,6 +30,7 @@ import SolicitarVacaciones from './components/User/UserEmpleado/SolicitarVac';
 import PerfilUserAdmin from './pages/PerfilUserAdmin';
 import GestinarEmpleadoAdmin from './pages/GestionarEmpleadoAdmin';
 import LiquidarNominaAdmin from './pages/LiquidarNominaAdmin';
+import GraficoNomina from './pages/GraficoNomina.jsx';
 /* import SolicitarCertificado from './components/User/UserEmpleado/SolicitarCertificado'; */
 
 ReactDOM.render(
@@ -63,7 +64,8 @@ ReactDOM.render(
         <Route path = '/singin/administrador/gestionarVacaciones' element = {<ReporteSalario />}/>
         <Route path = '/singin/administrador/gestionarPermiso' element = {<Formulario />}/>   
         <Route path = '/singin/administrador/generarReportes' element = {<PerfilUserNomina />} /> 
-                        
+        <Route path = '/singin/administrador/graficaNomina' element = {<GraficoNomina />} /> 
+        
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
