@@ -4,7 +4,7 @@ const userRoutes = require("./routes/User");
 const cors = require("cors");
 const morgan = require("morgan");
 const database = require('./database');
-
+const singinRoutes = require("./routes/Singin");
 
 //initialization
 var corsOptions = {
@@ -28,7 +28,7 @@ app.use(cors(corsOptions));
 
 //Routes
 app.use("/users", userRoutes);
-
+app.use("/singin", singinRoutes);
 // Starting the server
 app.listen(app.get('port'), () => {
     console.log(`Server on port ${app.get('port')}`);

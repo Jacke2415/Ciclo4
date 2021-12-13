@@ -1,5 +1,5 @@
 const UserData = require("../models/User");
-
+const bcrypt = require("bcryptjs");
 module.exports.getUser = async (req, res) => {
     try {
         const allUsers = await UserData.find();
@@ -9,6 +9,28 @@ module.exports.getUser = async (req, res) => {
         res.status(404).json({ message: error.message });
     }
 }
+module.exports.singin = async (req, res) => {
+    try {
+        const email = req.body.correo
+        const password = req.body.password
+        UserData.findOne({'email': {email}},'password', function (err, user) {
+            if (err) return handleError(err);
+
+            if (bcrypt.compare(password, user.password)){
+                
+            }
+        });
+        res.status(200).json(allUsers);
+    
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+
+}
+
+
+
+
 
 module.exports.createUser = async (req, res) => {
     const newUser = new UserData ({
