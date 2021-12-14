@@ -29,6 +29,9 @@ app.use(cors(corsOptions));
 //Routes
 app.use("/users", userRoutes);
 app.use("/singin", singinRoutes);
+app.get('/cookie',function(req, res){
+  res.cookie('cookie_name' , 'Daniel').send('Cookie is set');
+});
 // Starting the server
 app.listen(app.get('port'), () => {
     console.log(`Server on port ${app.get('port')}`);

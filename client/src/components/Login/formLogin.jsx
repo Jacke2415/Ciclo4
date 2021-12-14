@@ -1,14 +1,29 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom'
 import '../../public/css/Login.css'
-
+const LoginService = require('../../services/login.js');
 const FormLogin = () => {
     const [correo, setCorreo] = useState('');
     const [password, setPassword] = useState('');
-
-    const handleLogin = (event) => {
+    const [user, setUser] = useState('');
+    const handleLogin = async (event) => {
         event.preventDefault();
         
+        try{
+            const user = await LoginService.login({
+                correo,
+                password
+            });
+
+            console.log(user);
+
+            setUser(user);
+            setCorreo('');
+            setPassword('');
+
+        }catch(e){
+            
+        }
     }
     return(
         <form onSubmit={handleLogin} className ="d-grid gap-2 col-2 min-auto">

@@ -20,7 +20,7 @@ module.exports.singin = async (req, res) => {
                 
             }
         });
-        res.status(200).json(allUsers);
+        
     
     } catch (error) {
         res.status(404).json({ message: error.message });

@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Routes, Route} from 'react-router-dom' 
 import './index.css';
@@ -32,6 +33,7 @@ import GestinarEmpleadoAdmin from './pages/GestionarEmpleadoAdmin';
 import LiquidarNominaAdmin from './pages/LiquidarNominaAdmin';
 import GraficoNomina from './pages/GraficoNomina.jsx';
 /* import SolicitarCertificado from './components/User/UserEmpleado/SolicitarCertificado'; */
+axios.defaults.withCredentials = true;
 
 ReactDOM.render(
   <React.StrictMode>
