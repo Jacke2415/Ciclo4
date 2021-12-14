@@ -28,6 +28,9 @@ import SoliRep from './pages/SolicitarReporPago.jsx';
 import SolicitarPermiso from './pages/SolicitarPermiso.jsx';
 import SolicitarVacaciones from './pages/SolicitaVaca.jsx';
 import SolicitarCertificado from './pages/SolicitarCertificado.jsx'; 
+import PerfilUserAdmin from './pages/PerfilUserAdmin'; 
+import GestinarEmpleadoAdmin from './pages/GestionarEmpleadoAdmin'; 
+import LiquidarNominaAdmin  from './pages/LiquidarNominaAdmin'; 
 
 ReactDOM.render(
   <React.StrictMode>
@@ -41,7 +44,7 @@ ReactDOM.render(
         <Route path = '/signin/userEmpleado/reporteNomina' element = {< SoliRep/>} />
         <Route path = '/signin/userEmpleado/solicitarPermiso' element = {< SolicitarPermiso/>} />
         <Route path = '/signin/userEmpleado/solicitarVaciones' element = {< SolicitarVacaciones/>} />
-        <Route path = '/signin/userEmpleado/solicitarCertificado' element = {< SoliRep/>} />    
+        <Route path = '/signin/userEmpleado/solicitarCertificado' element = {< SolicitarCertificado/>} />    
         
         <Route path = '/signin/userNomina/crearNomina' element = {<CrearNomina />} />    
         <Route path = '/signin/userNomina/liquidarNomina' element = {<LiquidarNomina />}/>
