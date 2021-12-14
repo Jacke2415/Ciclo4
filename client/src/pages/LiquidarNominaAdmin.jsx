@@ -2,8 +2,8 @@
 import NavbarAdmin from '../components/Nav_Bar/NavbarAdmin';
 import SupLiquidar from '../components/User/UserNomina/SupLiquidar';
 import {TablaFuncionario} from '../components/User/UserNomina/TablaFuncionario';
-
 export default function CrearNomina() {
+ 
     return (
       <>
         <div className="container-lg">

@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
+<<<<<<< HEAD
 const { isEmail } = require("validator");
 const bcrypt = require("bcrypt");
+=======
+const bcrypt = require("bcryptjs");
+>>>>>>> daniel_frontend
 
 const Schema = mongoose.Schema;
 
@@ -28,6 +32,7 @@ const userSchema = new Schema({
     }
     );
 
+<<<<<<< HEAD
 // fire a function before doc saved to db
 userSchema.pre("save", async function (next) {
   const salt = await bcrypt.genSalt();
@@ -51,6 +56,10 @@ userSchema.statics.signin = async function (email, password) {
 };
 
 /* userSchema.methods.encryptPassword = async (password) => {
+=======
+userSchema.methods.encryptPassword = async (password) => {
+    console.log(password);
+>>>>>>> daniel_frontend
     const salt = await bcrypt.genSalt(10);
     return await bcrypt.hash(password, salt);
   };
@@ -58,7 +67,11 @@ userSchema.statics.signin = async function (email, password) {
 userSchema.methods.matchPassword = async function (password) {
     return await bcrypt.compare(password, this.password);
   };
+<<<<<<< HEAD
  */
+=======
+  
+>>>>>>> daniel_frontend
 const users = mongoose.model('users', userSchema);
 
 module.exports = users;

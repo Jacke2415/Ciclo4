@@ -1,7 +1,16 @@
 import React from 'react';
+import axios from 'axios';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Routes, Route} from 'react-router-dom' 
 import './index.css';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.bundle.js";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -22,7 +31,9 @@ import SolicitarVacaciones from './components/User/UserEmpleado/SolicitarVac';
 import PerfilUserAdmin from './pages/PerfilUserAdmin';
 import GestinarEmpleadoAdmin from './pages/GestionarEmpleadoAdmin';
 import LiquidarNominaAdmin from './pages/LiquidarNominaAdmin';
+import GraficoNomina from './pages/GraficoNomina.jsx';
 /* import SolicitarCertificado from './components/User/UserEmpleado/SolicitarCertificado'; */
+axios.defaults.withCredentials = true;
 
 ReactDOM.render(
   <React.StrictMode>
@@ -54,7 +65,9 @@ ReactDOM.render(
         <Route path = '/signin/administrador/gestionarNomina' element = {<LiquidarNominaAdmin />}/>
         <Route path = '/signin/administrador/gestionarVacaciones' element = {<ReporteSalario />}/>
         <Route path = '/signin/administrador/gestionarPermiso' element = {<Formulario />}/>   
-        <Route path = '/signin/administrador/generarReportes' element = {<PerfilUserNomina />} /> 
+        <Route path = '/signin/administrador/generarReportes' element = {<PerfilUserNomina />} />
+        <Route path = '/signin/administrador/graficaNomina' element = {<GraficoNomina />} />
+         
                         
       </Routes>
     </BrowserRouter>
