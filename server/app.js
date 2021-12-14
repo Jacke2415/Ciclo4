@@ -1,16 +1,11 @@
 const express = require("express");
 const morgan = require("morgan");
-<<<<<<< HEAD
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const database = require ('./database');
 const UserRoutes = require("./routes/User");
 const UserAdmin = require("./routes/UserAdmin");
 const { requireAuth } = require("./middleware/userMiddleware");
-=======
-const database = require('./database');
-const singinRoutes = require("./routes/Singin");
->>>>>>> daniel_frontend
 
 //initialization
 var corsOptions = {
@@ -33,7 +28,6 @@ app.use(cookieParser());
 app.use(cors(corsOptions));
 
 //Routes
-<<<<<<< HEAD
 app.use("/", UserRoutes);
 app.use("/signin", requireAuth, UserAdmin);
 /* app.get('/cookie',function(req, res){
@@ -41,13 +35,6 @@ app.use("/signin", requireAuth, UserAdmin);
 });
  */
 
-=======
-app.use("/users", userRoutes);
-app.use("/singin", singinRoutes);
-app.get('/cookie',function(req, res){
-  res.cookie('cookie_name' , 'Daniel').send('Cookie is set');
-});
->>>>>>> daniel_frontend
 // Starting the server
 app.listen(app.get('port'), () => {
     console.log(`Server on port ${app.get('port')}`);
