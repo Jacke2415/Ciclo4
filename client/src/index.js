@@ -35,33 +35,32 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path = '/' element = {<Login />} />
-        <Route path = '/singin' element = {<Login />} />
+        <Route path = '/signin' element = {<Login />} />
         
-        <Route path = '/singin/userEmpleado/perfilEmpleado' element = {< PerfilEmpleado/>} />
-        <Route path = '/singin/userEmpleado/reporteNomina' element = {< SoliRep/>} />
-        <Route path = '/singin/userEmpleado/solicitarPermiso' element = {< SolicitarPermiso/>} />
-        <Route path = '/singin/userEmpleado/solicitarVaciones' element = {< SolicitarVacaciones/>} />
-        <Route path = '/singin/userEmpleado/solicitarCertificado' element = {< SolicitarCertificado/>} />    
+        <Route path = '/signin/userEmpleado/perfilEmpleado' element = {< PerfilEmpleado/>} />
+        <Route path = '/signin/userEmpleado/reporteNomina' element = {< SoliRep/>} />
+        <Route path = '/signin/userEmpleado/solicitarPermiso' element = {< SolicitarPermiso/>} />
+        <Route path = '/signin/userEmpleado/solicitarVaciones' element = {< SolicitarVacaciones/>} />
+        <Route path = '/signin/userEmpleado/solicitarCertificado' element = {< SoliRep/>} />    
         
-        <Route path = '/singin/userNomina/crearNomina' element = {<CrearNomina />} />    
-        <Route path = '/singin/userNomina/liquidarNomina' element = {<LiquidarNomina />}/>
-        <Route path = '/singin/userNomina/reporteSalario' element = {<ReporteSalario />}/>
-        <Route path = '/singin/userNomina/formulario' element = {<Formulario />}/>   
-        <Route path = '/singin/userNomina/Perfil' element = {<PerfilUserNomina />} /> 
-        <Route path = '/singin/userNomina/crearEmpleado' element = {<CrearEmpleado />} /> 
-        <Route path = '/singin/userNomina/liquidarNomina' element = {<LiquidarNomina />} />
-        <Route path = '/singin/userNomina/gestionarVacaciones' element = {<VacacionesNomina />} />
-        <Route path = '/singin/userNomina/gestionarPermisos' element = {<PermisosNomina />} />
-        <Route path = '/singin/userNomina/reporteSalario' element = {<ReporteSalario />} />
+        <Route path = '/signin/userNomina/crearNomina' element = {<CrearNomina />} />    
+        <Route path = '/signin/userNomina/liquidarNomina' element = {<LiquidarNomina />}/>
+        <Route path = '/signin/userNomina/reporteSalario' element = {<ReporteSalario />}/>
+        <Route path = '/signin/userNomina/formulario' element = {<Formulario />}/>   
+        <Route path = '/signin/userNomina/Perfil' element = {<PerfilUserNomina />} /> 
+        <Route path = '/signin/userNomina/crearEmpleado' element = {<CrearEmpleado />} /> 
+        <Route path = '/signin/userNomina/liquidarNomina' element = {<LiquidarNomina />} />
+        <Route path = '/signin/userNomina/gestionarVacaciones' element = {<VacacionesNomina />} />
+        <Route path = '/signin/userNomina/gestionarPermisos' element = {<PermisosNomina />} />
+        <Route path = '/signin/userNomina/reporteSalario' element = {<ReporteSalario />} />
                  
-        <Route path = '/singin/administrador/perfilAdministrador' element = {< PerfilUserAdmin/>} />       
-        <Route path = '/singin/administrador/gestionarEmpleado' element = {<GestinarEmpleadoAdmin />} />    
-        <Route path = '/singin/administrador/gestionarNomina' element = {<LiquidarNominaAdmin />}/>
-        <Route path = '/singin/administrador/gestionarVacaciones' element = {<ReporteSalario />}/>
-        <Route path = '/singin/administrador/gestionarPermiso' element = {<Formulario />}/>   
-        <Route path = '/singin/administrador/generarReportes' element = {<PerfilUserNomina />} /> 
-        <Route path = '/singin/administrador/graficaNomina' element = {<GraficoNomina />} /> 
-        
+        <Route path = '/signin/administrador/perfilAdministrador' element = {< PerfilUserAdmin/>} />       
+        <Route path = '/signin/administrador/gestionarEmpleado' element = {<GestinarEmpleadoAdmin />} />    
+        <Route path = '/signin/administrador/gestionarNomina' element = {<LiquidarNominaAdmin />}/>
+        <Route path = '/signin/administrador/gestionarVacaciones' element = {<ReporteSalario />}/>
+        <Route path = '/signin/administrador/gestionarPermiso' element = {<Formulario />}/>   
+        <Route path = '/signin/administrador/generarReportes' element = {<PerfilUserNomina />} /> 
+                        
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

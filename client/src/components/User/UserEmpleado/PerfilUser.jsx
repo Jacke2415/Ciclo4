@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../../public/css/PerfilUser.css";
 class Perfil extends React.Component {
   render() {
+    const [nombre, setNombre] = useState
     return (
+
             <div className="content">
               <div className="row">
                 <div className="col-md-3 bg-white border-right">
@@ -30,7 +32,7 @@ class Perfil extends React.Component {
                           type="text"
                           className="form-control"
                           placeholder="Nombre"
-                          value=""
+                          value={nombre}
                         />
                       </div>
                       <div className="col-md-6">

@@ -95,7 +95,7 @@ export default function Formulario () {
     const createUser = (e) => {
         e.preventDefault();
         axios
-            .post("http://localhost:5000/users", user)
+            .post("http://localhost:5000/signup", user)
             .then(() => {
                 window.location.reload(false)
                 console.log(user)
