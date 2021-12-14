@@ -34,7 +34,7 @@ class Perfil extends React.Component {
                           type="text"
                           className="form-control"
                           placeholder="Nombre"
-                          value=""
+                          value="Kelly"
                         />
                       </div>
                       <div className="col-md-6">
@@ -42,7 +42,7 @@ class Perfil extends React.Component {
                         <input
                           type="text"
                           className="form-control"
-                          value=""
+                          value="Rolon"
                           placeholder="Apellido"
                         />
                       </div>
@@ -54,7 +54,7 @@ class Perfil extends React.Component {
                           type="text"
                           className="form-control"
                           placeholder="Numero de Telefono"
-                          value=""
+                          value="3103745700"
                         />
                       </div>
                       <div className="col-md-12">
@@ -63,7 +63,7 @@ class Perfil extends React.Component {
                           type="text"
                           className="form-control"
                           placeholder="Direccion"
-                          value=""
+                          value="Calle 33 No 37a 03"
                         />
                       </div>
                       <div className="col-md-12">
@@ -72,11 +72,11 @@ class Perfil extends React.Component {
                           type="text"
                           className="form-control"
                           placeholder="Email"
-                          value=""
+                          value="Kellyr_24@hotmail.com"
                         />
                       </div>
                     </div>
-                    <div className="row mt-3">
+                    {/* <div className="row mt-3">
                       <div className="col-md-6">
                         <label className="labels">Pais</label>
                         <input
@@ -94,8 +94,8 @@ class Perfil extends React.Component {
                           value=""
                           placeholder="Ciudad"
                         />
-                      </div>
-                    </div>
+                      </div> 
+                    </div>*/}
                   </div>
                 </div>
 

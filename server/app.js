@@ -1,6 +1,7 @@
 const express = require("express");
 /* const dotenv = require("dotenv"); */
 const userRoutes = require("./routes/User");
+const nominaRoutes = require("./routes/Nomina");
 const cors = require("cors");
 const morgan = require("morgan");
 import './database'
@@ -23,6 +24,7 @@ app.use(cors());
 
 //Routes
 app.use("/users", userRoutes);
+app.use("/nominas", nominaRoutes);
 
 // Starting the server
 app.listen(app.get('port'), () => {

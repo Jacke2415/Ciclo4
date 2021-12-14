@@ -6,7 +6,7 @@ const FormLogin = () => {
     return(
         <form className ="d-grid gap-2 col-2 min-auto">
             <p><input type="text" placeholder="username" name="user" /></p>
-            <input type="text" placeholder="password" name="password" /><br/> 
+            <input type="password" placeholder="password" name="password" /><br/> 
             <Link to = '/singin/userNomina/Perfil' type="button" className= 'btn btn-secondary'>Login</Link>
         </form> 
     );
