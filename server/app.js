@@ -30,10 +30,10 @@ app.use(cors(corsOptions));
 //Routes
 app.use("/", UserRoutes);
 app.use("/signin", requireAuth, UserAdmin);
-app.get('/cookie',function(req, res){
+/* app.get('/cookie',function(req, res){
   res.cookie('jacke_name' , 'cookie_value').send('Cookie is set');
 });
-
+ */
 
 // Starting the server
 app.listen(app.get('port'), () => {
