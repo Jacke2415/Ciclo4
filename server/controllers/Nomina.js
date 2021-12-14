@@ -15,7 +15,7 @@ module.exports.createNomina = async (req, res) => {
         tipoLiquidacion: req.body.tipoLiquidacion,
         fechaInicio: req.body.fechaInicio,
         fechaFin: req.body.fechaFin,
-        total: req.body.total,
+        //total: req.body.total,
     });
     try {
         await newNomina.save();

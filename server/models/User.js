@@ -7,7 +7,7 @@ const userSchema = new Schema({
     nombre: {type: String, required: true},
     apellido: {type: String, required: true},
     tipo_identificacion: {type: String, required: true},
-    cedula: {type: String, required: true},
+    cedula: {type: Number, required: true, unique: true},
     password: {type: String, required: true},
     fecha_nacimiento: {type: Date, required: true},
     sexo: {type: String, required: true},
@@ -19,7 +19,6 @@ const userSchema = new Schema({
     salario: {type: Number, required: true},
     cargo: {type: String, required: true},
     estado: {type: String, required: true},
-
 });
 
 const users = mongoose.model('users', userSchema);

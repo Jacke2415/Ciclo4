@@ -9,11 +9,12 @@ export default function SupLiquidar () {
         tipoLiquidacion: '',
         fechaInicio:'',
         fechaFin:'',
-        total: '',
+        //total: '',
     });
 
 
     const createNomina = (n) => {
+        
         n.preventDefault();
         axios
             .post("http://localhost:5000/nominas", nomina)
@@ -57,7 +58,7 @@ export default function SupLiquidar () {
                    
                         <div class="col-3">
                             <div className="form">
-                                <input type="date" className="form-control" 
+                                <input type="Date" className="form-control" 
                                 id="fechaInicio" placeholder="Periodo Inicial" 
                                 value ={nomina.fechaInicio} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                     setNomina({...nomina, fechaInicio: event.target.value})
@@ -67,7 +68,7 @@ export default function SupLiquidar () {
                         </div>
                         <div class="col-3">
                             <div className="form">
-                                <input type="date" className="form-control" 
+                                <input type="Date" className="form-control" 
                                 id="fechaFin" placeholder="Periodo Final" 
                                 value ={nomina.fechaFin} /* onBlur= {handleBlur} */ onChange= {(event) => {
                                     setNomina({...nomina, fechaFin: event.target.value})

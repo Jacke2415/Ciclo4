@@ -7,7 +7,10 @@ const nominaSchema = new Schema({
     tipoLiquidacion: {type: String, required: true},
     fechaInicio: {type: Date, required: true},
     fechaFin: {type: Date, required: true},
-    total: {type: Number, required: true},
+    //total: {type: Number, required: true},
+    createdAt: {type:Date},
+    updatedAt: {type:Date}
+    
 
 });
 

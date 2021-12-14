@@ -2,7 +2,7 @@ const UserData = require("../models/User");
 
 module.exports.getUser = async (req, res) => {
     try {
-        const allUsers = await UserData.find();
+        const allUsers = await UserData.find({estado:"desactivado"});
         res.status(200).json(allUsers);
 
     } catch (error) {
