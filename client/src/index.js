@@ -23,14 +23,19 @@ import PermisosNomina from './pages/PermisosNomina';
 import ReporteSalario from './pages/ReporteSalario';
 import Formulario from '../src/components/User/UserNomina/Formulario';
 import PerfilUserNomina from './pages/PerfilUserNomina.jsx';
+
 import PerfilEmpleado from './pages/PerfilUserEmpleado.jsx';
 import SoliRep from './pages/SolicitarReporPago.jsx'; 
 import SolicitarPermiso from './pages/SolicitarPermiso.jsx';
 import SolicitarVacaciones from './pages/SolicitaVaca.jsx';
 import SolicitarCertificado from './pages/SolicitarCertificado.jsx'; 
+
 import PerfilUserAdmin from './pages/PerfilUserAdmin'; 
 import GestinarEmpleadoAdmin from './pages/GestionarEmpleadoAdmin'; 
-import LiquidarNominaAdmin  from './pages/LiquidarNominaAdmin'; 
+import LiquidarNominaAdmin  from './pages/LiquidarNominaAdmin';
+import ReporteSalarioAdmin from './pages/ReporteSalarioAdmin';
+import GestionarVacacionesAdmin from './pages/GestionarVacacionesAdmin.jsx';
+import GestionarPermisosAdmin from './pages/GestionarPermisosAdmin.jsx'; 
 
 ReactDOM.render(
   <React.StrictMode>
@@ -60,9 +65,9 @@ ReactDOM.render(
         <Route path = '/signin/administrador/perfilAdministrador' element = {< PerfilUserAdmin/>} />       
         <Route path = '/signin/administrador/gestionarEmpleado' element = {<GestinarEmpleadoAdmin />} />    
         <Route path = '/signin/administrador/gestionarNomina' element = {<LiquidarNominaAdmin />}/>
-        <Route path = '/signin/administrador/gestionarVacaciones' element = {<ReporteSalario />}/>
-        <Route path = '/signin/administrador/gestionarPermiso' element = {<Formulario />}/>   
-        <Route path = '/signin/administrador/generarReportes' element = {<PerfilUserNomina />} /> 
+        <Route path = '/signin/administrador/gestionarVacaciones' element = {<GestionarVacacionesAdmin />}/>
+        <Route path = '/signin/administrador/gestionarPermisos' element = {<GestionarPermisosAdmin />}/>   
+        <Route path = '/signin/administrador/generarReportes' element = {<ReporteSalarioAdmin />} /> 
                         
       </Routes>
     </BrowserRouter>
