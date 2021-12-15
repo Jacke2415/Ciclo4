@@ -202,7 +202,7 @@ export default function Formulario () {
                     <div class="row">
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <div className="form-check form-check-inline" value ={user.sexo} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                <div className="form-check form-check-inline" value ={user.sexo} onChange= {(event) => {
                                     setUser({...user, sexo: event.target.value})
                                     }} >
                                     <input className="form-check-input" type="radio" name="myRadio" value="Masculino" />
