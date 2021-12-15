@@ -90,49 +90,26 @@ class Perfil extends React.Component {
               </div>
               <div className="row mt-3">
                 <div className="col-md-6">
-                  <label className="labels">Pais</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Pais"
-                    value=""
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label className="labels">ciudad</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value=""
-                    placeholder="Ciudad"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3">
-            <div className="p-3 py-5">
-              <div className="row mt-5">
-                <div className="col-ms-6">
                   <label className="labels">Salario</label>
                   <input
                     type="text"
                     className="form-control"
                     placeholder="Salario"
+                    value=""
                   />
                 </div>
-                <div className="col-ms-6">
+                <div className="col-md-6">
                   <label className="labels">Fecha de Ingreso</label>
                   <input
                     type="text"
                     className="form-control"
+                    value=""
                     placeholder="Fecha de Ingreso"
                   />
                 </div>
               </div>
             </div>
           </div>
-
 
 
         </div>
