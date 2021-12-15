@@ -35,7 +35,7 @@ form {
     z-index: 2;
 }
 
-form input[type=text] {
+.form-control[type=email] {
     width: 250px;
     height: 30px;
     background: transparent;
@@ -48,7 +48,7 @@ form input[type=text] {
     padding: 4px;
 }
 
-form input[type=password] {
+.form-control[type=password] {
     width: 250px;
     height: 30px;
     background: transparent;
