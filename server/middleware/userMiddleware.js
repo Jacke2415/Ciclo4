@@ -2,8 +2,9 @@ const jwt = require("jsonwebtoken");
 
 const requireAuth = (req, res, next) => {
   const token = req.cookies.access_token;
+  console.log('middleware:')
   console.log(token);
-  
+    
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (error, decodedToken) => {
       if (error) {

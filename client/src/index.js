@@ -6,6 +6,10 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
+import { store, persistor } from "./redux/store";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+
 import Login from './pages/Login'; 
 import LiquidarNomina from './pages/LiquidarNomina';
 import CrearNomina from './pages/CrearNomina';
@@ -26,38 +30,42 @@ import LiquidarNominaAdmin from './pages/LiquidarNominaAdmin';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
     
-    <BrowserRouter>
-      <Routes>
-        <Route path = '/' element = {<Login />} />
-        <Route path = '/signin' element = {<Login />} />
-        
-        <Route path = '/signin/userEmpleado/perfilEmpleado' element = {< PerfilEmpleado/>} />
-        <Route path = '/signin/userEmpleado/reporteNomina' element = {< SoliRep/>} />
-        <Route path = '/signin/userEmpleado/solicitarPermiso' element = {< SolicitarPermiso/>} />
-        <Route path = '/signin/userEmpleado/solicitarVaciones' element = {< SolicitarVacaciones/>} />
-        <Route path = '/signin/userEmpleado/solicitarCertificado' element = {< SoliRep/>} />    
-        
-        <Route path = '/signin/userNomina/crearNomina' element = {<CrearNomina />} />    
-        <Route path = '/signin/userNomina/liquidarNomina' element = {<LiquidarNomina />}/>
-        <Route path = '/signin/userNomina/reporteSalario' element = {<ReporteSalario />}/>
-        <Route path = '/signin/userNomina/formulario' element = {<Formulario />}/>   
-        <Route path = '/signin/userNomina/Perfil' element = {<PerfilUserNomina />} /> 
-        <Route path = '/signin/userNomina/crearEmpleado' element = {<CrearEmpleado />} /> 
-        <Route path = '/signin/userNomina/liquidarNomina' element = {<LiquidarNomina />} />
-        <Route path = '/signin/userNomina/gestionarVacaciones' element = {<VacacionesNomina />} />
-        <Route path = '/signin/userNomina/gestionarPermisos' element = {<PermisosNomina />} />
-        <Route path = '/signin/userNomina/reporteSalario' element = {<ReporteSalario />} />
-                 
-        <Route path = '/signin/administrador/perfilAdministrador' element = {< PerfilUserAdmin/>} />       
-        <Route path = '/signin/administrador/gestionarEmpleado' element = {<GestinarEmpleadoAdmin />} />    
-        <Route path = '/signin/administrador/gestionarNomina' element = {<LiquidarNominaAdmin />}/>
-        <Route path = '/signin/administrador/gestionarVacaciones' element = {<ReporteSalario />}/>
-        <Route path = '/signin/administrador/gestionarPermiso' element = {<Formulario />}/>   
-        <Route path = '/signin/administrador/generarReportes' element = {<PerfilUserNomina />} /> 
-                        
-      </Routes>
-    </BrowserRouter>
+        <BrowserRouter>
+          <Routes>
+            <Route path = '/' element = {<Login />} />
+            <Route path = '/signin' element = {<Login />} />
+            
+            <Route path = '/signin/userEmpleado/perfilEmpleado' element = {< PerfilEmpleado/>} />
+            <Route path = '/signin/userEmpleado/reporteNomina' element = {< SoliRep/>} />
+            <Route path = '/signin/userEmpleado/solicitarPermiso' element = {< SolicitarPermiso/>} />
+            <Route path = '/signin/userEmpleado/solicitarVaciones' element = {< SolicitarVacaciones/>} />
+            <Route path = '/signin/userEmpleado/solicitarCertificado' element = {< SoliRep/>} />    
+            
+            <Route path = '/signin/userNomina/crearNomina' element = {<CrearNomina />} />    
+            <Route path = '/signin/userNomina/liquidarNomina' element = {<LiquidarNomina />}/>
+            <Route path = '/signin/userNomina/reporteSalario' element = {<ReporteSalario />}/>
+            <Route path = '/signin/userNomina/formulario' element = {<Formulario />}/>   
+            <Route path = '/signin/userNomina/Perfil' element = {<PerfilUserNomina />} /> 
+            <Route path = '/signin/userNomina/crearEmpleado' element = {<CrearEmpleado />} /> 
+            <Route path = '/signin/userNomina/liquidarNomina' element = {<LiquidarNomina />} />
+            <Route path = '/signin/userNomina/gestionarVacaciones' element = {<VacacionesNomina />} />
+            <Route path = '/signin/userNomina/gestionarPermisos' element = {<PermisosNomina />} />
+            <Route path = '/signin/userNomina/reporteSalario' element = {<ReporteSalario />} />
+                    
+            <Route path = '/signin/administrador/perfilAdministrador' element = {< PerfilUserAdmin/>} />       
+            <Route path = '/signin/administrador/gestionarEmpleado' element = {<GestinarEmpleadoAdmin />} />    
+            <Route path = '/signin/administrador/gestionarNomina' element = {<LiquidarNominaAdmin />}/>
+            <Route path = '/signin/administrador/gestionarVacaciones' element = {<ReporteSalario />}/>
+            <Route path = '/signin/administrador/gestionarPermiso' element = {<Formulario />}/>   
+            <Route path = '/signin/administrador/generarReportes' element = {<PerfilUserNomina />} /> 
+          </Routes>
+        </BrowserRouter>
+
+      </PersistGate>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
