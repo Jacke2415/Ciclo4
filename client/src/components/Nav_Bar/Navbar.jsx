@@ -4,20 +4,25 @@ import '../../public/css/navbar.css';
 
 const DNavbar = (props) => {
     const menuitems = props.items;
-    console.log(menuitems)
-    const items = menuitems.map((item) =>
-    <>
+    console.log(menuitems);
+    const items = () =>  menuitems.map((item) =>
+    <li>
+        
             <Link to={item.url}>
 
-            </Link>
             <span className="nav-text">
                 {item.name}
             </span>
-    </>
+            </Link>
+            
+    </li>
     );
     return(
         <nav className="main-menu">
-            <items></items>
+            <ul>
+            {items()}
+
+            </ul>
 
         </nav>
         

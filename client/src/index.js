@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Routes, Route} from 'react-router-dom' 
@@ -32,8 +32,14 @@ import PerfilUserAdmin from './pages/PerfilUserAdmin';
 import GestinarEmpleadoAdmin from './pages/GestionarEmpleadoAdmin';
 import LiquidarNominaAdmin from './pages/LiquidarNominaAdmin';
 import GraficoNomina from './pages/GraficoNomina.jsx';
+
+import { User } from './services/session.js';
+
 /* import SolicitarCertificado from './components/User/UserEmpleado/SolicitarCertificado'; */
 axios.defaults.withCredentials = true;
+
+var data_user = User();
+console.log(User());
 
 ReactDOM.render(
   <React.StrictMode>

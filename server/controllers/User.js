@@ -36,7 +36,11 @@ module.exports.createUser = async (req, res) => {
   };         
   try {
     const user = await UserData.create(newUser);
-    console.log(user)    
+    console.log(user);
+    /*  error: si el token se crea siempre que se crea un usuario
+        cuando un usuario administrador registre un nuevo usuario
+        lo sacara de su session.. 
+    */
     const token = createToken(user._id);
     res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
     console.log('Su registro ha sido exitoso!!')
@@ -80,6 +84,7 @@ module.exports.Logout = async (req, res) => {
 module.exports.reviewUser = (req, res) => {
   console.log("Revisar Usuario");
   const token = req.cookies.jwt;
+  console.log(token);
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
       if (err) {
