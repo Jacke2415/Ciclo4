@@ -10,31 +10,6 @@ module.exports.test = (req, res) => {
     res.send("Texto de prueba recibido desde la API. Id de usuario: " + id);
   };
 
-module.exports.reviewUser = (req, res) => {
-  console.log("Revisar Usuario");
-  const token = req.cookies.access_token;
-  console.log(token);
-  if (token) {
-    jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
-      if (err) {
-        console.log("error1");
-        res.status(401).json({ user: null });
-      } else {
-        console.log('hecho!!')
-        let user = await UserData.findById(decodedToken.id);
-        res
-          .status(200)
-          .json({ user });
-      }
-    });
-  } else {
-    console.log("error2");
-    res
-      .status(401)
-      .json({ user: null });
-  }
-};
-
 module.exports.getUser = async (req, res) => {
   try {
       const allUsers = await UserData.find();
