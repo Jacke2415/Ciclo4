@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import "../../../public/css/PerfilUser.css";
 class Perfil extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { enable: true }
+  }
+  handleGameClik() {
+    this.setState( {enable: !this.state.enable} )
+  } 
   render() {
     return (
 
@@ -31,6 +38,7 @@ class Perfil extends React.Component {
                     type="text"
                     className="form-control"
                     placeholder="Nombre"
+                    disabled
                   />
                 </div>
                 <div className="col-md-6">
@@ -40,6 +48,7 @@ class Perfil extends React.Component {
                     className="form-control"
                     value=""
                     placeholder="Apellido"
+                    disabled
                   />
                 </div>
                 <div className="col-md-6">
@@ -48,6 +57,7 @@ class Perfil extends React.Component {
                     type="text"
                     className="form-control"
                     placeholder="N° Identificacion"
+                    disabled
                   />
                 </div>
                 <div className="col-md-6">
@@ -56,6 +66,7 @@ class Perfil extends React.Component {
                     type="text"
                     className="form-control"
                     placeholder="Cargo"
+                    disabled
                   />
                 </div>
               </div>
@@ -67,6 +78,7 @@ class Perfil extends React.Component {
                     className="form-control"
                     placeholder="Numero de Telefono"
                     value=""
+                    disabled={this.state.enable}
                   />
                 </div>
                 <div className="col-md-12">
@@ -76,6 +88,7 @@ class Perfil extends React.Component {
                     className="form-control"
                     placeholder="Direccion"
                     value=""
+                    disabled={this.state.enable}
                   />
                 </div>
                 <div className="col-md-12">
@@ -85,6 +98,7 @@ class Perfil extends React.Component {
                     className="form-control"
                     placeholder="Email"
                     value=""
+                    disabled={this.state.enable}
                   />
                 </div>
               </div>
@@ -96,6 +110,7 @@ class Perfil extends React.Component {
                     className="form-control"
                     placeholder="Salario"
                     value=""
+                    disabled
                   />
                 </div>
                 <div className="col-md-6">
@@ -105,10 +120,12 @@ class Perfil extends React.Component {
                     className="form-control"
                     value=""
                     placeholder="Fecha de Ingreso"
+                    disabled
                   />
                 </div>
               </div>
             </div>
+              <button type="button" class="btn btn-primary" onClick={this.handleGameClik.bind(this)}> Editar Perfil </button>
           </div>
 
 
