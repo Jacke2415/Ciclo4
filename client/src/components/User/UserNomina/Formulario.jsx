@@ -38,8 +38,10 @@ export default function Formulario () {
         e.preventDefault();
         if (error.cedula.length==""){
             swal("Creacion Exitosa..");
+            /*axios
+            .post("http://localhost:5000/users", user)*/
             axios
-            .post("http://localhost:5000/users", user)
+            .post("http://localhost:5000/signup", user)
             .then(() => {
                 window.location.reload(false)
                 console.log(user)
@@ -164,7 +166,7 @@ export default function Formulario () {
                     <div class="row">
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className={error.password ? "form-control is-invalid" : "form-control" }
+                                <input type="password" className={error.password ? "form-control is-invalid" : "form-control" }
                                 id="password" placeholder="Password" value ={user.password} onChange= {(event) => {
                                     setUser({...user, password: event.target.value})
                                     const isValidPassword = validator.isLength(user.password, {min:7, max:11});

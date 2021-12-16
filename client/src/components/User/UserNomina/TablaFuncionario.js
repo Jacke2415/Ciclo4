@@ -1,9 +1,15 @@
 import React, {useState, useEffect}from 'react';
-import MaterialTable,{ MTableToolbar } from "material-table";
+import MaterialTable from "material-table";
 //import { AddBox, ArrowDownward, Edit, Event, Remove, DeleteIcon} from "@material-ui/icons";
+<<<<<<< HEAD
 //import { AddBox, ArrowDownward, Edit, Event, Remove, DeleteIcon} from "./TableIcons";
 import tableIcons from "./TableIcons";
 //import { Avatar, Container, Grid, Table, Tooltip } from "@material-ui/core";
+=======
+/* import { AddBox, ArrowDownward, Edit, Event, Remove, DeleteIcon} from "./TableIcons"; */
+import tableIcons from "./TableIcons";
+import { Avatar, Grid } from "@material-ui/core";
+>>>>>>> ad966ea00a1f8ad4319b60e295f60cabd418ed38
 import axios from 'axios';
 
 
@@ -32,7 +38,7 @@ const columns=[
     
 ];
 
-const baseUrl="http://localhost:5000/users"
+const baseUrl="http://localhost:5000/signin/users"
 
 
 
@@ -63,7 +69,7 @@ export const TablaFuncionario = () => {
             
             
             options={{
-                selection: true,
+                //selection: true,
                 headerStyle: {
                     backgroundColor: ' rgb(0, 17, 59)',
                     color: '#FFF',

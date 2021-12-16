@@ -1,11 +1,10 @@
 const { Router } = require ("express");
 const User = require ('../controllers/User');
-/*import student from '../models/student.js';*/
 
 const router = Router();
 
-router.get('/', User.getUser);
-router.post('/', User.createUser);
-router.delete('/:id', User.deleteUser);
+router.post('/signup', User.createUser);
+router.post('/signin', User.Signin);
+
 
 module.exports = router;

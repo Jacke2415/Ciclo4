@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect }from 'react';
+import { useDispatch } from "react-redux";
 import "../../../public/css/PerfilUser.css";
-import Navbar from "../../Nav_Bar/Navbar.jsx";
-class Perfil extends React.Component {
-  render() {
-    return (
-      
+import { checkUser } from "../../../redux/apiCalls/authApiCalls";
 
-          
+const Perfil = () => {
+
+  const dispatch = useDispatch();
+  
+  const user = JSON.parse(JSON.parse(localStorage.getItem("persist:auth")).currentUser)
+    
+  useEffect(()=>{
+    checkUser(dispatch);
+  }, [dispatch])
+
+        return (          
             <div className="content">
               <div className="row">
                 <div className="col-md-3 bg-white border-right">
@@ -34,7 +41,9 @@ class Perfil extends React.Component {
                           type="text"
                           className="form-control"
                           placeholder="Nombre"
-                          value="Kelly"
+                          id = 'nombre'
+                          disabled
+                          value={user.nombre}
                         />
                       </div>
                       <div className="col-md-6">
@@ -42,7 +51,8 @@ class Perfil extends React.Component {
                         <input
                           type="text"
                           className="form-control"
-                          value="Rolon"
+                          disabled
+                          value= {user.apellido}
                           placeholder="Apellido"
                         />
                       </div>
@@ -54,7 +64,7 @@ class Perfil extends React.Component {
                           type="text"
                           className="form-control"
                           placeholder="Numero de Telefono"
-                          value="3103745700"
+                          value={user.telefono}
                         />
                       </div>
                       <div className="col-md-12">
@@ -63,7 +73,7 @@ class Perfil extends React.Component {
                           type="text"
                           className="form-control"
                           placeholder="Direccion"
-                          value="Calle 33 No 37a 03"
+                          value={user.direccion}
                         />
                       </div>
                       <div className="col-md-12">
@@ -72,26 +82,26 @@ class Perfil extends React.Component {
                           type="text"
                           className="form-control"
                           placeholder="Email"
-                          value="Kellyr_24@hotmail.com"
+                          value={user.email}
                         />
                       </div>
                     </div>
                     {/* <div className="row mt-3">
                       <div className="col-md-6">
-                        <label className="labels">Pais</label>
+                        <label className="labels">Salario</label>
                         <input
                           type="text"
                           className="form-control"
                           placeholder="Pais"
-                          value=""
+                          value= {user.salario}
                         />
                       </div>
                       <div className="col-md-6">
-                        <label className="labels">ciudad</label>
+                        <label className="labels">Fecha de Ingreso</label>
                         <input
                           type="text"
                           className="form-control"
-                          value=""
+                          value={user.fecha_ingreso}
                           placeholder="Ciudad"
                         />
                       </div> 
@@ -107,6 +117,5 @@ class Perfil extends React.Component {
           
      
     );
-  }
 }
 export default Perfil;
