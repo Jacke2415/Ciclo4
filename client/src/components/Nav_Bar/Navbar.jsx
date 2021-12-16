@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import '../../public/css/navbar.css';
 
-const DNavbar = (props) => {
+/* const DNavbar = (props) => {
     const menuitems = props.items;
     console.log(menuitems)
     const items = menuitems.map((item) =>
@@ -22,7 +22,7 @@ const DNavbar = (props) => {
         </nav>
         
     );
-}
+} */
 
 class Navbar extends React.Component {
 
@@ -44,7 +44,7 @@ class Navbar extends React.Component {
 
                         </li>
                         <li className="has-subnav">
-                            <NavLink className="nav-link" aria-current="page" to="/singin/userEmpleado/solicitarPermiso">
+                            <Link to="/singin/userEmpleado/solicitarPermiso">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journals" viewBox="0 0 16 16">
                                     <path d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2 2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v9a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2z" />
                                     <path d="M1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 2.5v.5H.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1H2v-.5a.5.5 0 0 0-1 0z" />
@@ -52,7 +52,7 @@ class Navbar extends React.Component {
                                 <span className="nav-text">
                                     Solicitar Permisos
                                 </span>
-                            </NavLink>
+                            </Link>
 
                         </li>
                         <li className="has-subnav">
@@ -78,14 +78,14 @@ class Navbar extends React.Component {
                             </Link>
                         </li>
                         <li>
-                            <NavLink className="nav-link" aria-current="page" to="/singin/userEmpleado/reporteNomina">
+                            <Link to="/singin/userEmpleado/reporteNomina">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-spreadsheet" viewBox="0 0 16 16">
                                     <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z" />
                                 </svg>
                                 <span className="nav-text">
                                     Solicitar Reportes de Pago
                                 </span>
-                            </NavLink>
+                            </Link>
                         </li>
 
                     </ul>
@@ -110,4 +110,4 @@ class Navbar extends React.Component {
     }
 }
 
-export default DNavbar;
+export default Navbar;

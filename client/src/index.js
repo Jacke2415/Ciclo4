@@ -45,11 +45,11 @@ ReactDOM.render(
         <Route path = '/' element = {<Login />} />
         <Route path = '/signin' element = {<Login />} />
         
-        <Route path = '/signin/userEmpleado/perfilEmpleado' element = {< PerfilEmpleado/>} />
-        <Route path = '/signin/userEmpleado/reporteNomina' element = {< SoliRep/>} />
-        <Route path = '/signin/userEmpleado/solicitarPermiso' element = {< SolicitarPermiso/>} />
-        <Route path = '/signin/userEmpleado/solicitarVaciones' element = {< SolicitarVacaciones/>} />
-        <Route path = '/signin/userEmpleado/solicitarCertificado' element = {< SolicitarCertificado/>} />    
+        <Route path = '/singin/userEmpleado/perfilEmpleado' element = {< PerfilEmpleado/>} />
+        <Route path = '/singin/userEmpleado/reporteNomina' element = {< SoliRep/>} />
+        <Route path = '/singin/userEmpleado/solicitarPermiso' element = {< SolicitarPermiso/>} />
+        <Route path = '/singin/userEmpleado/solicitarVaciones' element = {< SolicitarVacaciones/>} />
+        <Route path = '/singin/userEmpleado/solicitarCertificado' element = {< SolicitarCertificado/>} />    
         
         <Route path = '/signin/userNomina/crearNomina' element = {<CrearNomina />} />    
         <Route path = '/signin/userNomina/liquidarNomina' element = {<LiquidarNomina />}/>
