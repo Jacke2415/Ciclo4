@@ -39,6 +39,7 @@ class Perfil extends React.Component {
                     className="form-control"
                     placeholder="Nombre"
                     disabled
+                    value=""
                   />
                 </div>
                 <div className="col-md-6">
@@ -58,6 +59,7 @@ class Perfil extends React.Component {
                     className="form-control"
                     placeholder="N° Identificacion"
                     disabled
+                    value=""
                   />
                 </div>
                 <div className="col-md-6">
@@ -67,6 +69,7 @@ class Perfil extends React.Component {
                     className="form-control"
                     placeholder="Cargo"
                     disabled
+                    value=""
                   />
                 </div>
               </div>
@@ -125,7 +128,7 @@ class Perfil extends React.Component {
                 </div>
               </div>
             </div>
-              <button type="button" class="btn btn-primary" onClick={this.handleGameClik.bind(this)}> Editar Perfil </button>
+              <button type="button" class="btn btn-primary" onClick={this.handleGameClik.bind(this)}>Editar Perfil</button>
           </div>
 
 
