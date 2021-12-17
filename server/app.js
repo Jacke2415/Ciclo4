@@ -1,13 +1,13 @@
 const express = require("express");
-/* const dotenv = require("dotenv"); */
-const nominaRoutes = require("./routes/Nomina");
-const vacacionesRoutes = require("./routes/Vacaciones");
+const dotenv = require("dotenv"); 
 const cors = require("cors");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const database = require ('./database');
 const UserRoutes = require("./routes/User");
 const UserAdmin = require("./routes/UserAdmin");
+const UserNomina = require("./routes/UserNomina");
+const UserEmpleado = require("./routes/UserEmpleado");
 const { requireAuth } = require("./middleware/userMiddleware");
 
 //initialization
@@ -31,11 +31,10 @@ app.use(cookieParser());
 app.use(cors(corsOptions));
 
 //Routes
-
-app.use("/nominas", nominaRoutes);
-app.use("/vacaciones", vacacionesRoutes);
 app.use("/", UserRoutes);
-app.use("/signin", requireAuth, UserAdmin);
+app.use("/admin", requireAuth, UserAdmin);
+app.use("/nomina", requireAuth, UserNomina);
+app.use("/empleado", requireAuth, UserEmpleado);
 
 // Starting the server
 app.listen(app.get('port'), () => {

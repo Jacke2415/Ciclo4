@@ -16,7 +16,7 @@ class SupMisNominas extends Component{
                     <div className="row">
                         <div className="col-4">
                             
-                        <Link to='/singin/userNomina/liquidarNomina' type="button" class="btn btn-primary">Crear Nomina</Link>
+                        <Link to='/signin/userNomina/liquidarNomina' type="button" class="btn btn-primary">Crear Nomina</Link>
                         </div>
                     </div>
                 </div>

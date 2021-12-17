@@ -1,13 +1,10 @@
 //import '../../../public/css/Login.css'
 import NavbarAdmin from '../components/Nav_Bar/NavbarAdmin';
 import {Grafico} from '../components/Graphics/grafico.jsx';
-import { RenderGraficaNomina } from '../components/Graphics/RenderGraficaNomina';
 
 export default function GraficoNomina() {
     const gdata = [2001000, 900000]
-    const ddata = [900000]
     const labels = ['Empleado mayor de', 'Empleado menor de']
-    const mlabels = ['Empleado menor de']
     return (
       <>
         <div className="container-lg">

@@ -9,5 +9,4 @@ router.get('/logout', UserAdmin.Logout);
 
 router.delete('/:_id', UserAdmin.deleteUser);
 
-
 module.exports = router;

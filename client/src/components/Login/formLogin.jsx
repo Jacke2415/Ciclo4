@@ -7,7 +7,7 @@ import '../../public/css/Login.css';
 const FormLogin = () => {
 
     const [user_Login, setUser_Login] = useState({})
-    const { currentUser } = useSelector((state) => state.auth);
+    /* const { currentUser } = useSelector((state) => state.auth); */
 
     const dispatch = useDispatch();
 
@@ -16,11 +16,12 @@ const FormLogin = () => {
         login(dispatch, user_Login);
     }
 
-    /*console.log('Datos enviados')
+    /* Para fines educativos despues de haber iniciado sesión
+    console.log('Datos enviados')
     console.log(user_Login)
     console.log('Datos recibidos')
     console.log(currentUser.rol)
-    console.log('final')*/
+    console.log('final') */
         
     return(
         <form className ="d-grid gap-2 col-2 min-auto" onSubmit = {loginUser}>

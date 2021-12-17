@@ -38,7 +38,11 @@ module.exports.createUser = async (req, res) => {
   };         
   try {
     const user = await UserData.create(newUser);
-    console.log(user)    
+    console.log(user);
+    /*  error: si el token se crea siempre que se crea un usuario
+        cuando un usuario administrador registre un nuevo usuario
+        lo sacara de su session.. 
+    */
     const token = createToken(user._id);
     res
       .cookie('access_token', token, { httpOnly: true, maxAge: maxAge * 1000 })
@@ -94,3 +98,22 @@ module.exports.reviewUser = (req, res) => {
       .json({ user: null });
   }
 };
+
+module.exports.getSumaSalario = async (req, res) => {
+    try {
+        const allUsersActive = await UserData.find({estado:"activo"});
+        
+        const total =  allUsersActive[0] ;
+        console.log(total);
+        res.status(200).json(total);
+
+        /* db.users.aggregate([
+            {$match:{$or:[{estado:"activo"},{estado:'desactivado'}]}},
+            //{$match:[{estado:'activo'}]},
+            {$group:{_id:'$estado', total:{$sum:'$salario'}}}
+            ]) */
+        //total:{$sum:'$salario'}
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}

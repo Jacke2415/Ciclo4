@@ -1,7 +1,6 @@
 import React from "react";
 import '../../../public/css/SoliVac.css';
 
-
 class SoliVac extends React.Component {
 
     render() {
