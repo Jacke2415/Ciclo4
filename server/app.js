@@ -32,9 +32,9 @@ app.use(cors(corsOptions));
 
 //Routes
 app.use("/", UserRoutes);
-app.use("/signin", requireAuth, UserAdmin);
-app.use("/signin", requireAuth, UserNomina);
-app.use("/signin", requireAuth, UserEmpleado);
+app.use("/admin", requireAuth, UserAdmin);
+app.use("/nomina", requireAuth, UserNomina);
+app.use("/empleado", requireAuth, UserEmpleado);
 
 // Starting the server
 app.listen(app.get('port'), () => {
