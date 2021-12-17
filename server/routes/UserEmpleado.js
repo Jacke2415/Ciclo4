@@ -4,7 +4,6 @@ const User = require ('../controllers/User');
 
 const router = Router();
 
-router.post('/', User.singin);
 
 
 module.exports = router;

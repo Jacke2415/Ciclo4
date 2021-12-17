@@ -11,8 +11,8 @@ const NavbarEmpleado = () => {
         {"name": 'Solicitar Vacaciones', 'url': "/signin/userEmpleado/solicitarVaciones"},
         {"name": 'Certificados Laborales', 'url': "#"},
         {"name": 'Solicitar Reportes de Pago', 'url': "#"}
-
     ]
+    
     return(
         <DNavbar items={items}/>
     );

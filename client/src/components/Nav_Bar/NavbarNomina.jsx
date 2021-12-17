@@ -6,11 +6,11 @@ import DNavbar from "./Navbar.jsx";
 const NavbarN = () => {
   const items = [
     { name: "Perfil de Usuario", url: "/signin/userNomina/Perfil" },
-    { name: "Crear Empleado", url: "/singin/userNomina/crearEmpleado" },
-    { name: "Crear Nomina", url: "/singin/userNomina/crearNomina" },
-    { name: "Gestionar Vacaciones", url: "/singin/userNomina/gestionarVacaciones" },
-    { name: "Gestionar Permisos", url: "/singin/userNomina/gestionarPermisos" },
-    { name: "Reporte Salario", url: "/singin/userNomina/reporteSalario" }
+    { name: "Crear Empleado", url: "/signin/userNomina/crearEmpleado" },
+    { name: "Crear Nomina", url: "/signin/userNomina/crearNomina" },
+    { name: "Gestionar Vacaciones", url: "/signin/userNomina/gestionarVacaciones" },
+    { name: "Gestionar Permisos", url: "/signin/userNomina/gestionarPermisos" },
+    { name: "Reporte Salario", url: "/signin/userNomina/reporteSalario" }
   ];
   return <DNavbar items={items} />;
 };
@@ -42,7 +42,7 @@ class NavbarNomina extends React.Component {
             </li>
 
             <li className="has-subnav">
-              <Link to="/singin/userNomina/crearEmpleado">
+              <Link to="/signin/userNomina/crearEmpleado">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -58,7 +58,7 @@ class NavbarNomina extends React.Component {
               </Link>
             </li>
             <li className="has-subnav">
-              <Link to="/singin/userNomina/crearNomina">
+              <Link to="/signin/userNomina/crearNomina">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -75,7 +75,7 @@ class NavbarNomina extends React.Component {
               </Link>
             </li>
             <li>
-              <Link to="/singin/userNomina/gestionarVacaciones">
+              <Link to="/signin/userNomina/gestionarVacaciones">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -97,7 +97,7 @@ class NavbarNomina extends React.Component {
               </Link>
             </li>
             <li>
-              <Link to="/singin/userNomina/gestionarPermisos">
+              <Link to="/signin/userNomina/gestionarPermisos">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -113,7 +113,7 @@ class NavbarNomina extends React.Component {
               </Link>
             </li>
             <li>
-              <Link to="/singin/userNomina/reporteSalario">
+              <Link to="/signin/userNomina/reporteSalario">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"

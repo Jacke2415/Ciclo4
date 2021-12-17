@@ -14,14 +14,18 @@ import VacacionesNomina from "./pages/VacacionesNomina";
 import PermisosNomina from "./pages/PermisosNomina";
 import ReporteSalario from "./pages/ReporteSalario";
 import Formulario from "../src/components/User/UserNomina/Formulario";
-import PerfilUserNomina from "./pages/PerfilUserNomina.jsx";
-import PerfilEmpleado from "./components/User/UserEmpleado/PerfilUser.jsx";
-import SoliRep from "./components/User/UserEmpleado/SolicitaRep";
-import SolicitarPermiso from "./components/User/UserEmpleado/SolicitarPermiso";
-import SolicitarVacaciones from "./components/User/UserEmpleado/SolicitarVac";
+import PerfilUserNomina from "./pages/PerfilUserNomina";
+import PerfilUserEmpleado from './pages/PerfilUserEmpleado';
+import SoliRep from './pages/SolicitarReporPago'; 
+import SolicitarPermiso from './pages/SolicitarPermiso';
+import SolicitarVacaciones from './pages/SolicitaVaca';
+import SolicitarCertificado from './pages/SolicitarCertificado'; 
 import PerfilUserAdmin from "./pages/PerfilUserAdmin";
 import GestinarEmpleadoAdmin from "./pages/GestionarEmpleadoAdmin";
 import LiquidarNominaAdmin from "./pages/LiquidarNominaAdmin";
+import GestionarPermisosAdmin from './pages/GestionarPermisosAdmin';
+import GestionarVacacionesAdmin from './pages/GestionarVacacionesAdmin';
+import ReporteSalarioAdmin from './pages/ReporteSalarioAdmin.jsx';
 
 function App() {
   const { currentUser } = useSelector((state) => state.auth);
@@ -48,7 +52,7 @@ function App() {
 
         <Route
           path="/signin/userEmpleado/perfilEmpleado"
-          element={<PerfilEmpleado />}
+          element={<PerfilUserEmpleado />}
         />
         <Route
           path="/signin/userEmpleado/reporteNomina"
@@ -64,7 +68,7 @@ function App() {
         />
         <Route
           path="/signin/userEmpleado/solicitarCertificado"
-          element={<SoliRep />}
+          element={<SolicitarCertificado />}
         />
 
         <Route
@@ -119,15 +123,15 @@ function App() {
         />
         <Route
           path="/signin/administrador/gestionarVacaciones"
-          element={<ReporteSalario />}
+          element={<GestionarVacacionesAdmin />}
         />
         <Route
-          path="/signin/administrador/gestionarPermiso"
-          element={<Formulario />}
+          path="/signin/administrador/gestionarPermisos"
+          element={<GestionarPermisosAdmin />}
         />
         <Route
           path="/signin/administrador/generarReportes"
-          element={<PerfilUserNomina />}
+          element={<ReporteSalarioAdmin />}
         />
       </Routes>
     </BrowserRouter>
