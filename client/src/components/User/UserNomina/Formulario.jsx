@@ -58,7 +58,7 @@ export default function Formulario () {
                         <div class="col">
                             <div className="form-floating mb-3">
                                 <input 
-                                type="email" 
+                                type="text" 
                                 className={error.nombre ? "form-control is-invalid" : "form-control" }
                                 id="nombre" 
                                 placeholder="Nombre" 
@@ -87,7 +87,7 @@ export default function Formulario () {
                         <div class="col">
                             <div className="form-floating mb-3">
                                 <input 
-                                type="email" 
+                                type="text" 
                                 className={error.apellido ? "form-control is-invalid" : "form-control" } 
                                 id="apellido" 
                                 placeholder="Apellido" 
@@ -128,7 +128,7 @@ export default function Formulario () {
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className={error.cedula ? "form-control is-invalid" : "form-control" }
+                                <input type="text" className={error.cedula ? "form-control is-invalid" : "form-control" }
                                 id="cedula" placeholder="No Identificación" 
                                 value ={user.cedula}  onChange= {(event) => {
                                     setUser({...user, cedula: event.target.value})
@@ -213,7 +213,7 @@ export default function Formulario () {
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className={error.telefono ? "form-control is-invalid" : "form-control" } 
+                                <input type="text" className={error.telefono ? "form-control is-invalid" : "form-control" } 
                                 placeholder="Telefono" id="telefono"
                                 value ={user.telefono}  onChange= {(event) => {
                                     setUser({...user, telefono: event.target.value})
@@ -246,7 +246,7 @@ export default function Formulario () {
                     <div class="row">
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className={error.direccion ? "form-control is-invalid" : "form-control" }
+                                <input type="text" className={error.direccion ? "form-control is-invalid" : "form-control" }
                                 id="direccion" placeholder="Direccion" required
                                 value ={user.direccion} onChange= {(event) => {
                                     setUser({...user, direccion: event.target.value})
@@ -272,7 +272,7 @@ export default function Formulario () {
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className= {error.email ? "form-control is-invalid" : "form-control" }  
+                                <input type="text" className= {error.email ? "form-control is-invalid" : "form-control" }  
                                 id="email" placeholder="Email" required
                                 value ={user.email}  onChange= {(event) => {
                                     setUser({...user, email: event.target.value})
@@ -328,7 +328,7 @@ export default function Formulario () {
                     <div class="row">
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className={error.salario ? "form-control is-invalid" : "form-control" }
+                                <input type="text" className={error.salario ? "form-control is-invalid" : "form-control" }
                                 id="salario" placeholder="Salario" required
                                 value ={user.salario}  onChange= {(event) => {
                                     setUser({...user, salario: event.target.value})
@@ -354,7 +354,7 @@ export default function Formulario () {
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className="form-control" 
+                                <input type="text" className="form-control" 
                                 id="cargo" placeholder="Cargo" required
                                 value ={user.cargo} onChange= {(event) => {
                                     setUser({...user, cargo: event.target.value})

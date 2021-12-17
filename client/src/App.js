@@ -36,7 +36,11 @@ function App() {
           <Routes>
             <Route path = '/' element = {<Login />} />
             <Route path = '/signin' 
-            element = {(currentUser.rol === 2 ) ? <Navigate to = "/signin/administrador/perfilAdministrador" /> :(currentUser.rol === 1 ) ? <Navigate to = '/signin/userNomina/Perfil' /> :(currentUser.rol === 0 ) ? <Navigate to = '/signin/userEmpleado/perfilEmpleado' /> : <Login />}/>
+            element = {
+              (currentUser.rol === null)? <Navigate to = '/signin'/>:(currentUser.rol === 2 ) ? <Navigate to = "/signin/administrador/perfilAdministrador" />:
+              (currentUser.rol === 1 ) ? <Navigate to = '/signin/userNomina/Perfil' />:
+              (currentUser.rol === 0 ) ? <Navigate to = '/signin/userEmpleado/perfilEmpleado' />: 
+              <Login />}/>
             
             <Route path = '/signin/userEmpleado/perfilEmpleado' element = {< PerfilEmpleado/>} />
             <Route path = '/signin/userEmpleado/reporteNomina' element = {< SoliRep/>} />
