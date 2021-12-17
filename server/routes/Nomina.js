@@ -8,4 +8,6 @@ router.get('/', Nomina.getNomina);
 router.post('/', Nomina.createNomina);
 router.delete('/:id', Nomina.deleteNomina);
 
+
+
 module.exports = router;

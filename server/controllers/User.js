@@ -2,7 +2,7 @@ const UserData = require("../models/User");
 
 module.exports.getUser = async (req, res) => {
     try {
-        const allUsers = await UserData.find({estado:"desactivado"});
+        const allUsers = await UserData.find({});
         res.status(200).json(allUsers);
 
     } catch (error) {
@@ -44,5 +44,24 @@ module.exports.deleteUser = async (req, res) => {
         res.send('Succesfully Deleted!')
     } catch (error) {
         console.log(error);
+    }
+}
+
+module.exports.getSumaSalario = async (req, res) => {
+    try {
+        const allUsersActive = await UserData.find({estado:"activo"});
+        
+        const total =  allUsersActive[0] ;
+        console.log(total);
+        res.status(200).json(total);
+
+        /* db.users.aggregate([
+            {$match:{$or:[{estado:"activo"},{estado:'desactivado'}]}},
+            //{$match:[{estado:'activo'}]},
+            {$group:{_id:'$estado', total:{$sum:'$salario'}}}
+            ]) */
+        //total:{$sum:'$salario'}
+    } catch (error) {
+        res.status(404).json({ message: error.message });
     }
 }

@@ -34,3 +34,15 @@ module.exports.deleteNomina = async (req, res) => {
         console.log(error);
     }
 }
+
+module.exports.total = async(req, res) =>{
+    const nomina = await NominaData.find();
+    res.status(200).json(nomina)
+    
+    //db.getCollection("users").find({estado:'activo'});
+   /*  db.users.aggregate([
+    {$match:{$or:[{estado:"activo"},{estado:'desactivado'}]}},
+    //{$match:[{estado:'activo'}]},
+    {$group:{_id:'$estado', total:{$sum:'$salario'}}}
+    ]) */
+}
