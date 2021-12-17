@@ -23,12 +23,6 @@ const loginUser = (e) => {
 };    
 
     return(
-<<<<<<< HEAD
-        <form className ="d-grid gap-2 col-2 min-auto">
-            <p><input type="text" placeholder="username" name="user" /></p>
-            <input type="password" placeholder="password" name="password" /><br/> 
-            <Link to = '/singin/userNomina/Perfil' type="button" className= 'btn btn-secondary'>Login</Link>
-=======
         <form className ="d-grid gap-2 col-2 min-auto" onSubmit = {loginUser}>
             <p><input 
             type="email" 
@@ -47,7 +41,6 @@ const loginUser = (e) => {
             onChange= {(event) => setUser_Login({...user_Login, password: event.target.value})} 
             required  /><br/> 
             <button type="submit" className= 'btn btn-secondary'>Login</button>
->>>>>>> ad966ea00a1f8ad4319b60e295f60cabd418ed38
         </form> 
     );
 }

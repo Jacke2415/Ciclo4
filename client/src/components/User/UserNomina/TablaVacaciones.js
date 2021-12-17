@@ -1,20 +1,29 @@
 import React from "react"
 import MaterialTable from "material-table";
 import tableIcons from "./TableIcons";
+import axios from "axios";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const columns=[
-    {title: "No Identificación", field:'identificacion'    },
-    {title:'Nombre', field:'nombre'  },
-    {title:'Apellido',field:'apellido'},
-    {title:'Fecha Ingreso', field:'fingreso'},
+    {title: "No Identificación", field:'cedula'    },
+    {title:'Fecha Inicial', field:'fechaInicial'},
+    {title:'Fecha Final', field:'fechaFinal'},
     {title:'Estado Solicitud', field:'estado'}
 ];
-const data=[
-{identificacion:'12345678', nombre:'Mark' , apellido:'Gonzalez', fingreso:"01/02/2019", estado:'Pendiente'},
-{identificacion:'412563987', nombre:'Natalia' , apellido:'Bermudez', fingreso:"15/06/2019", estado:'Pendiente'},
-{identificacion:'11310487', nombre:'Esteban' , apellido:'Sanchez', fingreso:"29/10/2019", estado:'Pendiente'},
-];
+const baseUrl="http://localhost:5000/vacaciones"
+
 const TablaVacaciones = () =>{
+    const [data, setData]=useState([ ]);
+    const peticionGet=async()=>{
+        await axios.get(baseUrl).then(response=>{
+            setData(response.data)
+        })
+    }
+
+    useEffect(()=>{
+        peticionGet();
+    },[])
     return(
         <>
             <div>
