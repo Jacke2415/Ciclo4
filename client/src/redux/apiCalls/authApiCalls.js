@@ -34,7 +34,7 @@ export const login = async (dispatch, user) => {
   }
 };
 
-/* export const register = async (dispatch, user) => {
+export const register = async (dispatch, user) => {
   dispatch(registerStart());
   console.log("dispatching register");
   try {
@@ -46,7 +46,7 @@ export const login = async (dispatch, user) => {
     console.log(error.response.data);
     dispatch(registerFailure(error.response.data));
   }
-}; */
+};
 
 export const logout = async (dispatch) => {
   dispatch(logoutStart());

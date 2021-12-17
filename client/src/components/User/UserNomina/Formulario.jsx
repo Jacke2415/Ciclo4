@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { checkUser } from "../redux/apiCalls/authApiCalls";
+import React, { useState } from "react";
 import "../../../public/css/Formulario.css"
 import axios from 'axios'
 import validator from "validator";
 import swal from 'sweetalert';
 
-
 export default function Formulario() {
-    const [error, setError] = useState({})
-        /* email: "", password: "", cedula: "",
+    const [error, setError] = useState({
+        email: "", password: "", cedula: "",
         nombre: "", apellido: "", telefono: "", direccion: "", cargo: "", salario: ""
-    }); */
-    const [user, setUser] = useState({})
-        /* tipo_usuario: '',
+    });
+    const [user, setUser] = useState({
+        tipo_usuario: '',
         nombre: '',
         apellido: '',
         tipo_identificacion: '',
@@ -29,32 +26,30 @@ export default function Formulario() {
         salario: '',
         cargo: '',
         estado: ''
-    }); */
-
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        console.log("Hola");
-        checkUser(dispatch);
-      }, [dispatch]);
+    });
 
     const createUser = (e) => {
         e.preventDefault();
         if (error.cedula.length === "") {
             swal("Creacion Exitosa..");
+            /*axios
+            .post("http://localhost:5000/users", user)*/
             axios
-                .post("http://localhost:5000/nomina/signup", user)
-                .then((response) => {
-                    setUser(response.data)
+                .post("http://localhost:5000/signup", user)
+                .then(() => {
+                    window.location.reload(false)
+                    console.log(user)
                 })
                 .catch((error) => {
-                    setError(error.response.data);
+                    console.log(error);
                     swal("Debe llenar todos los campos");
                 });
+
         } else {
             swal("Debe llenar todos los campos");
         }
     };
+
 
     return (
         <>
@@ -84,6 +79,7 @@ export default function Formulario() {
                                     }
                                 }
                                 } />
+
                             <label for="">Nombre</label>
                             <div className="text-danger">
                                 {error.nombre}
@@ -110,6 +106,7 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, apellido: "" };
                                         });
+
                                     }
                                 }} />
                             <label htmlFor="">Apellido</label>
@@ -146,6 +143,7 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, cedula: "" };
                                         });
+
                                     }
                                 }} />
                             <label htmlFor="NoIdentificacion">
@@ -153,8 +151,11 @@ export default function Formulario() {
                             <div className="text-danger">
                                 {error.cedula}
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
                 <div class="row">
                     <div class="col">
@@ -171,6 +172,7 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, password: "" };
                                         });
+
                                     }
                                 }} />
                             <label htmlFor="">Password</label>
@@ -187,8 +189,11 @@ export default function Formulario() {
                                     setUser({ ...user, fecha_nacimiento: event.target.value })
                                 }} />
                             <label htmlFor="">Fecha De Nacimiento</label>
+
                         </div>
+
                     </div>
+
                 </div>
                 <div class="row">
                     <div class="col">
@@ -206,6 +211,7 @@ export default function Formulario() {
                                 <label className="form-check-label" for="inlineRadio2">Femenino</label>
                             </div>
                         </div>
+
                     </div>
                     <div class="col">
                         <div className="form-floating mb-3">
@@ -227,6 +233,7 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, telefono: "" };
                                         });
+
                                     }
                                 }} />
                             <label htmlFor="">Telefono</label>
@@ -234,7 +241,9 @@ export default function Formulario() {
                                 {error.telefono}
                             </div>
                         </div>
+
                     </div>
+
                 </div>
                 <div class="row">
                     <div class="col">
@@ -252,13 +261,16 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, direccion: "" };
                                         });
+
                                     }
                                 }} />
                             <label htmlFor="">Dirección</label>
                             <div className="text-danger">
                                 {error.direccion}
                             </div>
+
                         </div>
+
                     </div>
                     <div class="col">
                         <div className="form-floating mb-3">
@@ -275,14 +287,17 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, email: "" };
                                         });
+
                                     }
                                 }} />
                             <label htmlFor="">Email</label>
                             <div className="text-danger">
                                 {error.email}
                             </div>
+
                         </div>
                     </div>
+
                 </div>
                 <div class="row">
                     <div class="col">
@@ -293,7 +308,9 @@ export default function Formulario() {
                                     setUser({ ...user, fecha_ingreso: event.target.value })
                                 }} />
                             <label htmlFor="">Fecha De Ingreso</label>
+
                         </div>
+
                     </div>
                     <div class="col">
                         <select className="form-select  mb-3" aria-label=" "
@@ -306,7 +323,9 @@ export default function Formulario() {
                             <option value="ObraLabor">Por Obra o Labor</option>
                             <option value="Temporal">Temporal</option>
                         </select>
+
                     </div>
+
                 </div>
                 <div class="row">
                     <div class="col">
@@ -326,6 +345,7 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, salario: "" };
                                         });
+
                                     }
                                 }} />
                             <label htmlFor="">Salario</label>
@@ -350,14 +370,18 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, cargo: "" };
                                         });
+
                                     }
                                 }} />
                             <label htmlFor="">Cargo</label>
                             <div className="text-danger">
                                 {error.cargo}
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
                 <div class="row">
                     <div class="col">
@@ -368,6 +392,27 @@ export default function Formulario() {
                     </div>
                 </div>
             </form>
+
+
         </>
     )
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

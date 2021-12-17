@@ -4,10 +4,11 @@ const cors = require("cors");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const database = require ('./database');
-const UserRoutes = require("./routes/User");
-const UserAdmin = require("./routes/UserAdmin");
-const UserNomina = require("./routes/UserNomina");
-const UserEmpleado = require("./routes/UserEmpleado");
+const UserRoutes = require("./routes/Signin");
+const Users = require("./routes/Users");
+const Nomina = require("./routes/Nomina");
+const Permisos = require("./routes/Permisos");
+const Vacaciones = require("./routes/Vacaciones");
 const { requireAuth } = require("./middleware/userMiddleware");
 
 //initialization
@@ -32,9 +33,10 @@ app.use(cors(corsOptions));
 
 //Routes
 app.use("/", UserRoutes);
-app.use("/admin", requireAuth, UserAdmin);
-app.use("/nomina", requireAuth, UserNomina);
-app.use("/empleado", requireAuth, UserEmpleado);
+app.use("/users", requireAuth, Users);
+app.use("/nomina", requireAuth, Nomina);
+app.use("/permisos", requireAuth, Permisos);
+app.use("/vacaciones", requireAuth, Vacaciones);
 
 // Starting the server
 app.listen(app.get('port'), () => {
