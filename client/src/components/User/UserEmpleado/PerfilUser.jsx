@@ -7,7 +7,7 @@ import { checkUser } from "../../../redux/apiCalls/authApiCalls";
 const Perfil = () => {
 
   const [user, setUser] = useState({});
-  const { error, currentUser } = useSelector((state) => state.auth);
+  const { currentUser } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
   
