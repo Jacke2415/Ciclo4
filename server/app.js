@@ -12,8 +12,8 @@ const { requireAuth } = require("./middleware/userMiddleware");
 
 //initialization
 var corsOptions = {
-  origin: "http://localhost:3000",
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  origin: "http://localhost:3000", // dirección del front
+  optionsSuccessStatus: 200, 
   credentials: true,
 };
 
@@ -21,11 +21,11 @@ const app = express();
 
 
 // Settings 
-app.set('port', process.env.PORT || 5000);
+app.set('port', process.env.PORT || 5000); //config del puerto
 
 // Middlewares
-app.use(morgan("dev"));
-app.use(express.json());
+app.use(morgan("dev")); // permite el track de los datos
+app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors(corsOptions));

@@ -12,6 +12,8 @@ router.delete('/:id', Nomina.deleteNomina);
 router.get('/', Nomina.getVacaciones);
 router.post('/', Nomina.createVacaciones);
 
+//-----------------crearUsuario---------------
 
+router.post('/signup', Nomina.createUser);
 
 module.exports = router;
