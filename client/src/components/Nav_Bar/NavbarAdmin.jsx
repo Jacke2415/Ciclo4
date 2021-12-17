@@ -1,12 +1,20 @@
 import React from 'react';
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import '../../public/css/navbar.css';
 
 
 
-class NavbarNomina extends React.Component {
+const NavbarAdmin = () => {
+    const { currentUser } = useSelector((state) => state.auth);
+    const dispatch = useDispatch();
 
-    render() {
+    const logout = () => {
+    logout(dispatch);
+    };
+
+    console.log(currentUser)
 
         return (
             <>
@@ -87,7 +95,7 @@ class NavbarNomina extends React.Component {
 
                     <ul className="logout">
                         <li>
-                            <Link to="/">
+                            <Link to="/signin/logout" onClick={logout}>
                                 <i className="fa fa-power-off fa-2x"></i>
                                 <span className="nav-text">
                                     Logout
@@ -101,6 +109,6 @@ class NavbarNomina extends React.Component {
 
         );
     }
-}
 
-export default NavbarNomina;
+
+export default NavbarAdmin;

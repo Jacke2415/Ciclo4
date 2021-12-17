@@ -4,7 +4,6 @@ const UserAdmin = require("../controllers/UserAdmin");
 const router = Router();
 
 router.get('/user-test', UserAdmin.test);
-router.get('/user', UserAdmin.reviewUser);
 router.get('/users', UserAdmin.getUser);
 router.get('/logout', UserAdmin.Logout);
 
