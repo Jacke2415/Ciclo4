@@ -35,6 +35,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-engine": "^4.5.1",
+    "redux": "^4.1.2",
     "validator": "^13.7.0"
   },
   "devDependencies": {
@@ -42,6 +43,9 @@
     "@babel/core": "^7.16.0",
     "@babel/node": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.12",
+    "@types/morgan": "^1.9.3",
     "eslint": "^8.4.1",
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^8.3.0",

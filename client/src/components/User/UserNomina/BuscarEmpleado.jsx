@@ -10,15 +10,17 @@ const BuscarEmpleado = () =>{
         
           <div className="row">
             <div className="col-6">
-              <div className="row mb-2 ">
-                <label for="" className="col">No Identificación</label>
-              </div>
-              <div className="row mb-3 ">
-                <input type="text" className="form-control" id="cedula"/>
-              </div>
-              <div className="row mb-4 ">
-                <button class="btn btn-primary" type="button">Buscar</button>
-              </div>
+              <form className="card">
+                <div className="row mb-2 ">
+                  <label for="" className="col">No Identificación</label>
+                </div>
+                <div className="row mb-3 ">
+                  <input type="text" className="form-control" id="cedula"/>
+                </div>
+                <div className="row mb-4 ">
+                  <button class="btn btn-primary" type="button">Buscar</button>
+                </div>
+              </form>
             </div>
           
             <div className="col-6 ">

@@ -18,7 +18,7 @@ const userSchema = new Schema({
     email: {type: String, required: true, unique: true},
     fecha_ingreso: {type: String, required: true},
     tipo_contrato: {type: String, required: true},
-    salario: {type: String, required: true},
+    salario: {type: Number, required: true},
     cargo: {type: String, required: true},
     estado: {type: String, required: true},
     },

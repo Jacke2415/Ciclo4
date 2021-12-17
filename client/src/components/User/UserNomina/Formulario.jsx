@@ -1,73 +1,13 @@
 import React, { useState } from "react";
-/* import { ValidacionForm } from "./ValidacionForm"; */
+import { handleErrors, ValidacionForm } from "./ValidacionForm"; 
 import "../../../public/css/Formulario.css"
 import axios from 'axios'
-
-/*const salariomin=908526;
- const validationsForm = (form) => {
-    let errors={};
-    const expletras=(/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/);
-    const expemail=(/^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/);
-    const expnumerica=(/^([0-9])*$/);
-    const explongitud=(/^([0-9]){1,10}$/);
-
-    if (form.nombre.length===0){
-        errors.nombre="Debe Ingresar un 'Nombre' Valido ";
-    }else if(!expletras.test(form.nombre)){
-        errors.nombre="Solo debe contener letras y espacios";
-    }
-    
-    if (form.apellido.length===0){
-        errors.apellido="Debe Ingresar un 'Apellido' Valido ";
-    }else if(!expletras.test(form.apellido)){
-        errors.apellido="Solo debe contener letras y espacios";
-    }
-    
-    if(form.cedula.length===0){
-        errors.cedula="Debe Ingresar un 'No Identificación' Valido";
-    }else if(!expnumerica.test(form.cedula)){
-        errors.cedula="Su identificación no es valida, solo debe contener numeros";
-    }else if(!explongitud.test(form.cedula)){
-        errors.cedula="Su identificación no es valida, solo debe tener un maximo de 10 digitos";
-    }
-
-    if(form.telefono.length===0){
-        errors.telefono="Debe Ingresar un 'No Telefono' Valido";
-    }else if(!expnumerica.test(form.telefono)){
-        errors.telefono="Solo debe contener numeros";
-    }else if(!explongitud.test(form.telefono)){
-        errors.telefono="El numero telefonico solo debe tener un maximo de 10 digitos ";
-    }      
-    
-    if (form.direccion.length===0){
-        errors.direccion="Debe Ingresar una Dirección Valida 'ej: C 50 # 37a 50'";
-    }
-    
-    if (form.email.length===0){
-        errors.email="Debe Ingresar un 'Email' Valido";
-    }else if(!expemail.test(form.email)){
-    errors.email="Debe Ingresar un Email Valido 'ejemplo@xxxx.com'";
-    }
-    
-    if (form.salario.length===0){
-        errors.salario="Debe Ingresar un 'Valor de Salario' Valido";
-    }else if(!expnumerica.test(form.salario)){
-        errors.salario="Solo debe contener numeros";
-    }else if(form.salario<salariomin){
-        errors.salario="El salario debe ser igual o mayor a $908.526"
-    }
-
-    if (form.cargo.length===0){
-        errors.cargo="Debe Asignar un 'Cargo' al Empleado";
-    }else if(!expletras.test(form.cargo)){
-        errors.cargo="Solo debe contener letras y espacios";
-    }
-                        
-    return errors;
-} */
+import validator from "validator";
+import swal from 'sweetalert';
 
 export default function Formulario () {
-        
+    const [error, setError] = useState({email: "", password:"", cedula:"", 
+    nombre:"", apellido:"", telefono:"", direccion:"", cargo:"", salario:""});  
     const [user, setUser] = useState({
         tipo_usuario:'',
         nombre:'',
@@ -87,14 +27,15 @@ export default function Formulario () {
         estado:''
     });
 
-   /*  const {
-        errors,
-        handleBlur,
-    } = ValidacionForm(user,validationsForm); */
+   
 
     const createUser = (e) => {
         e.preventDefault();
-        axios
+        if (error.cedula.length==""){
+            swal("Creacion Exitosa..");
+            /*axios
+            .post("http://localhost:5000/users", user)*/
+            axios
             .post("http://localhost:5000/signup", user)
             .then(() => {
                 window.location.reload(false)
@@ -102,7 +43,14 @@ export default function Formulario () {
             })
             .catch((error) => {
                 console.log(error);
+                swal("Debe llenar todos los campos");
             });
+
+        }else{
+            swal("Debe llenar todos los campos");
+        }
+        
+        
     };
   
     return(
@@ -113,31 +61,59 @@ export default function Formulario () {
                         <div class="col">
                             <div className="form-floating mb-3">
                                 <input 
-                                type="text" 
-                                className="form-control" 
+                                type="email" 
+                                className={error.nombre ? "form-control is-invalid" : "form-control" }
                                 id="nombre" 
                                 placeholder="Nombre" 
-                                value ={user.nombre}  /* onBlur= {handleBlur} */ 
-                                onChange= {(event) => setUser({...user, nombre: event.target.value})}   
-                                required />
-                                {/* {errors.nombre && <p className="error"> {errors.nombre} </p>} */}
-                                <label for="">Nombre</label>
+                                value ={user.nombre}  
+                                onChange= {(event) =>{ setUser({...user, nombre: event.target.value})
+                                const isValidLetras = validator.isAlpha(user.nombre);
+                                    if(!isValidLetras){
+                                        setError((error)=> {
+                                            return {...error, nombre:"El Nombre Solo debe contener letras"};
+                                        });
+                                    }else {
+                                        setError((error)=> {
+                                            return {...error, nombre:""};
+                                        });
+
+                                    }
+                                }   
+                                } />
                                 
+                                <label for="">Nombre</label>
+                                <div className="text-danger">
+                                    {error.nombre}
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
                                 <input 
-                                type="text" 
-                                className="form-control" 
+                                type="email" 
+                                className={error.apellido ? "form-control is-invalid" : "form-control" } 
                                 id="apellido" 
                                 placeholder="Apellido" 
-                                value ={user.apellido} /* onBlur= {handleBlur} */ 
-                                onChange= {(event) =>
-                                    setUser({...user, apellido: event.target.value})}
-                                required />
-                                <label for="">Apellido</label>
-                                {/* {errors.apellido && <p className="error"> {errors.apellido} </p>} */}
+                                value ={user.apellido}  
+                                onChange= {(event) => {
+                                    setUser({...user, apellido: event.target.value})
+                                    
+                                    const isValidLetras = validator.isAlpha(user.apellido);
+                                    if(!isValidLetras){
+                                        setError((error)=> {
+                                            return {...error, apellido:"El Apellido Solo debe contener letras"};
+                                        });
+                                    }else {
+                                        setError((error)=> {
+                                            return {...error, apellido:""};
+                                        });
+
+                                    }
+                                }} />
+                                <label htmlFor="">Apellido</label>
+                                <div className="text-danger">
+                                    {error.apellido}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -155,14 +131,28 @@ export default function Formulario () {
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
+                                <input type="email" className={error.cedula ? "form-control is-invalid" : "form-control" }
                                 id="cedula" placeholder="No Identificación" 
-                                value ={user.cedula} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                value ={user.cedula}  onChange= {(event) => {
                                     setUser({...user, cedula: event.target.value})
+                                    const isValidCedula = validator.isLength(user.cedula, {min:7, max:10});
+                                    if(!isValidCedula){
+                                        setError((error)=> {
+                                            return {...error, cedula:"El No identificacion solo debe contener numeros y solo de 8 a 10 caracteres"};
+                                        });
+                                    }else {
+                                        setError((error)=> {
+                                            return {...error, cedula:""};
+                                        });
+
+                                    }
                                 }} />
-                                <label for="NoIdentificacion">
+                                <label htmlFor="NoIdentificacion">
                                 Numero Identificación</label>
-                                {/* {errors.identificacion && <p classNameName="error"> {errors.identificacion} </p>} */}
+                                <div className="text-danger">
+                                    {error.cedula}
+                                </div>
+                                
                             </div> 
                             
                         </div>
@@ -171,23 +161,36 @@ export default function Formulario () {
                     <div class="row">
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="password" className="form-control" 
-                                id="password" placeholder="Password" value ={user.password} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                <input type="password" className={error.password ? "form-control is-invalid" : "form-control" }
+                                id="password" placeholder="Password" value ={user.password} onChange= {(event) => {
                                     setUser({...user, password: event.target.value})
+                                    const isValidPassword = validator.isLength(user.password, {min:7, max:11});
+                                    if(!isValidPassword){
+                                        setError((error)=> {
+                                            return {...error, password:"El password debe contener de 8 a 10 caracteres"};
+                                        });
+                                    }else {
+                                        setError((error)=> {
+                                            return {...error, password:""};
+                                        });
+
+                                    }
                                 }} />
-                                {/*{errors.password && <p className="error"> {errors.password} </p>} */}
-                                <label for="">Password</label>
+                                <label htmlFor="">Password</label>
+                                <div className="text-danger">
+                                    {error.password}
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
                                 <input type="date" className="form-control" 
                                 id="fecha_nacimiento" placeholder="Fecha Nacimiento" 
-                                value ={user.fecha_nacimiento} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                value ={user.fecha_nacimiento}  onChange= {(event) => {
                                     setUser({...user, fecha_nacimiento: event.target.value})
                                 }} />
-                                <label for="">Fecha De Nacimiento</label>
-                                {/* {errors.fnacimiento && <p classNameName="error"> {errors.fnacimiento} </p>} */}
+                                <label htmlFor="">Fecha De Nacimiento</label>
+                                
                             </div>
                                 
                         </div>
@@ -196,7 +199,7 @@ export default function Formulario () {
                     <div class="row">
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <div className="form-check form-check-inline" value ={user.sexo} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                <div className="form-check form-check-inline" value ={user.sexo} onChange= {(event) => {
                                     setUser({...user, sexo: event.target.value})
                                     }} >
                                     <input className="form-check-input" type="radio" name="myRadio" value="Masculino" />
@@ -213,13 +216,31 @@ export default function Formulario () {
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
-                                placeholder="Telefono" required
-                                value ={user.telefono} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                <input type="email" className={error.telefono ? "form-control is-invalid" : "form-control" } 
+                                placeholder="Telefono" id="telefono"
+                                value ={user.telefono}  onChange= {(event) => {
                                     setUser({...user, telefono: event.target.value})
+                                    const isValidCedula = validator.isLength(user.telefono, {min:8, max:10});
+                                    const isValidNumero = validator.isNumeric(user.telefono);
+                                    if(!isValidNumero){
+                                        setError((error)=> {
+                                            return {...error, telefono:"El Telefono debe contener de 8 a 10 caracteres y debe ser numerico"};
+                                        });
+                                    }else if(!isValidCedula){
+                                        setError((error)=> {
+                                            return {...error, telefono:"El Telefono debe contener de 8 a 10 caracteres y debe ser numerico"};
+                                        });
+                                    }else{
+                                        setError((error)=> {
+                                            return {...error, telefono:""};
+                                        });
+
+                                    }
                                 }} />
-                                <label for="">Telefono</label>
-                                {/* {errors.telefono && <p className="error"> {errors.telefono} </p>} */}
+                                <label htmlFor="">Telefono</label>
+                                <div className="text-danger">
+                                    {error.telefono}
+                                </div>
                             </div>
                             
                         </div>
@@ -228,25 +249,53 @@ export default function Formulario () {
                     <div class="row">
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" 
+                                <input type="email" className={error.direccion ? "form-control is-invalid" : "form-control" }
                                 id="direccion" placeholder="Direccion" required
-                                value ={user.direccion} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                value ={user.direccion} onChange= {(event) => {
                                     setUser({...user, direccion: event.target.value})
+                                    const isValidPassword = validator.isLength(user.direccion, {min:12});
+                                    if(!isValidPassword){
+                                        setError((error)=> {
+                                            return {...error, direccion:"La dirección debe contener mas de 12 caracteres"};
+                                        });
+                                    }else {
+                                        setError((error)=> {
+                                            return {...error, direccion:""};
+                                        });
+
+                                    }
                                 }} />
-                                <label for="">Dirección</label>
-                                {/* {errors.direccion && <p className="error"> {errors.direccion} </p>} */}
+                                <label htmlFor="">Dirección</label>
+                                <div className="text-danger">
+                                    {error.direccion}
+                                </div>
+                                
                             </div>
                             
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className="form-control" 
+                                <input type="email" className= {error.email ? "form-control is-invalid" : "form-control" }  
                                 id="email" placeholder="Email" required
-                                value ={user.email} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                value ={user.email}  onChange= {(event) => {
                                     setUser({...user, email: event.target.value})
+                                    const isValidEmail = validator.isEmail(user.email);
+                                    if(!isValidEmail){
+                                        setError((error)=> {
+                                            return {...error, email:"Correo Invalido"};
+                                        });
+                                    }else {
+                                        setError((error)=> {
+                                            return {...error, email:""};
+                                        });
+
+                                    }
                                 }} />
-                                <label for="">Email</label>
-                                {/* {errors.email && <p className="error"> {errors.email} </p>} */}
+                                <label htmlFor="">Email</label>
+                                <div className="text-danger">
+                                    {error.email}
+                                </div>
+                                
                             </div>
                         </div>
                        
@@ -256,17 +305,17 @@ export default function Formulario () {
                             <div className="form-floating mb-3">
                                 <input type="date" className="form-control" 
                                 id="fingreso" placeholder="Fecha De Ingreso" required
-                                value ={user.fecha_ingreso} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                value ={user.fecha_ingreso} onChange= {(event) => {
                                     setUser({...user, fecha_ingreso: event.target.value})
                                 }} />
-                                <label for="">Fecha De Ingreso</label>
-                                {/* {errors.fingreso && <p className="error"> {errors.fingreso} </p>} */}
+                                <label htmlFor="">Fecha De Ingreso</label>
+                               
                             </div>
                             
                         </div>
                         <div class="col">
                             <select className="form-select  mb-3" aria-label=" "
-                            id="tcontrato" value ={user.tipo_contrato} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                            id="tcontrato" value ={user.tipo_contrato} onChange= {(event) => {
                                 setUser({...user, tipo_contrato: event.target.value})
                             }} >
                                 <option selected>Tipo De Contrato</option>
@@ -282,24 +331,54 @@ export default function Formulario () {
                     <div class="row">
                         <div class="col">
                             <div className="form-floating mb-3">
-                                <input type="email" className="form-control" 
+                                <input type="email" className={error.salario ? "form-control is-invalid" : "form-control" }
                                 id="salario" placeholder="Salario" required
-                                value ={user.salario} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                value ={user.salario}  onChange= {(event) => {
                                     setUser({...user, salario: event.target.value})
+                                    const salariomin=parseInt(event.target.value);
+                                    console.log(salariomin);
+                                    /*const isValidNumero = validator.isNumeric(user.salario);*/
+                                    if(parseInt(salariomin)< (908526)){
+                                        setError((error)=> {
+                                            return {...error, salario:"El Salario debe ser numerico y mayor o igual a 908.526 "};
+                                        });
+                                    }else {
+                                        setError((error)=> {
+                                            return {...error, salario:""};
+                                        });
+
+                                    }
                                 }} />
-                                <label for="">Salario</label>
-                                {/* {errors.salario && <p className="error"> {errors.salario} </p>} */}
+                                <label htmlFor="">Salario</label>
+                                <div className="text-danger">
+                                    {error.salario}
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <div className="form-floating mb-3">
                                 <input type="email" className="form-control" 
                                 id="cargo" placeholder="Cargo" required
-                                value ={user.cargo} /* onBlur= {handleBlur} */ onChange= {(event) => {
+                                value ={user.cargo} onChange= {(event) => {
                                     setUser({...user, cargo: event.target.value})
+                                    const isValidLetras = validator.isAlpha(user.cargo);
+                                    console.log(user.cargo);
+                                    if(!isValidLetras){
+                                        setError((error)=> {
+                                            return {...error, cargo:"El Cargo Del Empleado Solo debe contener letras"};
+                                        });
+                                    }else {
+                                        setError((error)=> {
+                                            return {...error, cargo:""};
+                                        });
+
+                                    }
                                 }} />
-                                <label for="">Cargo</label>
-                                {/* {errors.cargo && <p className="error"> {errors.cargo} </p>} */}
+                                <label htmlFor="">Cargo</label>
+                                <div className="text-danger">
+                                    {error.cargo}
+                                </div>
+                                
                             </div>
                             
                         </div>

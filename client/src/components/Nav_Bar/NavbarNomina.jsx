@@ -117,4 +117,4 @@ class NavbarNomina extends React.Component {
     }
 }
 
-export default NavbarN;
+export default NavbarNomina;
