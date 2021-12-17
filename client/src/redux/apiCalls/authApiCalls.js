@@ -14,6 +14,7 @@ import {
 } from "../slices/auth";
 import axios from "axios";
 
+
 axios.defaults.withCredentials = true;
 
 export const login = async (dispatch, user) => {
@@ -23,9 +24,11 @@ export const login = async (dispatch, user) => {
       "http://localhost:5000/signin",
       user
     );
-    console.log('respuesta ApiCalls')
+    console.log('datos enviados ApiCalls')
     console.log(user);
     dispatch(loginSuccess(res.data));
+    console.log('datos recibidos ApiCalls');
+    console.log(res.data);
   } catch (error) {
     dispatch(loginFailure(error.response.data));
   }

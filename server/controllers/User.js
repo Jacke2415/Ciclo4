@@ -58,15 +58,14 @@ module.exports.Signin = async (req, res) => {
     const user = await UserData.signin(email, password);
     const userAll = await UserData.findOne({_id : user._id})
     const rol = await userAll.tipo_usuario
-    const cedula = await userAll.cedula
+    
     const token = createToken(user._id);
     
     res
       .cookie('access_token', token, { httpOnly: true, maxAge: maxAge * 1000 })
       .status(200)
-      .json({ message: 'su signin ha sido exitoso!!!', user, rol, cedula} );
+      .json({ message: 'su signin ha sido exitoso!!!', user, rol} );
   } catch (error) {
-
     res.status(400).json(error);
   }
 };

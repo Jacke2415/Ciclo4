@@ -5,11 +5,6 @@ import axios from 'axios'
 import validator from "validator";
 import swal from 'sweetalert';
 
-
-
-
-
-
 export default function Formulario () {
     const [error, setError] = useState({email: "", password:"", cedula:"", 
     nombre:"", apellido:"", telefono:"", direccion:"", cargo:"", salario:""});  
