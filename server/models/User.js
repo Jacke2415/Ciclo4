@@ -40,7 +40,7 @@ userSchema.statics.signin = async function (email, password) {
   if (user) {
     const autorizado = await bcrypt.compare(password, user.password);
     if (autorizado) {
-      console.log(user._id);
+      console.log( 'Autorizado' );
       return user._id;
     } else {
       throw Error("login: La contraseña es incorrecta.");

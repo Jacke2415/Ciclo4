@@ -1,17 +1,24 @@
-import React, { useEffect }from 'react';
+import React, { useState, useEffect }from 'react';
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import "../../../public/css/PerfilUser.css";
 import { checkUser } from "../../../redux/apiCalls/authApiCalls";
 
 const Perfil = () => {
 
+  const [user, setUser] = useState({});
+  const { currentUser } = useSelector((state) => state.auth);
+
   const dispatch = useDispatch();
   
-  const user = JSON.parse(JSON.parse(localStorage.getItem("persist:auth")).currentUser)
-    
   useEffect(()=>{
     checkUser(dispatch);
   }, [dispatch])
+
+  console.log('Dato preguntado')
+  console.log(user)
+  console.log('Dato respondido')
+  console.log(currentUser)
 
         return (          
             <div className="content">
@@ -43,7 +50,7 @@ const Perfil = () => {
                           placeholder="Nombre"
                           id = 'nombre'
                           disabled
-                          value={user.nombre}
+                          value={currentUser.nombre}
                         />
                       </div>
                       <div className="col-md-6">
@@ -52,7 +59,7 @@ const Perfil = () => {
                           type="text"
                           className="form-control"
                           disabled
-                          value= {user.apellido}
+                          value= {currentUser.apellido}
                           placeholder="Apellido"
                         />
                       </div>
@@ -64,7 +71,7 @@ const Perfil = () => {
                           type="text"
                           className="form-control"
                           placeholder="Numero de Telefono"
-                          value={user.telefono}
+                          value={currentUser.telefono}
                         />
                       </div>
                       <div className="col-md-12">
@@ -73,7 +80,7 @@ const Perfil = () => {
                           type="text"
                           className="form-control"
                           placeholder="Direccion"
-                          value={user.direccion}
+                          value={currentUser.direccion}
                         />
                       </div>
                       <div className="col-md-12">
@@ -82,7 +89,7 @@ const Perfil = () => {
                           type="text"
                           className="form-control"
                           placeholder="Email"
-                          value={user.email}
+                          value={currentUser.email}
                         />
                       </div>
                     </div>
@@ -93,7 +100,7 @@ const Perfil = () => {
                           type="text"
                           className="form-control"
                           placeholder="Pais"
-                          value= {user.salario}
+                          value= {currentUser.salario}
                         />
                       </div>
                       <div className="col-md-6">
@@ -101,7 +108,7 @@ const Perfil = () => {
                         <input
                           type="text"
                           className="form-control"
-                          value={user.fecha_ingreso}
+                          value={currentUser.fecha_ingreso}
                           placeholder="Ciudad"
                         />
                       </div>

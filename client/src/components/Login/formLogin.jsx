@@ -1,27 +1,27 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { login } from "../../../src/redux/apiCalls/authApiCalls";
 import '../../public/css/Login.css';
-import axios from 'axios'
 
 const FormLogin = () => {
-    const [user_Login, setUser_Login] = useState({
-        email:'',
-        password:''
-    });
 
-axios.defaults.withCredentials = true;
-const loginUser = (e) => {
-    e.preventDefault();
-    axios
-        .post("http://localhost:5000/signin", user_Login)
-        .then(() => {
-            window.location.reload(false)
-            })
-        .catch((error) => {
-            console.log(error);
-        });
-};    
+    const [user_Login, setUser_Login] = useState({})
+    const { currentUser } = useSelector((state) => state.auth);
 
+    const dispatch = useDispatch();
+
+    const loginUser = (e) => {
+        e.preventDefault();
+        login(dispatch, user_Login);
+    }
+
+    console.log('Datos enviados')
+    console.log(user_Login)
+    console.log('Datos recibidos')
+    console.log(currentUser.cedula)
+    console.log('link correspondiente')
+        
     return(
         <form className ="d-grid gap-2 col-2 min-auto" onSubmit = {loginUser}>
             <p><input 
