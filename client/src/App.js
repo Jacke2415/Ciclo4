@@ -28,21 +28,21 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element= {<Navigate to='/signin' />}/>
         <Route
           path="/signin"
           element={
-            currentUser === null ? (
+            (currentUser === null) ? 
               <Login />
-            ) : currentUser.rol === 2 ? (
+            : (currentUser.rol === 2) ? 
               <Navigate to="/signin/administrador/perfilAdministrador" />
-            ) : currentUser.rol === 1 ? (
+            : (currentUser.rol === 1) ? 
               <Navigate to="/signin/userNomina/Perfil" />
-            ) : currentUser.rol === 0 ? (
+            : (currentUser.rol === 0) ? 
               <Navigate to="/signin/userEmpleado/perfilEmpleado" />
-            ) : (
+            : 
               <Login />
-            )
+            
           }
         />
 
