@@ -38,7 +38,11 @@ module.exports.createUser = async (req, res) => {
   };         
   try {
     const user = await UserData.create(newUser);
-    console.log(user)    
+    console.log(user);
+    /*  error: si el token se crea siempre que se crea un usuario
+        cuando un usuario administrador registre un nuevo usuario
+        lo sacara de su session.. 
+    */
     const token = createToken(user._id);
     res
       .cookie('access_token', token, { httpOnly: true, maxAge: maxAge * 1000 })
