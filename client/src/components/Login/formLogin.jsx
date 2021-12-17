@@ -16,11 +16,11 @@ const FormLogin = () => {
         login(dispatch, user_Login);
     }
 
-    console.log('Datos enviados')
+/*     console.log('Datos enviados')
     console.log(user_Login)
     console.log('Datos recibidos')
     console.log(currentUser.cedula)
-    console.log('link correspondiente')
+    console.log('link correspondiente') */
         
     return(
         <form className ="d-grid gap-2 col-2 min-auto" onSubmit = {loginUser}>

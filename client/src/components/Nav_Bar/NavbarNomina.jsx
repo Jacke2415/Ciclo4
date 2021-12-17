@@ -6,9 +6,11 @@ import DNavbar from "./Navbar.jsx";
 const NavbarN = () => {
   const items = [
     { name: "Perfil de Usuario", url: "/signin/userNomina/Perfil" },
-    { name: "Solicitar Permisos", url: "#" },
-    { name: "Solicitar Vacaciones", url: "#" },
-    { name: "Certificados Laborales", url: "#" },
+    { name: "Crear Empleado", url: "/singin/userNomina/crearEmpleado" },
+    { name: "Crear Nomina", url: "/singin/userNomina/crearNomina" },
+    { name: "Gestionar Vacaciones", url: "/singin/userNomina/gestionarVacaciones" },
+    { name: "Gestionar Permisos", url: "/singin/userNomina/gestionarPermisos" },
+    { name: "Reporte Salario", url: "/singin/userNomina/reporteSalario" }
   ];
   return <DNavbar items={items} />;
 };
