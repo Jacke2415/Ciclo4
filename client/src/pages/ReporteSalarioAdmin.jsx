@@ -1,26 +1,29 @@
 //import '../../../public/css/Login.css'
+import SupReporteSalario from '../components/User/UserNomina/SupReporteSalario';
+import {TablaReporte} from '../components/User/UserNomina/TablaReporte';
 import NavbarAdmin from '../components/Nav_Bar/NavbarAdmin';
-import SupLiquidar from '../components/User/UserNomina/SupLiquidar';
-import {TablaFuncionario} from '../components/User/UserNomina/TablaFuncionario';
+/* import { TablaNominas } from '../components/User/UserNomina/TablaNominas'; */
+
 export default function CrearNomina() {
- 
     return (
       <>
         <div className="container-lg">
           <div className="row">
-            <div className="col">
+            <div className="col-2">
               <NavbarAdmin />
             </div>
             <div className="col-10">
-              <SupLiquidar />
-              <TablaFuncionario />
+              
+                  <SupReporteSalario />
+                  <TablaReporte />
             </div>
-           
           </div>
         </div>
         
+
+
         
-      
+        
 
       </>
     );

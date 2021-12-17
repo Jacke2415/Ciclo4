@@ -1,3 +1,4 @@
+import React from 'react';
 import './index.css';
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
@@ -14,13 +15,19 @@ import PermisosNomina from './pages/PermisosNomina';
 import ReporteSalario from './pages/ReporteSalario';
 import Formulario from '../src/components/User/UserNomina/Formulario';
 import PerfilUserNomina from './pages/PerfilUserNomina.jsx';
-import PerfilEmpleado from './components/User/UserEmpleado/PerfilUser.jsx';
-import SoliRep from './components/User/UserEmpleado/SolicitaRep'; 
-import SolicitarPermiso from './components/User/UserEmpleado/SolicitarPermiso';
-import SolicitarVacaciones from './components/User/UserEmpleado/SolicitarVac';
-import PerfilUserAdmin from './pages/PerfilUserAdmin';
-import GestinarEmpleadoAdmin from './pages/GestionarEmpleadoAdmin';
-import LiquidarNominaAdmin from './pages/LiquidarNominaAdmin';
+
+import PerfilEmpleado from './pages/PerfilUserEmpleado.jsx';
+import SoliRep from './pages/SolicitarReporPago.jsx'; 
+import SolicitarPermiso from './pages/SolicitarPermiso.jsx';
+import SolicitarVacaciones from './pages/SolicitaVaca.jsx';
+import SolicitarCertificado from './pages/SolicitarCertificado.jsx'; 
+
+import PerfilUserAdmin from './pages/PerfilUserAdmin'; 
+import GestinarEmpleadoAdmin from './pages/GestionarEmpleadoAdmin'; 
+import LiquidarNominaAdmin  from './pages/LiquidarNominaAdmin';
+import ReporteSalarioAdmin from './pages/ReporteSalarioAdmin';
+import GestionarVacacionesAdmin from './pages/GestionarVacacionesAdmin.jsx';
+import GestionarPermisosAdmin from './pages/GestionarPermisosAdmin.jsx'; 
 
 function App() {
     const { currentUser } = useSelector((state) => state.auth);
@@ -35,7 +42,8 @@ function App() {
             <Route path = '/signin/userEmpleado/reporteNomina' element = {< SoliRep/>} />
             <Route path = '/signin/userEmpleado/solicitarPermiso' element = {< SolicitarPermiso/>} />
             <Route path = '/signin/userEmpleado/solicitarVaciones' element = {< SolicitarVacaciones/>} />
-            <Route path = '/signin/userEmpleado/solicitarCertificado' element = {< SoliRep/>} />    
+            <Route path = '/signin/userEmpleado/solicitarCertificado' element = {< SolicitarCertificado/>} />    
+               
             
             <Route path = '/signin/userNomina/crearNomina' element = {<CrearNomina />} />    
             <Route path = '/signin/userNomina/liquidarNomina' element = {<LiquidarNomina />}/>
@@ -51,9 +59,9 @@ function App() {
             <Route path = '/signin/administrador/perfilAdministrador' element = {< PerfilUserAdmin/>} />       
             <Route path = '/signin/administrador/gestionarEmpleado' element = {<GestinarEmpleadoAdmin />} />    
             <Route path = '/signin/administrador/gestionarNomina' element = {<LiquidarNominaAdmin />}/>
-            <Route path = '/signin/administrador/gestionarVacaciones' element = {<ReporteSalario />}/>
-            <Route path = '/signin/administrador/gestionarPermiso' element = {<Formulario />}/>   
-            <Route path = '/signin/administrador/generarReportes' element = {<PerfilUserNomina />} /> 
+            <Route path = '/signin/administrador/gestionarVacaciones' element = {<GestionarVacacionesAdmin />}/>
+            <Route path = '/signin/administrador/gestionarPermiso' element = {<GestionarPermisosAdmin />}/>   
+            <Route path = '/signin/administrador/generarReportes' element = {<ReporteSalarioAdmin />} />  
           </Routes>
         </BrowserRouter>
     );

@@ -19,8 +19,8 @@ const FormLogin = () => {
     console.log('Datos enviados')
     console.log(user_Login)
     console.log('Datos recibidos')
-    console.log(currentUser.cedula)
-    console.log('link correspondiente')
+    console.log(currentUser.rol)
+    console.log('final')
         
     return(
         <form className ="d-grid gap-2 col-2 min-auto" onSubmit = {loginUser}>
