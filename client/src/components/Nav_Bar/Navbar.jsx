@@ -3,7 +3,30 @@ import { Link } from 'react-router-dom';
 import '../../public/css/navbar.css';
 
 const DNavbar = (props) => {
-    
+    const menuitems = props.items;
+    console.log(menuitems);
+    const items = () =>  menuitems.map((item) =>
+    <li>
+        
+            <Link to={item.url}>
+
+            <span className="nav-text">
+                {item.name}
+            </span>
+            </Link>
+            
+    </li>
+    );
+    return(
+        <nav className="main-menu">
+            <ul>
+            {items()}
+
+            </ul>
+
+        </nav>
+        
+    );
 }
 
 class Navbar extends React.Component {
@@ -92,4 +115,4 @@ class Navbar extends React.Component {
     }
 }
 
-export default Navbar;
+export default DNavbar;

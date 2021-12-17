@@ -1,7 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {BrowserRouter, Routes, Route} from 'react-router-dom' 
+import axios from 'axios';
+import ReactDOM from 'react-dom';
 import './index.css';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.bundle.js";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -27,6 +36,8 @@ import PerfilUserAdmin from './pages/PerfilUserAdmin';
 import GestinarEmpleadoAdmin from './pages/GestionarEmpleadoAdmin';
 import LiquidarNominaAdmin from './pages/LiquidarNominaAdmin';
 /* import SolicitarCertificado from './components/User/UserEmpleado/SolicitarCertificado'; */
+axios.defaults.withCredentials = true;
+
 
 ReactDOM.render(
   <React.StrictMode>

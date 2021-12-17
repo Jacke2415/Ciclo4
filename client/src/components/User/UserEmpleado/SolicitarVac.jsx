@@ -1,6 +1,6 @@
 import React from "react";
 import '../../../public/css/SoliVac.css';
-import Navbar from "../../Nav_Bar/Navbar.jsx";
+import NavbarEmpleado from "../../Nav_Bar/NavbarEmpleado";
 
 class SoliVac extends React.Component {
 
@@ -10,7 +10,7 @@ class SoliVac extends React.Component {
             <div class="container">
                 <div class="row">
                     <div className="col-3">
-                        <Navbar />
+                        <NavbarEmpleado />
                     </div>
 
                     <div class="col-9">
