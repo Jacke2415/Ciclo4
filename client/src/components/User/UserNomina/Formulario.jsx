@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { handleErrors, ValidacionForm } from "./ValidacionForm"; 
 import "../../../public/css/Formulario.css"
 import axios from 'axios'
 import validator from "validator";
@@ -27,11 +26,9 @@ export default function Formulario () {
         estado:''
     });
 
-   
-
     const createUser = (e) => {
         e.preventDefault();
-        if (error.cedula.length==""){
+        if (error.cedula.length===""){
             swal("Creacion Exitosa..");
             /*axios
             .post("http://localhost:5000/users", user)*/

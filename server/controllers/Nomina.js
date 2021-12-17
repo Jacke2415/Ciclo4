@@ -15,7 +15,7 @@ module.exports.createNomina = async (req, res) => {
         tipoLiquidacion: req.body.tipoLiquidacion,
         fechaInicio: req.body.fechaInicio,
         fechaFin: req.body.fechaFin,
-        total: req.body.total,
+        //total: req.body.total,
     });
     try {
         await newNomina.save();
@@ -33,4 +33,16 @@ module.exports.deleteNomina = async (req, res) => {
     } catch (error) {
         console.log(error);
     }
+}
+
+module.exports.total = async(req, res) =>{
+    const nomina = await NominaData.find();
+    res.status(200).json(nomina)
+    
+    //db.getCollection("users").find({estado:'activo'});
+   /*  db.users.aggregate([
+    {$match:{$or:[{estado:"activo"},{estado:'desactivado'}]}},
+    //{$match:[{estado:'activo'}]},
+    {$group:{_id:'$estado', total:{$sum:'$salario'}}}
+    ]) */
 }
