@@ -39,7 +39,7 @@ const FormLogin = () => {
     console.log('Datos enviados')
     console.log(user_Login)
     console.log('Datos recibidos')
-    console.log(currentUser.cedula)
+    /*console.log(currentUser.cedula)*/
     console.log('link correspondiente')
     console.log(userLink())
     
