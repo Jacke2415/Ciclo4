@@ -4,7 +4,7 @@ const Users = require("../controllers/Users");
 const router = Router();
 
 router.get('/user-test', Users.test);
-router.get('/users', Users.getUser);
+router.get('/', Users.getUser);
 router.get('/logout', Users.Logout);
 router.post('/signup', Users.createUser);
 
