@@ -20,7 +20,6 @@ module.exports.getUser = async (req, res) => {
 };
 
 module.exports.createUser = async (req, res) => {
-  console.log('entramos a crear Usuario')
   const newUser = new UserData({
     tipo_usuario: 2,
     nombre: req.body.nombre,
@@ -29,7 +28,7 @@ module.exports.createUser = async (req, res) => {
     cedula: req.body.cedula,
     password: req.body.password,
     fecha_nacimiento: req.body.fecha_nacimiento,
-    sexo: req.body.sexo,
+    sexo: 'Femenino', // Arreglar cuando este listo el button    
     telefono: req.body.telefono,
     direccion: req.body.direccion,
     email: req.body.email,
@@ -39,7 +38,6 @@ module.exports.createUser = async (req, res) => {
     cargo: req.body.cargo,
     estado: 'activo',
   });
-
   const email = await UserData.findOne({ email: newUser.email });
   if (email) {
     return res
@@ -48,22 +46,16 @@ module.exports.createUser = async (req, res) => {
   };         
   try {
     const user = await UserData.create(newUser);
-    console.log(user);
-    /*  error: si el token se crea siempre que se crea un usuario
-        cuando un usuario administrador registre un nuevo usuario
-        lo sacara de su session.. 
-    */
-    /* const token = createToken(user._id); */
+    console.log('Creamos un usuario nuevo!!')
     res
-      /* .cookie('access_token', token, { httpOnly: true, maxAge: maxAge * 1000 }) */
-      .status(201)
-      .json({ message: 'Su registro ha sido exitoso!!', newUser });
-    } catch (error) {
+      .status(200)
+      .json({ message: 'Su registro ha sido exitoso!!', user });
+  } catch (error) {
       res
         .status(409)
         .json({ message: error.message});
-    }
-  };
+  }
+};    
   
 module.exports.deleteUser = async (req, res) => {
     const id = req.params.id;

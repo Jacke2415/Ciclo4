@@ -10,15 +10,12 @@ const createToken = (id) => {
 };
 
 module.exports.Signin = async (req, res) => {
-  const { email, password } = req.body;
-    
+  const { email, password } = req.body;    
   try {
     const user = await UserData.signin(email, password);
     const userAll = await UserData.findOne({_id : user._id})
-    const rol = await userAll.tipo_usuario
-    
-    const token = createToken(user._id);
-    
+    const rol = await userAll.tipo_usuario    
+    const token = createToken(user._id);    
     res
       .cookie('access_token', token, { httpOnly: true, maxAge: maxAge * 1000 })
       .status(200)
