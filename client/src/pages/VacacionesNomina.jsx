@@ -16,9 +16,9 @@ const VacacionesNomina = () => {
                             <div className="">
                                 <h1>Gestion Empleados - Vacaciones</h1>
                             </div>
-                            <br /><br /><br />
+                            
                             <BuscarEmpleado/>
-                            <br /><br /><br />
+                            <br/>
                             <TablaVacaciones/>
                          </div>  
                     </div>

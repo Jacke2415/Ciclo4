@@ -1,8 +1,8 @@
 import React from "react";
 import "../public/css/PerfilUser.css";
 import NavbarAdmin from "../components/Nav_Bar/NavbarAdmin";
-import {TablaFuncionario} from "../components/User/UserNomina/TablaFuncionario";
-import SupGestionarPermisos from "../components/User/UserAdmin/SupGestionarPermisos";
+import BuscarPermisos from "../components/User/UserNomina/BucarPermisos";
+import TablaVacaciones from "../components/User/UserNomina/TablaVacaciones"
 
 class GestionarPermisosAdmin extends React.Component {
   render() {
@@ -10,12 +10,19 @@ class GestionarPermisosAdmin extends React.Component {
       <>
         <div className="container-lg">
           <div className="row">
-            <div className="col-2">
+            <div className="col">
               <NavbarAdmin />
             </div>
             <div className="col-10">
-              <SupGestionarPermisos />
-              <TablaFuncionario />
+              <div className="container">
+                <div className="">
+                  <h1>Gestion Empleados - Permisos</h1>
+                </div>
+
+                <BuscarPermisos />
+
+                <TablaVacaciones />
+              </div>
             </div>
           </div>
         </div>

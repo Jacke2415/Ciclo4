@@ -1,21 +1,29 @@
 import React from "react";
 import "../public/css/PerfilUser.css";
 import NavbarAdmin from "../components/Nav_Bar/NavbarAdmin";
-import {TablaFuncionario} from "../components/User/UserNomina/TablaFuncionario";
-import SupGestionarVacaciones from "../components/User/UserAdmin/SupGestionarVacaciones";
+import BuscarEmpleado from "../components/User/UserNomina/BuscarEmpleado";
+import TablaVacaciones  from "../components/User/UserNomina/TablaVacaciones"
+
 
 class GestionarEmpleadoAdmin extends React.Component {
   render() {
     return (
       <>
-        <div className="container-lg">
+        <div className="container-md" style={{"padding":"9px"}}>
           <div className="row">
-            <div className="col-2">
+            <div className="col">
               <NavbarAdmin />
             </div>
             <div className="col-10">
-              <SupGestionarVacaciones />
-              <TablaFuncionario />
+              <div className="formulario">
+                <div className="">
+                  <h1>Gestion Empleados - Vacaciones</h1>
+                </div>
+                
+                <BuscarEmpleado />
+                
+                <TablaVacaciones />
+              </div>
             </div>
           </div>
         </div>

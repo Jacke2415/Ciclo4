@@ -34,8 +34,8 @@ const Perfil = (props) => {
               className="rounded-circle mt-5"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF2psCzfbB611rnUhxgMi-lc2oB78ykqDGYb4v83xQ1pAbhPiB&usqp=CAU" alt=""
             />
-            <span className="font-weight-bold">{currentUser.nombre} + {currentUser.apellido}</span>
-            <span className="text-black-50">amelly12 @bbb.com</span>
+            <span className="font-weight-bold">{currentUser.nombre} {currentUser.apellido}</span>
+            <span className="text-black-50">{currentUser.email}</span>
             <span> </span>
           </div>
         </div>
@@ -95,6 +95,7 @@ const Perfil = (props) => {
                 <input
                   type="text"
                   className="form-control"
+                  disabled={enabled}
                   placeholder="Numero de Telefono"
                   value={currentUser.telefono}
                 />
@@ -105,6 +106,7 @@ const Perfil = (props) => {
                   type="text"
                   className="form-control"
                   placeholder="Direccion"
+                  disabled={enabled}
                   value={currentUser.direccion}
                 />
               </div>
@@ -114,6 +116,7 @@ const Perfil = (props) => {
                   type="text"
                   className="form-control"
                   placeholder="Email"
+                  disabled={enabled}
                   value={currentUser.email}
                 />
               </div>
@@ -125,6 +128,7 @@ const Perfil = (props) => {
                   type="text"
                   className="form-control"
                   placeholder="Pais"
+                  disabled
                   value={currentUser.salario}
                 />
               </div>
@@ -135,11 +139,12 @@ const Perfil = (props) => {
                   className="form-control"
                   value={currentUser.fecha_ingreso}
                   placeholder="Ciudad"
+                  disabled
                 />
               </div>
             </div>
-            <button type="button" class="btn btn-primary" onClick={handleGameClick}>Editar Perfil</button>
           </div>
+            <button type="button" class="btn btn-primary" onClick={handleGameClick}>Editar Perfil</button>
         </div>
       </div>
     </div>

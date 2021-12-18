@@ -52,7 +52,7 @@ export default function Formulario () {
   
     return(
         <>
-                <form className="card" onSubmit={createUser}>
+                <form className="card" style={{ "width: 18rem": "100", "padding: 10px": "10px" }} onSubmit={createUser}>
                     <h2>Informacion Empleado</h2>
                     <div class="row">
                         <div class="col">

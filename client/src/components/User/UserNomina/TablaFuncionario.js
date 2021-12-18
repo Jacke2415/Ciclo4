@@ -65,7 +65,7 @@ export const TablaFuncionario = () => {
             options={{
                 //selection: true,
                 headerStyle: {
-                    backgroundColor: ' rgb(0, 17, 59)',
+                    backgroundColor: '#6699CC',
                     color: '#FFF',
                     },
                 exportButton: true,
