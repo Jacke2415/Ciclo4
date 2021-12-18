@@ -10,6 +10,24 @@ module.exports.test = (req, res) => {
     res.send("Texto de prueba recibido desde la API. Id de usuario: " + id);
   };
 
+module.exports.editUser = async(req, res) => {
+    try{
+      const data = res.UserData;
+      const filtro = res.user;
+
+      let userupdate = await UserData.findOneAndUpdate(filtro, data);
+      res.status(200).json({
+        message: "Usuario Actualizado"
+      });
+
+
+    }catch (error){
+      console.log(error);
+    }
+}
+module.exports.testUser = async(req, res) => {
+  
+}
 module.exports.getUser = async (req, res) => {
   try {
       const allUsers = await UserData.find();
