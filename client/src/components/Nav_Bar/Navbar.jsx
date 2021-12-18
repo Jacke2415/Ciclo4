@@ -1,9 +1,9 @@
 import React from "react";
-/* import { useDispatch, useSelector } from "react-redux"; */
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../../public/css/navbar.css";
 
-/* const DNavbar = (props) => {
+const DNavbar = (props) => {
   const { currentUser } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
@@ -26,7 +26,7 @@ import "../../public/css/navbar.css";
       <ul>{items()}</ul>
       <ul className="logout">
         <li>
-          <Link to="/signin/logout" onClick={logout}>
+          <Link to="/signin" onClick={logout}>
             <i className="fa fa-power-off fa-2x"></i>
             <span className="nav-text">Logout</span>
           </Link>
@@ -34,9 +34,9 @@ import "../../public/css/navbar.css";
       </ul>
     </nav>
   );
-}; */
+}; 
 
-/* const DNavbar = (props) => {
+/*  const DNavbar = (props) => {
     const menuitems = props.items;
     console.log(menuitems)
     const items = menuitems.map((item) =>
@@ -56,7 +56,7 @@ import "../../public/css/navbar.css";
         </nav>
         
     );
-} */
+}  */
 
 class Navbar extends React.Component {
 
@@ -144,4 +144,4 @@ class Navbar extends React.Component {
     }
 }
 
-export default Navbar;
+export default DNavbar;

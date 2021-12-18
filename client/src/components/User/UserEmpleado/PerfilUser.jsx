@@ -3,15 +3,35 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import "../../../public/css/PerfilUser.css";
 import { checkUser } from "../../../redux/apiCalls/authApiCalls";
-
+import { registerStart, registerSuccess, registerFailure } from "../../../redux/slices/auth";
+import axios from 'axios';
 const Perfil = (props) => {
 
   const [user, setUser] = useState({});
   const [enabled, setEnabled] = useState(true);
   const { currentUser } = useSelector((state) => state.auth);
+  const [telefono, setTelefono] = useState(currentUser.telefono);
+  const [direccion, setDireccion] = useState(currentUser.direccion);
+  const handleGameClick = async () => {
+    const data = {
+      userData: {
+        telefono: telefono,
+        direccion: direccion
 
-  const handleGameClick = () => {
-    setEnabled(!enabled);
+      },
+      user: {
+        _id: currentUser._id
+      }
+    }
+    try{
+      const res = await axios.post(
+        'http://localhost:5000/users/edit', data);
+
+      dispatch(registerSuccess(res.data))
+      
+    }catch (error){
+      dispatch(registerFailure(error.response.data))
+    }
   }
 
   const dispatch = useDispatch();
@@ -19,6 +39,7 @@ const Perfil = (props) => {
   useEffect(() => {
     checkUser(dispatch);
   }, [dispatch])
+  
 
   console.log('Dato preguntado')
   console.log(user)
@@ -96,7 +117,8 @@ const Perfil = (props) => {
                   type="text"
                   className="form-control"
                   placeholder="Numero de Telefono"
-                  value={currentUser.telefono}
+                  value={telefono}
+                  onChange={({target}) => {setTelefono(target.value)}}
                 />
               </div>
               <div className="col-md-12">
@@ -105,7 +127,8 @@ const Perfil = (props) => {
                   type="text"
                   className="form-control"
                   placeholder="Direccion"
-                  value={currentUser.direccion}
+                  value={direccion}
+                  onChange={({target}) => {setDireccion(target.value)}}
                 />
               </div>
               <div className="col-md-12">
@@ -115,6 +138,7 @@ const Perfil = (props) => {
                   className="form-control"
                   placeholder="Email"
                   value={currentUser.email}
+                  disabled
                 />
               </div>
             </div>
@@ -126,6 +150,7 @@ const Perfil = (props) => {
                   className="form-control"
                   placeholder="Pais"
                   value={currentUser.salario}
+                  disabled
                 />
               </div>
               <div className="col-md-6">
@@ -135,6 +160,7 @@ const Perfil = (props) => {
                   className="form-control"
                   value={currentUser.fecha_ingreso}
                   placeholder="Ciudad"
+                  disabled
                 />
               </div>
             </div>

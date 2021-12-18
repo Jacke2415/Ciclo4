@@ -8,6 +8,7 @@ router.get('/', Users.getUser);
 router.get('/logout', Users.Logout);
 router.post('/signup', Users.createUser);
 router.post('/edit', Users.editUser);
+router.post('/userID', Users.getUserID);
 
 router.delete('/:_id', Users.deleteUser);
 

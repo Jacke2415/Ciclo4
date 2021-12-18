@@ -51,7 +51,7 @@ export const login = async (dispatch, user) => {
 export const logout = async (dispatch) => {
   dispatch(logoutStart());
   try {
-    const res = await axios.post("http://localhost:5000/signin/Logout");
+    const res = await axios.post("http://localhost:5000/users/logout");
     dispatch(logoutSuccess(res.data));
   } catch (error) {
     console.log(error);

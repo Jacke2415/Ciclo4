@@ -11,8 +11,9 @@ module.exports.test = (req, res) => {
 };
 module.exports.editUser = async (req, res) => {
   try {
-    const data = req.body.UserData;
+    const data = req.body.userData;
     const filtro = req.body.user;
+    console.log(req.body)
     
     let userupdate = await UserData.findOneAndUpdate(filtro, data);
     res.status(200).json({
@@ -30,6 +31,18 @@ module.exports.getUser = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+module.exports.getUserID = async (req, res) => {
+  try {
+    const params = req.body.parametros;
+    console.log(params);
+    const data_search = await UserData.find(params);
+    res.status(200).json(data_search);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
+
 
 module.exports.createUser = async (req, res) => {
   const newUser = new UserData({
@@ -70,9 +83,9 @@ module.exports.deleteUser = async (req, res) => {
   /* const { id } = res.locals.user; */
   try {
     await UserData.findByIdAndRemove(id).exec();
-    res.send('Succesfully Deleted!');
+    res.status(201).json({message: 'Succesfully Deleted!'});
   } catch (error) {
-    console.log(error);
+    res.status(409).json({ message: error.message });
   }
 };
 
