@@ -1,7 +1,7 @@
 import React from "react";
 import "../public/css/PerfilUser.css";
 import NavbarAdmin from "../components/Nav_Bar/NavbarAdmin";
-import {TablaFuncionario} from "../components/User/UserNomina/TablaFuncionario";
+import {TablaFuncionarioCopia} from "../components/User/UserNomina/TablaFuncionarioCopia";
 import SupGestionarEmpleados from "../components/User/UserAdmin/SupGestionarEmpleados";
 
 class GestionarEmpleadoAdmin extends React.Component {
@@ -15,7 +15,7 @@ class GestionarEmpleadoAdmin extends React.Component {
             </div>
             <div className="col-10">
               <SupGestionarEmpleados />
-              <TablaFuncionario />
+              <TablaFuncionarioCopia />
             </div>
           </div>
         </div>
