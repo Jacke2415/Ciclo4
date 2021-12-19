@@ -22,7 +22,7 @@ class NavbarNomina extends React.Component {
         <nav class="main-menu">
           <ul>
             <li>
-              <Link to="/singin/userNomina/Perfil">
+              <Link to="/signin/userNomina/Perfil">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"

@@ -34,7 +34,7 @@ export const login = async (dispatch, user) => {
   }
 };
 
-export const register = async (dispatch, user) => {
+/* export const register = async (dispatch, user) => {
   dispatch(registerStart());
   console.log("dispatching register");
   try {
@@ -46,12 +46,12 @@ export const register = async (dispatch, user) => {
     console.log(error.response.data);
     dispatch(registerFailure(error.response.data));
   }
-};
+}; */
 
 export const logout = async (dispatch) => {
   dispatch(logoutStart());
   try {
-    const res = await axios.post("http://localhost:5000/signin/Logout");
+    const res = await axios.post("http://localhost:5000/users/logout");
     dispatch(logoutSuccess(res.data));
   } catch (error) {
     console.log(error);

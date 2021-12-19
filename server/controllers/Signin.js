@@ -10,15 +10,12 @@ const createToken = (id) => {
 };
 
 module.exports.Signin = async (req, res) => {
-  const { email, password } = req.body;
-    
+  const { email, password } = req.body;    
   try {
     const user = await UserData.signin(email, password);
     const userAll = await UserData.findOne({_id : user._id})
-    const rol = await userAll.tipo_usuario
-    
-    const token = createToken(user._id);
-    
+    const rol = await userAll.tipo_usuario    
+    const token = createToken(user._id);    
     res
       .cookie('access_token', token, { httpOnly: true, maxAge: maxAge * 1000 })
       .status(200)
@@ -53,21 +50,3 @@ module.exports.reviewUser = (req, res) => {
   }
 };
 
-module.exports.getSumaSalario = async (req, res) => {
-    try {
-        const allUsersActive = await UserData.find({estado:"activo"});
-        
-        const total =  allUsersActive[0] ;
-        console.log(total);
-        res.status(200).json(total);
-
-        /* db.users.aggregate([
-            {$match:{$or:[{estado:"activo"},{estado:'desactivado'}]}},
-            //{$match:[{estado:'activo'}]},
-            {$group:{_id:'$estado', total:{$sum:'$salario'}}}
-            ]) */
-        //total:{$sum:'$salario'}
-    } catch (error) {
-        res.status(404).json({ message: error.message });
-    }
-}

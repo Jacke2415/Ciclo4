@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+/* import { useSelector } from "react-redux"; */
 import { useDispatch } from "react-redux";
 import { login } from "../../../src/redux/apiCalls/authApiCalls";
 import '../../public/css/Login.css';

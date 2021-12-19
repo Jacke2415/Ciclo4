@@ -95,7 +95,7 @@ const NavbarAdmin = () => {
 
                     <ul className="logout">
                         <li>
-                            <Link to="/signin/logout" onClick={logout}>
+                            <Link to="/signin" onClick={logout}>
                                 <i className="fa fa-power-off fa-2x"></i>
                                 <span className="nav-text">
                                     Logout
