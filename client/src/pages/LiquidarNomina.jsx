@@ -26,8 +26,8 @@ export default function CrearNomina() {
             </div>
             <div className="row">
             <div className="col-12">
-{/*               <TablaLiquidar />
- */}            </div>
+               <TablaLiquidar />
+            </div>
 
             </div>
           </div>
