@@ -15,10 +15,11 @@ const VacacionesNomina = () => {
                         <div className="container">
                             <div className="">
                                 <h1>Gestion Empleados - Vacaciones</h1>
+                                <br /><br />
                             </div>
-                            <br /><br /><br />
+                            <br /><br /><br /><br /><br />
                             <BuscarEmpleado/>
-                            <br /><br /><br />
+                            <br /><br />
                             <TablaVacaciones/>
                          </div>  
                     </div>

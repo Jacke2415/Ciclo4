@@ -119,3 +119,13 @@ module.exports.getSumaSalario = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+
+module.exports.getUserOne = async (req, res) => {
+  try {
+      const UserOne = await UserData.find(req.cedula);
+      res.status(200).json(UserOne);
+  } catch (error) {
+      res.status(404).json({ message: error.message });
+  }
+};
+

@@ -6,6 +6,7 @@ const vacacionesSchema = new Schema({
     cedula: {type: String, required: true},
     fechaInicial: {type: Date, required: true},
     fechaFinal: {type: Date, required: true},
+    diasVacaciones:{type: Number, required: true},
     estado: {type: String, required: true},
    
 });
