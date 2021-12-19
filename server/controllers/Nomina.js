@@ -1,4 +1,7 @@
 const NominaData = require("../models/Nomina");
+const UserData = require('../models/Users');
+const UserVacaciones = require('../models/Vacaciones');
+const UserPersmisos = require('../models/Permisos');
 
 module.exports.getNomina = async (req, res) => {
     try {
@@ -34,6 +37,22 @@ module.exports.deleteNomina = async (req, res) => {
         console.log(error);
     }
 }
+
+module.exports.getLiquidacionNomina = async (req, res) => {
+    try {
+      console.log('hola si empiezo')    
+      const allActiveUser = await UserData.find({estado:'activo'})
+              
+      for (const [key, value] of Object.entries(allActiveUser)) {
+        const liquidacion = value.salario - value.deducciones;
+        console.log(liquidacion)
+      }
+  
+      res.status(200).json(allActiveUser);
+    } catch (error) {
+      res.status(404).json({ message: error.message });
+    }
+  };
 
 module.exports.total = async(req, res) =>{
     const nomina = await NominaData.find();
