@@ -1,7 +1,7 @@
 import SoliVac from '../components/User/UserEmpleado/SolicitarVac.jsx';
 import NavbarEmpleado from '../components/Nav_Bar/NavbarEmpleado.jsx';
 
-export default function CrearEmpleado() {
+export default function SolicitarVacaciones() {
     return (
       <>
         <div className="container-lg">

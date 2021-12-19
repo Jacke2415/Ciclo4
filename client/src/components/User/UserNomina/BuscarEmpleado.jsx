@@ -4,13 +4,13 @@ const Style = {
     width: '18rem',
 };
 
-const BuscarEmpleado = () =>{
+export default function BuscarEmpleado (){
     return(
         <>
         
           <div className="row">
             <div className="col-6">
-              <form className="card">
+              <form>
                 <div className="row mb-2 ">
                   <label for="" className="col">No Identificación</label>
                 </div>
@@ -51,6 +51,6 @@ const BuscarEmpleado = () =>{
         </>
     )
 }
-export default BuscarEmpleado 
+
     
 

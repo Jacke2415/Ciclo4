@@ -18,17 +18,12 @@ export default function CrearNomina() {
                 <br />
                 <br />
                 <br />
-                <br />
-                <br />
-                <br />
-                <br />
               </div>
             </div>
             <div className="row">
-            <div className="col-12">
-              <TablaFuncionarioCopia />
-            </div>
-
+              <div className="col-12">
+                <TablaFuncionarioCopia />
+              </div>
             </div>
           </div>
         </div>

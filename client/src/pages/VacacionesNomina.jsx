@@ -1,9 +1,8 @@
-import React from "react";
 import BuscarEmpleado from "../components/User/UserNomina/BuscarEmpleado";
 import TablaVacaciones from "../components/User/UserNomina/TablaVacaciones";
-import NavbarNomina from "../components/Nav_Bar/NavbarNomina";
+import NavbarNomina from "../components/Nav_Bar/NavbarNomina.jsx";
 
-const VacacionesNomina = () => {
+export default function VacacionesNomina() {
   return (
     <>
       <div className="container-lg">
@@ -18,19 +17,19 @@ const VacacionesNomina = () => {
                   <h1>Gestion Empleados - Vacaciones</h1>
                 </div>
               </div>
-              <br />
-              <br />
-              <br />
-              <BuscarEmpleado />
-              <br />
-              <br />
-              <br />
-              <TablaVacaciones />
+              <div className="row">
+                <div className="col-12">
+                  <BuscarEmpleado />
+                </div>
+                <div className="col-12">
+                  <TablaVacaciones />
+                </div>
+              </div>
+              
             </div>
           </div>
         </div>
       </div>
     </>
   );
-};
-export default VacacionesNomina;
+}

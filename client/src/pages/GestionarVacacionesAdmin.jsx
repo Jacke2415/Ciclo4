@@ -1,11 +1,9 @@
-import React from "react";
-import "../public/css/PerfilUser.css";
 import NavbarAdmin from "../components/Nav_Bar/NavbarAdmin";
-import {TablaFuncionario} from "../components/User/UserNomina/TablaFuncionario";
+import { TablaFuncionarioCopia } from "../components/User/UserNomina/TablaFuncionarioCopia";
 import SupGestionarVacaciones from "../components/User/UserAdmin/SupGestionarVacaciones";
 
-class GestionarEmpleadoAdmin extends React.Component {
-  render() {
+export default function GestionarVacacionesAdmin() {
+
     return (
       <>
         <div className="container-lg">
@@ -14,13 +12,17 @@ class GestionarEmpleadoAdmin extends React.Component {
               <NavbarAdmin />
             </div>
             <div className="col-10">
-              <SupGestionarVacaciones />
-              <TablaFuncionario />
+              <div className="row">
+                <div className="col-12">
+                  <SupGestionarVacaciones />
+                </div>
+                <div className="col-12">
+                  <TablaFuncionarioCopia />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </>
     );
-  }
 }
-export default GestionarEmpleadoAdmin;
