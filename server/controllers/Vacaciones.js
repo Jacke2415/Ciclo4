@@ -12,9 +12,10 @@ module.exports.getVacaciones = async (req, res) => {
 
 module.exports.createVacaciones = async (req, res) => {
     const newVacaciones = new VacacionesData ({
-        cedula: 1129567866,
+        cedula: req.body.cedula,
         fechaInicial: req.body.fechaInicial,
         fechaFinal: req.body.fechaFinal,
+        diasVacaciones: req.body.diasVacaciones,
         estado: 'Pendiente',
         
     });
