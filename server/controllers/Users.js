@@ -31,6 +31,7 @@ module.exports.getUser = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+
 module.exports.getUserID = async (req, res) => {
   try {
     const params = req.body.parametros;
@@ -42,9 +43,11 @@ module.exports.getUserID = async (req, res) => {
   }
 };
 
-
-
 module.exports.createUser = async (req, res) => {
+  const salario = parseFloat(req.body.salario);
+  const deducciones = salario*0.04
+  console.log(deducciones)
+
   const newUser = new UserData({
     tipo_usuario: 2,
     nombre: req.body.nombre,
@@ -59,16 +62,20 @@ module.exports.createUser = async (req, res) => {
     email: req.body.email,
     fecha_ingreso: req.body.fecha_ingreso,
     tipo_contrato: req.body.tipo_contrato,
-    salario: parseFloat(req.body.salario),
+    salario: salario,
+    deducciones: deducciones,    
     cargo: req.body.cargo,
     estado: 'activo',
   });
+
   const email = await UserData.findOne({ email: newUser.email });
   if (email) {
     return res
       .status(400)
       .json({ email: 'El email ya se encuentra registrado', password: '' });
   }
+  console.log('se se puede')
+  console.log(newUser.deducciones)
   try {
     const user = await UserData.create(newUser);
     console.log('Creamos un usuario nuevo!!');
@@ -99,6 +106,20 @@ module.exports.Logout = async (req, res) => {
     .json({ message: 'successfully logged out' });
 };
 
+module.exports.getSumaSalario = async (req, res) => {
+  try {
+    const allActiveUsers = await UserData.find({estado: 'activo'})  
+    const allSalarios = await
+    UserData.aggregate([      
+        {$group:{_id:{estado:'$estado'}, total:{$sum:'$salario'}}}
+      ])
+    console.log(allSalarios)
+    res.status(200).json(allActiveUsers);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
 module.exports.getUserOne = async (req, res) => {
   try {
       const UserOne = await UserData.find(req.cedula);
@@ -108,15 +129,3 @@ module.exports.getUserOne = async (req, res) => {
   }
 };
 
-module.exports.getSumaSalario = async (req, res) => {
-  try {  
-    const allSalarios = await
-    UserData.aggregate([      
-        {$group:{_id:{estado:'$estado'}, total:{$sum:'$salario'}}}
-      ])
-    console.log(allSalarios)
-    res.status(200).json(allSalarios);
-  } catch (error) {
-    res.status(404).json({ message: error.message });
-  }
-};

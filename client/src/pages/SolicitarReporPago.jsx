@@ -1,5 +1,5 @@
 import SoliRep from '../components/User/UserEmpleado/SolicitaRep.jsx';
-import Navbar from '../components/Nav_Bar/Navbar.jsx';
+import NavbarEmpleado from '../components/Nav_Bar/NavbarEmpleado.jsx';
 
 export default function CrearEmpleado() {
     return (
@@ -7,7 +7,7 @@ export default function CrearEmpleado() {
         <div className="container-lg">
           <div className="row">
             <div className="col">
-              <Navbar />
+              <NavbarEmpleado />
             </div>
             <div className="col-10">
               <SoliRep />

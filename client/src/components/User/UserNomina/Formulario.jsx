@@ -34,29 +34,10 @@ export default function Formulario() {
 
     const createUser = (e) => {
         e.preventDefault();
-        if (error.cedula.length === "") {
-            swal("Creacion Exitosa..");
-            /*axios
-            .post("http://localhost:5000/users", user)*/
-            axios
-                .post("http://localhost:5000/signup", user)
-                .then(() => {
-                    window.location.reload(false)
-                    console.log(user)
-                })
-                .catch((error) => {
-                    console.log(error);
-                    /*swal("Debe llenar todos los campos");*/
-                });
-
-        } else {
-            /*swal("Debe llenar todos los campos");*/
-        }
-    };
         setError("");
         setUser("");
         register(dispatch, user)
-    
+    }
 
     console.log('usuario ingresado')
     console.log(user)
