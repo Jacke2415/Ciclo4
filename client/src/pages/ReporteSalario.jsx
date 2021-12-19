@@ -8,17 +8,31 @@ export default function CrearNomina() {
     return (
       <>
         <div className="container-lg">
-          <div className="row">
-            <div className="col-2">
-              <NavbarNomina />
+        <div className="row">
+          <div className="col">
+            <NavbarNomina />
+          </div>
+          <div className="col-10">
+            <div className="row">
+              <div className="col-12 d-flex flex-row">
+              <SupReporteSalario />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+              </div>
             </div>
-            <div className="col-10">
-              
-                  <SupReporteSalario />
-                  <TablaReporte />
+            <div className="row">
+            <div className="col-12">
+            </div>
+            <TablaReporte />
             </div>
           </div>
         </div>
+      </div>
         
 
 
