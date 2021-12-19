@@ -42,11 +42,11 @@ export default function Formulario() {
                 })
                 .catch((error) => {
                     console.log(error);
-                    swal("Debe llenar todos los campos");
+                    /*swal("Debe llenar todos los campos");*/
                 });
 
         } else {
-            swal("Debe llenar todos los campos");
+            /*swal("Debe llenar todos los campos");*/
         }
     };
 
@@ -155,6 +155,7 @@ export default function Formulario() {
                         </div>
 
                     </div>
+                </div>
                     <div class="row">
                         <div class="col">
                             <div className="form-floating mb-3">

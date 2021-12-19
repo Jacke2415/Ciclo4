@@ -29,7 +29,7 @@ module.exports.createUser = async (req, res) => {
     cedula: req.body.cedula,
     password: req.body.password,
     fecha_nacimiento: req.body.fecha_nacimiento,
-    sexo: req.body.sexo,
+    sexo: "Femenino",
     telefono: req.body.telefono,
     direccion: req.body.direccion,
     email: req.body.email,
@@ -81,5 +81,14 @@ module.exports.Logout = async (req, res) => {
       .clearCookie('access_token')
       .status(200)
       .json({ message: 'successfully logged out' });
+};
+
+module.exports.getUserOne = async (req, res) => {
+  try {
+      const UserOne = await UserData.find(req.cedula);
+      res.status(200).json(UserOne);
+  } catch (error) {
+      res.status(404).json({ message: error.message });
+  }
 };
 

@@ -9,5 +9,6 @@ router.get('/logout', Users.Logout);
 router.post('/signup', Users.createUser);
 
 router.delete('/:_id', Users.deleteUser);
+router.get('/cedula/:cedula', Users.getUserOne);
 
 module.exports = router;
