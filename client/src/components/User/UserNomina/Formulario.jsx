@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { checkUser } from "../../../redux/apiCalls/authApiCalls";
 import { registerStart, registerSuccess, registerFailure } from "../../../redux/slices/auth";
 import { useDispatch } from "react-redux";
+import swal from 'sweetalert';
 
 export default function Formulario() {
     const [error, setError] = useState({});
