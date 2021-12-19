@@ -30,9 +30,9 @@ const SolicitarPer  = (props) => {
     var fechai=new Date(permiso.fechaInicial)
     var fechaf=new Date(permiso.fechaFinal)
     var resta= Math.abs(fechaf-fechai);
-    var date= resta/(1000*3600*24); 
-    permiso.diasPermiso=date;  
-    /*console.log(diasPermiso);*/
+    var date= (resta/(1000*3600*24))+1; 
+    permiso.diasPermiso=(date);  
+    
     
     const onSubmitCreate = (e) => {
         e.preventDefault();

@@ -15,6 +15,7 @@ module.exports.createVacaciones = async (req, res) => {
         cedula: req.body.cedula,
         fechaInicial: req.body.fechaInicial,
         fechaFinal: req.body.fechaFinal,
+        diasVacaciones: req.body.diasVacaciones,
         estado: 'Pendiente',
         
     });

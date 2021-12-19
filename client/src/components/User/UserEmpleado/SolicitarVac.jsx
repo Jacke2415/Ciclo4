@@ -23,10 +23,17 @@ const SoliVac = (props) => {
         cedula:"",
         fechaInicial:"",
         fechaFinal:"",
+        diasVacaciones:"",
         estado:""
 
     });
-    vacacion.cedula=currentUser.cedula;     
+    vacacion.cedula=currentUser.cedula;
+    var fechai=new Date(vacacion.fechaInicial)
+    var fechaf=new Date(vacacion.fechaFinal)
+    var resta= Math.abs(fechaf-fechai);
+    var date= (resta/(1000*3600*24))+1; 
+    vacacion.diasVacaciones=(date);    
+    console.log(date)   
 
     const onSubmitCreate = (e) => {
         e.preventDefault();
