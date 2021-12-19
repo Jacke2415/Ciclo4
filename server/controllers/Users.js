@@ -16,9 +16,9 @@ module.exports.editUser = async (req, res) => {
     console.log(req.body)
     
     let userupdate = await UserData.findOneAndUpdate(filtro, data);
-    res.status(200).json({
-      message: 'Usuario Actualizado',
-    });
+    res
+      .status(200)
+      .json({ message: 'Usuario Actualizado', userupdate  });
   } catch (error) {
     console.log(error);
   }
@@ -59,7 +59,7 @@ module.exports.createUser = async (req, res) => {
     email: req.body.email,
     fecha_ingreso: req.body.fecha_ingreso,
     tipo_contrato: req.body.tipo_contrato,
-    salario: req.body.salario,
+    salario: parseFloat(req.body.salario),
     cargo: req.body.cargo,
     estado: 'activo',
   });
@@ -79,19 +79,35 @@ module.exports.createUser = async (req, res) => {
 };
 
 module.exports.deleteUser = async (req, res) => {
+  console.log('entramos a borrar')
   const id = req.params._id;
   /* const { id } = res.locals.user; */
   try {
     await UserData.findByIdAndRemove(id).exec();
     res.status(201).json({message: 'Succesfully Deleted!'});
+    console.log(`usuario ${id} borrado`)
   } catch (error) {
     res.status(409).json({ message: error.message });
   }
 };
 
 module.exports.Logout = async (req, res) => {
+  console.log('estamos limpiando la cookie')
   res
     .clearCookie('access_token')
     .status(200)
     .json({ message: 'successfully logged out' });
+};
+
+module.exports.getSumaSalario = async (req, res) => {
+  try {  
+    const allSalarios = await
+    UserData.aggregate([      
+        {$group:{_id:{estado:'$estado'}, total:{$sum:'$salario'}}}
+      ])
+    console.log(allSalarios)
+    res.status(200).json(allSalarios);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
 };

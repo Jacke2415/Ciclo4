@@ -42,7 +42,6 @@ const DNavbar = (props) => {
     const items = menuitems.map((item) =>
     <>
             <Link to={item.url}>
-
             </Link>
             <span className="nav-text">
                 {item.name}
@@ -52,7 +51,6 @@ const DNavbar = (props) => {
     return(
         <nav className="main-menu">
             <items></items>
-
         </nav>
         
     );
@@ -144,4 +142,4 @@ class Navbar extends React.Component {
     }
 }
 
-export default DNavbar;
+export default Navbar;

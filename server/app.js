@@ -33,8 +33,8 @@ app.use(cors(corsOptions));
 
 //Routes
 app.use("/", UserRoutes);
-/* app.use("/users", requireAuth, Users); */
-app.use("/users", Users);
+app.use("/users", requireAuth, Users);
+/* app.use("/users", Users); */
 app.use("/nomina", requireAuth, Nomina);
 app.use("/permisos", requireAuth, Permisos);
 app.use("/vacaciones", requireAuth, Vacaciones);
