@@ -1,13 +1,15 @@
 const { Router } = require ("express");
 const Nomina = require ('../controllers/Nomina');
-const LiquidacionMensual = require ('../controllers/LiquidacionMensual')
+
 
 
 const router = Router();
 
 router.get('/', Nomina.getNomina);
-router.post('/', Nomina.createNomina);
+router.post('/', Nomina.createNominaMensual);
 router.delete('/:id', Nomina.deleteNomina);
-router.get('/liquidacion', LiquidacionMensual.getLiquidacionNomina);
+router.get('/liquidacionMensual', Nomina.getLiquidacionNominaMensual);
+
+
 
 module.exports = router;

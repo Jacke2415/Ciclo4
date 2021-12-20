@@ -9,8 +9,6 @@ router.get('/logout', Users.Logout);
 router.post('/signup', Users.createUser);
 router.post('/edit', Users.editUser);
 router.post('/userID', Users.getUserID);
-router.get('/total', Users.getSumaSalario);
-
 
 router.delete('/:_id', Users.deleteUser);
 router.get('/cedula/:cedula', Users.getUserOne);
