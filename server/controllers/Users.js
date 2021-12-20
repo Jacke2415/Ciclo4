@@ -49,14 +49,14 @@ module.exports.createUser = async (req, res) => {
   console.log(deducciones)
 
   const newUser = new UserData({
-    tipo_usuario: 2,
+    tipo_usuario: 0,
     nombre: req.body.nombre,
     apellido: req.body.apellido,
     tipo_identificacion: req.body.tipo_identificacion,
     cedula: req.body.cedula,
     password: req.body.password,
     fecha_nacimiento: req.body.fecha_nacimiento,
-    sexo: 'Femenino', // Arreglar cuando este listo el button    
+    sexo: req.body.sexo, // Arreglar cuando este listo el button    
     telefono: req.body.telefono,
     direccion: req.body.direccion,
     email: req.body.email,
