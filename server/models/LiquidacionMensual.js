@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const nominaSchema = new Schema({
-    nombre: {type: String, required: true},//liquidado, pendiente
-    apellido: {type: String, required: true},// mensual o quincenal
+const LiquidacionMensualSchema = new Schema({
+    nombre: {type: String, required: true},
+    apellido: {type: String, required: true},
     cedula: {type: String, required: true},
     salario: {type: Number, required: true},
     deducciones: {type: Number, required: true},
@@ -13,6 +13,6 @@ const nominaSchema = new Schema({
     salarioLiquidado: {type:Number, required: true},
 });
 
-const nominas = mongoose.model('nominas', nominaSchema);
+const LiquidacionMensual = mongoose.model('LiquidacionMensual', LiquidacionMensualSchema);
 
-module.exports = nominas;
+module.exports = LiquidacionMensual;
