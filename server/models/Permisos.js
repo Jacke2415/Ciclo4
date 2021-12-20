@@ -11,7 +11,12 @@ const permisosSchema = new Schema({
     diasPermiso: {type: Number, required: true},
     estado: {type: String, required: true},
    
-});
+},
+{
+    timestamps: true,
+    versionKey: false,
+}
+);
 
 const permisos = mongoose.model('permisos', permisosSchema);
 

@@ -12,7 +12,12 @@ const nominaSchema = new Schema({
     updatedAt: {type:Date}
     
 
-});
+},
+{
+    timestamps: true,
+    versionKey: false,
+}
+);
 
 const nominas = mongoose.model('nominas', nominaSchema);
 
