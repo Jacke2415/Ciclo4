@@ -3,11 +3,11 @@ import MaterialTable from "material-table";
 import tableIcons from "./TableIcons";
 
 const columns=[
-    {title : "Estado", field:'estado'    },
-    {title:'Mes Liquidado', field:'mes'  },
-    {title:'Tipo Liquidación',field:'tipo'},
-    {title:'Fecha Inicio', field:'inicio'},
-    {title:'Fecha Final', field:'final'},
+       
+    {title:'Mes liquidado',field:'mes'},
+    {title:'Tipo Liquidación',field:'tipoLiquidacion'},
+    {title:'Fecha Inicio', field:'fechainicio'},
+    {title:'Fecha Final', field:'fechaFinal'},
     {title:'Total Nomina', field:'total', type:"numeric"}
 ];
 const data=[
@@ -25,19 +25,7 @@ export const TablaNominas = () => {
       columns={columns}
       data={data}
       icons={tableIcons} 
-      actions={[
-        {
-            icon : tableIcons.Edit,
-            tooltip : 'Editar Funcionario',
-            onClick : (event, rowData)=>alert('Editar al Funcionario: '+rowData.nombre+" "+rowData.apellido)
-        },
-        {
-            icon : tableIcons.Delete,
-            tooltip : 'Eliminar Funcionario',
-            onClick : (event, rowData)=>window.confirm('Esta seguro de eliminar este funcionario: '+rowData.nombre+" "+rowData.apellido)
-        }
-        
-      ]}
+      
 
         options={{
             actionsColumnIndex: -1,

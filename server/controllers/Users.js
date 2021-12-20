@@ -129,3 +129,35 @@ module.exports.getUserOne = async (req, res) => {
   }
 };
 
+module.exports.getUsuariosActivos = async (req, res) => {
+  try {
+    const allActiveUsers = await UserData.find({estado: 'activo'})  
+    console.log('usuarios activos')
+    console.log(allActiveUsers)
+    res.status(200).json(allActiveUsers);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
+module.exports.getUsuariosFiltroSalario = async (req, res) => {
+  try {
+    const {value, valueSelect} = req.query;
+    if (valueSelect=="mayor"){
+      const allActiveUsers = await UserData.find({salario:{$gt:value}})  
+      console.log('usuarios activos')
+      console.log(allActiveUsers)
+     // res.status(200).json({params: value,params2:valueSelect});
+     res.status(200).json(allActiveUsers);
+    }else{
+      const allActiveUsers = await UserData.find({salario:{$lte:value}})  
+      console.log('usuarios activos')
+      console.log(allActiveUsers)
+      res.status(200).json(allActiveUsers);
+    }
+
+    
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};

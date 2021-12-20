@@ -13,23 +13,7 @@ export default function CrearNomina() {
             <NavbarNomina />
           </div>
           <div className="col-10">
-            <div className="row">
-              <div className="col-12 d-flex flex-row">
-              <SupReporteSalario />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-              </div>
-            </div>
-            <div className="row">
-            <div className="col-12">
-            </div>
             <TablaReporte />
-            </div>
           </div>
         </div>
       </div>
