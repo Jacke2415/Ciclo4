@@ -5,7 +5,7 @@ class SupReporteSalario extends Component{
     render(){
         return(
             <>
-                <div className="container">
+                <div className="container" style={{position: 'relative'}}>
                     <div className="row">
                         <div className="col-6">
                             <h2>Reporte de Salarios</h2>

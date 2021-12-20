@@ -26,7 +26,7 @@ const Perfil = (props) => {
   console.log(currentUser)
 
   return (
-    <div className="content">
+    <div className="content" style={{position: 'relative'}}>
       <div className="row">
         <div className="col-md-3 bg-white border-right">
           <div className="d-flex flex-column align-items-center text-center p-3 py-5">

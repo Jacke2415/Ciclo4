@@ -2,13 +2,14 @@ import React from "react";
 import BuscarEmpleado from "../components/User/UserNomina/BuscarEmpleado";
 import  TablaVacaciones  from "../components/User/UserNomina/TablaVacaciones"
 import NavbarNomina from "../components/Nav_Bar/NavbarNomina";
-
+import Background from "../components/Login/Background";
 const VacacionesNomina = () => {
     return(
         <>  
             <div className="container-lg">
                 <div className="row">
                     <div className="col">
+                        <Background />
                         <NavbarNomina />
                     </div>
                     <div className="col-10">

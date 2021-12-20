@@ -2,6 +2,7 @@
 import NavbarAdmin from '../components/Nav_Bar/NavbarAdmin';
 import SupLiquidar from '../components/User/UserNomina/SupLiquidar';
 import {TablaFuncionario} from '../components/User/UserNomina/TablaFuncionario';
+import Background from "../components/Login/Background";
 export default function CrearNomina() {
  
     return (
@@ -9,6 +10,7 @@ export default function CrearNomina() {
         <div className="container-lg">
           <div className="row">
             <div className="col">
+              <Background />
               <NavbarAdmin />
             </div>
             <div className="col-10">

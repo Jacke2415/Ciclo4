@@ -23,7 +23,7 @@ const BuscarEmpleado = () => {
           </form>
         </div>
 
-        <div className="col-6 ">
+        <div className="col-6 " style={{position: 'relative'}}>
           <table className="table-sm table-bordered border-light table-rounded">
             <thead>
               <tr>

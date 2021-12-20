@@ -28,7 +28,7 @@ nav.main-menu.expanded {
     rgba(3,3,108,1) 50%,
     rgba(0, 17, 59, 1) 99%
   );
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   height: 100%;
@@ -79,7 +79,7 @@ nav.main-menu.expanded {
   position: relative;
   display: table-cell;
   vertical-align: middle;
-  width: 190px;
+  width: 100%;
   font-family: "Titillium Web", sans-serif;
 }
 

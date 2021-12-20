@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 class SupMisNominas extends Component{
     render(){
         return(
-                <div className="container">
+                <div className="container" style={{position: 'relative'}}>
                     <div className="row">
                         <div className="col-6">
                             <div><br /></div>
