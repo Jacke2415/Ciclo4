@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { checkUser } from "../../../redux/apiCalls/authApiCalls";
 import { registerStart, registerSuccess, registerFailure } from "../../../redux/slices/auth";
 import { useDispatch } from "react-redux";
-import swal from 'sweetalert';
+import validator from 'validator';
 
 export default function Formulario() {
     const [error, setError] = useState({});
@@ -33,10 +33,11 @@ export default function Formulario() {
     }    
 
     const createUser = (e) => {
-        e.preventDefault();
+        /*e.preventDefault();*/
         setError("");
-        setUser("");
         register(dispatch, user)
+        setUser("");
+        
     }
 
     console.log('usuario ingresado')
@@ -59,7 +60,7 @@ export default function Formulario() {
                                 value={user.nombre}
                                 onChange={(event) => {
                                     setUser({ ...user, nombre: event.target.value })
-                                    /* const isValidLetras = validator.isAlpha(user.nombre);
+                                    const isValidLetras = validator.isAlpha(event.target.value);
                                     if (!isValidLetras) {
                                         setError((error) => {
                                             return { ...error, nombre: "El Nombre Solo debe contener letras" };
@@ -68,8 +69,7 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, nombre: "" };
                                         });
-
-                                    } */
+                                    } 
                                 }
                                 } />
 
@@ -90,7 +90,7 @@ export default function Formulario() {
                                 onChange={(event) => {
                                     setUser({ ...user, apellido: event.target.value })
 
-                                    /* const isValidLetras = validator.isAlpha(user.apellido);
+                                    const isValidLetras = validator.isAlpha(event.target.value);
                                     if (!isValidLetras) {
                                         setError((error) => {
                                             return { ...error, apellido: "El Apellido Solo debe contener letras" };
@@ -99,8 +99,7 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, apellido: "" };
                                         });
-
-                                    } */
+                                    } 
                                 }} />
                             <label htmlFor="">Apellido</label>
                             <div className="text-danger">
@@ -112,7 +111,7 @@ export default function Formulario() {
                 <div class="row">
                     <div class="col">
                         <select className="form-select mb-3" aria-label="Default select example"
-                            id="tipo_identificacion" value={user.tipo_identificacion} /* onBlur= {handleBlur} */ onChange={(event) => {
+                            id="tipo_identificacion" value={user.tipo_identificacion}  onChange={(event) => {
                                 setUser({ ...user, tipo_identificacion: event.target.value })
                             }}>
                             <option selected>Tipo Identificación</option>
@@ -127,7 +126,7 @@ export default function Formulario() {
                                 id="cedula" placeholder="No Identificación"
                                 value={user.cedula} onChange={(event) => {
                                     setUser({ ...user, cedula: event.target.value })
-                                    /*const isValidCedula = validator.isLength(user.cedula, { min: 7, max: 10 });
+                                    const isValidCedula = validator.isLength(event.target.value, { min: 7, max: 10 });
                                     if (!isValidCedula) {
                                         setError((error) => {
                                             return { ...error, cedula: "El No identificacion solo debe contener numeros y solo de 8 a 10 caracteres" };
@@ -136,8 +135,7 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, cedula: "" };
                                         });
-
-                                    } */
+                                    } 
                                 }} />
                             <label htmlFor="NoIdentificacion">
                                 Numero Identificación</label>
@@ -155,7 +153,7 @@ export default function Formulario() {
                             <input type="password" className={error.password ? "form-control is-invalid" : "form-control"}
                                 id="password" placeholder="Password" value={user.password} onChange={(event) => {
                                     setUser({ ...user, password: event.target.value })
-                                    /* const isValidPassword = validator.isLength(user.password, { min: 7, max: 11 });
+                                    const isValidPassword = validator.isLength(event.target.value, { min: 7, max: 11 });
                                     if (!isValidPassword) {
                                         setError((error) => {
                                             return { ...error, password: "El password debe contener de 8 a 10 caracteres" };
@@ -164,8 +162,7 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, password: "" };
                                         });
-
-                                    } */
+                                    } 
                                 }} />
                             <label htmlFor="">Password</label>
                             <div className="text-danger">
@@ -190,18 +187,16 @@ export default function Formulario() {
                 <div class="row">
                     <div class="col">
                         <div className="form-floating mb-3">
-                            <div className="form-check form-check-inline" value={user.sexo} onChange={(event) => {
-                                setUser({ ...user, sexo: event.target.value })
-                            }} >
-                                <input className="form-check-input" type="radio" name="myRadio" value="Masculino" />
-                                <label className="form-check-label" for="inlineRadio1">Masculino</label>
-                            </div>
-                            <div className="form-check form-check-inline" value={user.sexo} onChange={(event) => {
-                                setUser({ ...user, sexo: event.target.value })
-                            }} >
-                                <input className="form-check-input" type="radio" name="myRadio" value="Femenino" />
-                                <label className="form-check-label" for="inlineRadio2">Femenino</label>
-                            </div>
+                            <select className="form-select mb-3" aria-label="Default select example"
+                                id="sexo" value={user.sexo}  onChange={(event) => {
+                                    setUser({ ...user, sexo: event.target.value })
+                                }}>
+                                <option selected>Sexo</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                                
+                            </select>
+                            
                         </div>
 
                     </div>
@@ -211,8 +206,8 @@ export default function Formulario() {
                                 placeholder="Telefono" id="telefono"
                                 value={user.telefono} onChange={(event) => {
                                     setUser({ ...user, telefono: event.target.value })
-                                    /* const isValidCedula = validator.isLength(user.telefono, { min: 8, max: 10 });
-                                    const isValidNumero = validator.isNumeric(user.telefono);
+                                    const isValidCedula = validator.isLength(event.target.value, { min: 8, max: 10 });
+                                    const isValidNumero = validator.isNumeric(event.target.value);
                                     if (!isValidNumero) {
                                         setError((error) => {
                                             return { ...error, telefono: "El Telefono debe contener de 8 a 10 caracteres y debe ser numerico" };
@@ -226,7 +221,7 @@ export default function Formulario() {
                                             return { ...error, telefono: "" };
                                         });
  
-                                    }*/
+                                    }
                                 }} />
                             <label htmlFor="">Telefono</label>
                             <div className="text-danger">
@@ -244,7 +239,7 @@ export default function Formulario() {
                                 id="direccion" placeholder="Direccion" required
                                 value={user.direccion} onChange={(event) => {
                                     setUser({ ...user, direccion: event.target.value })
-                                    /* const isValidPassword = validator.isLength(user.direccion, { min: 12 });
+                                    const isValidPassword = validator.isLength(event.target.value, { min: 12 });
                                     if (!isValidPassword) {
                                         setError((error) => {
                                             return { ...error, direccion: "La dirección debe contener mas de 12 caracteres" };
@@ -253,8 +248,7 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, direccion: "" };
                                         });
-
-                                    } */
+                                    } 
                                 }} />
                             <label htmlFor="">Dirección</label>
                             <div className="text-danger">
@@ -270,7 +264,7 @@ export default function Formulario() {
                                 id="email" placeholder="Email" required
                                 value={user.email} onChange={(event) => {
                                     setUser({ ...user, email: event.target.value })
-                                    /*const isValidEmail = validator.isEmail(user.email);
+                                    const isValidEmail = validator.isEmail(event.target.value);
                                     if (!isValidEmail) {
                                         setError((error) => {
                                             return { ...error, email: "Correo Invalido" };
@@ -279,8 +273,7 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, email: "" };
                                         });
-
-                                    } */
+                                    } 
                                 }} />
                             <label htmlFor="">Email</label>
                             <div className="text-danger">
@@ -328,7 +321,7 @@ export default function Formulario() {
                                     setUser({ ...user, salario: event.target.value })
                                     const salariomin = parseInt(event.target.value);
                                     console.log(salariomin);
-                                    /*const isValidNumero = validator.isNumeric(user.salario);*/
+                                    
                                     if (parseInt(salariomin) < (908526)) {
                                         setError((error) => {
                                             return { ...error, salario: "El Salario debe ser numerico y mayor o igual a 908.526 " };
@@ -352,8 +345,8 @@ export default function Formulario() {
                                 id="cargo" placeholder="Cargo" required
                                 value={user.cargo} onChange={(event) => {
                                     setUser({ ...user, cargo: event.target.value })
-                                    /* const isValidLetras = validator.isAlpha(user.cargo);
-                                    console.log(user.cargo);
+                                    const isValidLetras = validator.isAlpha(event.target.value);
+                                    
                                     if (!isValidLetras) {
                                         setError((error) => {
                                             return { ...error, cargo: "El Cargo Del Empleado Solo debe contener letras" };
@@ -362,8 +355,7 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, cargo: "" };
                                         });
-
-                                    } */
+                                    } 
                                 }} />
                             <label htmlFor="">Cargo</label>
                             <div className="text-danger">
@@ -390,21 +382,3 @@ export default function Formulario() {
     )
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
