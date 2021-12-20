@@ -1,7 +1,8 @@
 const NominaData = require("../models/Nomina");
-const UserData = require('../models/Users');
-const UserVacaciones = require('../models/Vacaciones');
-const UserPersmisos = require('../models/Permisos');
+const UserData = require('../models/LiquidacionMensual')
+const VacacionesData = require('../models/Vacaciones');
+const PermisosData = require('../models/Permisos');
+const LiquidacionMensualData = require('../models/LiquidacionMensual');
 
 module.exports.getNomina = async (req, res) => {
     try {
@@ -10,21 +11,49 @@ module.exports.getNomina = async (req, res) => {
 
     } catch (error) {
         res.status(404).json({ message: error.message });
-    }}
+    }
+}
 
-module.exports.createNomina = async (req, res) => {
-    const newNomina = new NominaData ({
-        estadoNomina: req.body.estadoNomina,
+module.exports.getSumaSalario = async (req, res) => {
+    try {
+      const total = await
+      LiquidacionMensualData.aggregate([      
+        {$group:{_id:{estado:'activo'}, total:{$sum:'$salario'}}}
+        ])
+      console.log(total)  
+      
+      res.status(200).json(allActiveUsers);
+    } catch (error) {
+      res.status(404).json({ message: error.message });
+    }
+  };
+
+module.exports.createNominaMensual = async (req, res) => {
+    const allSalarios = await LiquidacionMensualData.find();
+    var total = 0
+    for (const [key, value] of Object.entries(allSalarios)){
+        total += value.salarioLiquidado 
+    }
+    console.log(`el valor total de la nomina del mes de diciembre es: ${total}`)
+    const newNomina = new NominaData({
         tipoLiquidacion: req.body.tipoLiquidacion,
         fechaInicio: req.body.fechaInicio,
         fechaFin: req.body.fechaFin,
-        //total: req.body.total,
+        total: total
     });
+    
+    const allNomina = await NominaData.find()
+    for (const [key, value] of Object.entries(allNomina)){
+        if (value.mes === mes && value.year === year)
+            res
+                .status(400)
+                .json({message: 'La nomina solicitada ya se encuentra generada!!'})
+    }
     try {
-        await newNomina.save();
+        /* await newNomina.save(); */ 
         res.status(201).json(newNomina);
     } catch (error) {
-        res.status(409).json({ message: error.message});
+        res.status(409).json({ message: error.message });
     }
 }
 
@@ -38,37 +67,66 @@ module.exports.deleteNomina = async (req, res) => {
     }
 }
 
-module.exports.getLiquidacionNomina = async (req, res) => {
+module.exports.getLiquidacionNominaMensual = async (req, res) => {
     try {
-      console.log('hola si empiezo')    
-      const allActiveUser = await UserData.find({estado:'activo'})
-              
-      for (const [key, value] of Object.entries(allActiveUser)) {
-        const liquidacion = value.salario - value.deducciones;
-        console.log(liquidacion)
-      }
-  
-      res.status(200).json(allActiveUser);
-    } catch (error) {
-      res.status(404).json({ message: error.message });
-    }
-  };
+        const allActiveUser = await UserData.find({ estado: 'activo' })
+        var newLiquidacionesMensual = []
 
-module.exports.total = async(req, res) =>{
-    const nomina = await NominaData.find();
-    res.status(200).json(nomina)
+        for (const [key, value] of Object.entries(allActiveUser)) {            
+            const nombre = value.nombre;
+            const apellido = value.apellido;
+            const cedula = value.cedula;
+            const salario = value.salario;
+            const deduccionesLegales = value.salario * 0.04;
+            const allVacaciones = await VacacionesData.find({ cedula: cedula })
+            const allPermisos = await PermisosData.find({ cedula: cedula })
+
+            var deduccionesVacaciones = 0
+            for (const [key, value] of Object.entries(allVacaciones)) {
+                if (value.estado === 'Pendiente'){
+                    deduccionesVacaciones += value.diasVacaciones * 117172 / 30;
+                    //actualizar en tabla de vacaciones a pagada
+                }else{
+                    deduccionesVacaciones += 0;
+                }
+            }
+
+            var deduccionesPermiso = 0
+            for (const [key, value] of Object.entries(allPermisos)) {
+                const tipoPermiso = value.tipoPermiso;
+                if (tipoPermiso.value === 'Remunerado') {
+                    deduccionesPermiso += value.diasPermiso * 117172 / 30;
+                } if (tipoPermiso.value === 'No Remunerado') {
+                    deduccionesPermiso += value.diasPermiso * salario / 30;
+                }
+            }
+
+            const liquidacion = salario - deduccionesLegales - deduccionesVacaciones - deduccionesPermiso;
+
+            const newLiquidacionMensual = new LiquidacionMensualData({
+                nombre: nombre,
+                apellido: apellido,
+                cedula: cedula,
+                salario: salario,
+                deducciones: deduccionesLegales,
+                vacaciones: deduccionesVacaciones,
+                permisos: deduccionesPermiso,
+                salarioLiquidado: liquidacion
+            });
+
+            await newLiquidacionMensual.save();
+            newLiquidacionesMensual.push(newLiquidacionMensual)
+        }        
+        res
+        .status(200)
+        .json({newLiquidacionesMensual})
     
-    //db.getCollection("users").find({estado:'activo'});
-   /*  db.users.aggregate([
-    {$match:{$or:[{estado:"activo"},{estado:'desactivado'}]}},
-    //{$match:[{estado:'activo'}]},
-    {$group:{_id:'$estado', total:{$sum:'$salario'}}}
-    ]) */
-}
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+};
 
+/* module.exports.postLiquidacionNominaMensual = async(res, req) =>{
+    const estado = req.body.
 
-
-
-
-
-
+} */

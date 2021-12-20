@@ -106,20 +106,6 @@ module.exports.Logout = async (req, res) => {
     .json({ message: 'successfully logged out' });
 };
 
-module.exports.getSumaSalario = async (req, res) => {
-  try {
-    const allActiveUsers = await UserData.find({estado: 'activo'})  
-    const allSalarios = await
-    UserData.aggregate([      
-        {$group:{_id:{estado:'$estado'}, total:{$sum:'$salario'}}}
-      ])
-    console.log(allSalarios)
-    res.status(200).json(allActiveUsers);
-  } catch (error) {
-    res.status(404).json({ message: error.message });
-  }
-};
-
 module.exports.getUserOne = async (req, res) => {
   try {
       const UserOne = await UserData.find(req.cedula);
