@@ -1,7 +1,8 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 
-svg, i{
+svg,
+i {
   font-size: 2em;
   position: relative;
   display: table-cell;
@@ -17,11 +18,17 @@ svg, i{
 nav.main-menu.expanded {
   width: 250px;
   overflow: visible;
-} 
+}
 
 .main-menu {
-  background: #00113b;
-  position: absolute;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 1%,
+    rgba(3,3,108,1) 50%,
+    rgba(0, 17, 59, 1) 99%
+  );
+  position: fixed;
   top: 0;
   bottom: 0;
   height: 100%;
@@ -72,7 +79,7 @@ nav.main-menu.expanded {
   position: relative;
   display: table-cell;
   vertical-align: middle;
-  width: 190px;
+  width: 100%;
   font-family: "Titillium Web", sans-serif;
 }
 
@@ -120,8 +127,16 @@ nav.main-menu li.active > a,
 .no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
 .dashboard-page nav.dashboard-menu ul li.active a {
   color: #00113b;
+  left: 0;
+  top: 0;
+  width: 91%;
+  height: 100%;
   background-color: #ffffff;
-  
+  transform: translateX(10%);
+  transition: all 0.2s;
+}
+li:hover::before {
+  transform: translateY(0);
 }
 .area {
   float: left;
@@ -137,4 +152,3 @@ nav.main-menu li.active > a,
     url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff)
       format("woff");
 }
-

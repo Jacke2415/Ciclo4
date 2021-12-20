@@ -76,21 +76,21 @@ export const TablaFuncionario = () => {
                       rowData.nombre +
                       " " +
                       rowData.apellido
-                  )
+                  ),
               },
             ]}
             options={{
               //selection: true,
               headerStyle: {
-                backgroundColor: " rgb(0, 17, 59)",
-                color: "#FFF"
+                backgroundColor: "#6699CC",
+                color: "#FFF",
               },
-              exportButton: true
+              exportButton: true,
             }}
             localization={{
               header: {
                 actions: "Acciones",
-              }
+              },
             }}
           />
         </div>

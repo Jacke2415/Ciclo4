@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import "../../../public/css/PerfilUser.css";
 import { checkUser } from "../../../redux/apiCalls/authApiCalls";
-import { registerStart, registerSuccess, registerFailure } from "../../../redux/slices/auth";
-import axios from 'axios';
+import {
+  registerStart,
+  registerSuccess,
+  registerFailure,
+} from "../../../redux/slices/auth";
+import axios from "axios";
 const Perfil = (props) => {
-
   const [user, setUser] = useState({});
   const [enabled, setEnabled] = useState(true);
   const { currentUser } = useSelector((state) => state.auth);
@@ -16,51 +19,49 @@ const Perfil = (props) => {
     const data = {
       userData: {
         telefono: telefono,
-        direccion: direccion
-
+        direccion: direccion,
       },
       user: {
-        _id: currentUser._id
-      }
-    }
-    try{
-      const res = await axios.post(
-        'http://localhost:5000/users/edit', data);
+        _id: currentUser._id,
+      },
+    };
+    try {
+      const res = await axios.post("http://localhost:5000/users/edit", data);
 
-      dispatch(registerSuccess(res.data))
-      
-    }catch (error){
-      dispatch(registerFailure(error.response.data))
+      dispatch(registerSuccess(res.data));
+    } catch (error) {
+      dispatch(registerFailure(error.response.data));
     }
-  }
+  };
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     checkUser(dispatch);
-  }, [dispatch])
-  
+  }, [dispatch]);
 
-  console.log('Dato preguntado')
-  console.log(user)
-  console.log('Dato respondido')
-  console.log(currentUser)
+  console.log("Dato preguntado");
+  console.log(user);
+  console.log("Dato respondido");
+  console.log(currentUser);
 
   return (
-    <div className="content">
+    <div className="content" style={{ position: "relative" }}>
       <div className="row">
         <div className="col-md-3 bg-white border-right">
           <div className="d-flex flex-column align-items-center text-center p-3 py-5">
             <img
               className="rounded-circle mt-5"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF2psCzfbB611rnUhxgMi-lc2oB78ykqDGYb4v83xQ1pAbhPiB&usqp=CAU" alt=""
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF2psCzfbB611rnUhxgMi-lc2oB78ykqDGYb4v83xQ1pAbhPiB&usqp=CAU"
+              alt=""
             />
-            <span className="font-weight-bold">{currentUser.nombre} + {currentUser.apellido}</span>
-            <span className="text-black-50">amelly12 @bbb.com</span>
+            <span className="font-weight-bold">
+              {currentUser.nombre} {currentUser.apellido}
+            </span>
+            <span className="text-black-50">{currentUser.email}</span>
             <span> </span>
           </div>
         </div>
-
 
         <div className="col-md-5 bg-white border-right">
           <div className="p-3 py-5">
@@ -74,7 +75,7 @@ const Perfil = (props) => {
                   type="text"
                   className="form-control"
                   placeholder="Nombre"
-                  id='nombre'
+                  id="nombre"
                   disabled
                   value={currentUser.nombre}
                 />
@@ -116,9 +117,12 @@ const Perfil = (props) => {
                 <input
                   type="text"
                   className="form-control"
+                  disabled={enabled}
                   placeholder="Numero de Telefono"
                   value={telefono}
-                  onChange={({target}) => {setTelefono(target.value)}}
+                  onChange={({ target }) => {
+                    setTelefono(target.value);
+                  }}
                 />
               </div>
               <div className="col-md-12">
@@ -128,7 +132,9 @@ const Perfil = (props) => {
                   className="form-control"
                   placeholder="Direccion"
                   value={direccion}
-                  onChange={({target}) => {setDireccion(target.value)}}
+                  onChange={({ target }) => {
+                    setDireccion(target.value);
+                  }}
                 />
               </div>
               <div className="col-md-12">
@@ -137,6 +143,7 @@ const Perfil = (props) => {
                   type="text"
                   className="form-control"
                   placeholder="Email"
+                  disabled={enabled}
                   value={currentUser.email}
                   disabled
                 />
@@ -149,6 +156,7 @@ const Perfil = (props) => {
                   type="text"
                   className="form-control"
                   placeholder="Pais"
+                  disabled
                   value={currentUser.salario}
                   disabled
                 />
@@ -164,11 +172,17 @@ const Perfil = (props) => {
                 />
               </div>
             </div>
-            <button type="button" class="btn btn-primary" onClick={handleGameClick}>Editar Perfil</button>
           </div>
+          <button
+            type="button"
+            class="btn btn-primary"
+            onClick={handleGameClick}
+          >
+            Editar Perfil
+          </button>
         </div>
       </div>
     </div>
   );
-}
+};
 export default Perfil;

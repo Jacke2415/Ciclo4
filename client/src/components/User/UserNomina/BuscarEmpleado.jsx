@@ -1,7 +1,7 @@
 import React from "react"
 
 const Style = {
-    width: '18rem',
+  width: '18rem',
 };
 
 export default function BuscarEmpleado (){
