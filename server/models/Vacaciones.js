@@ -9,7 +9,12 @@ const vacacionesSchema = new Schema({
     diasVacaciones:{type: Number, required: true},
     estado: {type: String, required: true},
    
-});
+},
+{
+    timestamps: true,
+    versionKey: false,
+}
+);
 
 const vacaciones = mongoose.model('vacaciones', vacacionesSchema);
 

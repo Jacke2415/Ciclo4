@@ -1,8 +1,9 @@
 const NominaData = require("../models/Nomina");
-const UserData = require('../models/LiquidacionMensual')
+const UserData = require('../models/Users');
 const VacacionesData = require('../models/Vacaciones');
 const PermisosData = require('../models/Permisos');
-const LiquidacionMensualData = require('../models/LiquidacionMensual');
+const LiquidacionMensualData = require('../models/LiquidacionMensual')
+
 
 module.exports.getNomina = async (req, res) => {
     try {
@@ -68,7 +69,7 @@ module.exports.deleteNomina = async (req, res) => {
     }
 }
 
-module.exports.getLiquidacionNominaMensual = async (req, res) => {
+module.exports.getLiquidacionNomina = async (req, res) => {
     try {
         const allActiveUser = await UserData.find({ estado: 'activo' })
         var newLiquidacionesMensual = []
@@ -84,12 +85,7 @@ module.exports.getLiquidacionNominaMensual = async (req, res) => {
 
             var deduccionesVacaciones = 0
             for (const [key, value] of Object.entries(allVacaciones)) {
-                if (value.estado === 'Pendiente'){
-                    deduccionesVacaciones += value.diasVacaciones * 117172 / 30;
-                    //actualizar en tabla de vacaciones a pagada
-                }else{
-                    deduccionesVacaciones += 0;
-                }
+                deduccionesVacaciones += value.diasVacaciones * 117172 / 30;
             }
 
             var deduccionesPermiso = 0
@@ -117,17 +113,13 @@ module.exports.getLiquidacionNominaMensual = async (req, res) => {
 
             await newLiquidacionMensual.save();
             newLiquidacionesMensual.push(newLiquidacionMensual)
-        }        
+        }
+        console.log(newLiquidacionesMensual)
         res
-        .status(200)
-        .json({newLiquidacionesMensual})
+            .status(200)
+            .json({newLiquidacionesMensual})
     
     } catch (error) {
-        res.status(404).json({ message: error.message });
+        console.log(error);
     }
-};
-
-/* module.exports.postLiquidacionNominaMensual = async(res, req) =>{
-    const estado = req.body.
-
-} */
+}
