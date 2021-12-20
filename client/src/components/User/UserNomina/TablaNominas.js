@@ -6,7 +6,7 @@ const columns=[
        
     {title:'Mes liquidado',field:'mes'},
     {title:'Tipo Liquidación',field:'tipoLiquidacion'},
-    {title:'Fecha Inicio', field:'fechainicio'},
+    {title:'Fecha Inicio', field:'fechaInicio'},
     {title:'Fecha Final', field:'fechaFinal'},
     {title:'Total Nomina', field:'total', type:"numeric"}
 ];

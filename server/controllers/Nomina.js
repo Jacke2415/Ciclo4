@@ -36,10 +36,11 @@ module.exports.createNominaMensual = async (req, res) => {
     }
     console.log(`el valor total de la nomina del mes de diciembre es: ${total}`)
     const newNomina = new NominaData({
+        mes:req.body.mes,
         tipoLiquidacion: req.body.tipoLiquidacion,
         fechaInicio: req.body.fechaInicio,
         fechaFin: req.body.fechaFin,
-        total: total
+        //total: total
     });
     
     const allNomina = await NominaData.find()
