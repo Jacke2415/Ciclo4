@@ -14,7 +14,7 @@ export default function SupLiquidar() {
   const createNomina = (n) => {
     n.preventDefault();
     axios
-      .post("http://localhost:5000/nominas", nomina)
+      .post("http://localhost:5000/nomina", nomina)
       .then(() => {
         window.location.reload(false);
         console.log(nomina);

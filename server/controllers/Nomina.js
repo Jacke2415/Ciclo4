@@ -15,16 +15,43 @@ module.exports.getNomina = async (req, res) => {
     }
 }
 
-module.exports.createNomina = async (req, res) => {
+module.exports.getSumaSalario = async (req, res) => {
+    try {
+      const total = await
+      LiquidacionMensualData.aggregate([      
+        {$group:{_id:{estado:'activo'}, total:{$sum:'$salario'}}}
+        ])
+      console.log(total)  
+      
+      res.status(200).json(allActiveUsers);
+    } catch (error) {
+      res.status(404).json({ message: error.message });
+    }
+  };
+
+module.exports.createNominaMensual = async (req, res) => {
+    const allSalarios = await LiquidacionMensualData.find();
+    var total = 0
+    for (const [key, value] of Object.entries(allSalarios)){
+        total += value.salarioLiquidado 
+    }
+    console.log(`el valor total de la nomina del mes de diciembre es: ${total}`)
     const newNomina = new NominaData({
-        estadoNomina: req.body.estadoNomina,
         tipoLiquidacion: req.body.tipoLiquidacion,
         fechaInicio: req.body.fechaInicio,
         fechaFin: req.body.fechaFin,
-        //total: req.body.total,
+        total: total
     });
+    
+    const allNomina = await NominaData.find()
+    for (const [key, value] of Object.entries(allNomina)){
+        if (value.mes === mes && value.year === year)
+            res
+                .status(400)
+                .json({message: 'La nomina solicitada ya se encuentra generada!!'})
+    }
     try {
-        await newNomina.save();
+        /* await newNomina.save(); */ 
         res.status(201).json(newNomina);
     } catch (error) {
         res.status(409).json({ message: error.message });
@@ -39,18 +66,6 @@ module.exports.deleteNomina = async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-}
-
-module.exports.total = async (req, res) => {
-    const nomina = await NominaData.find();
-    res.status(200).json(nomina)
-
-    //db.getCollection("users").find({estado:'activo'});
-    /*  db.users.aggregate([
-     {$match:{$or:[{estado:"activo"},{estado:'desactivado'}]}},
-     //{$match:[{estado:'activo'}]},
-     {$group:{_id:'$estado', total:{$sum:'$salario'}}}
-     ]) */
 }
 
 module.exports.getLiquidacionNomina = async (req, res) => {
@@ -102,14 +117,8 @@ module.exports.getLiquidacionNomina = async (req, res) => {
         res
             .status(200)
             .json({newLiquidacionesMensual})
-
     
     } catch (error) {
-        res.status(404).json({ message: error.message });
+        console.log(error);
     }
-};
-
-
-
-
-
+}
