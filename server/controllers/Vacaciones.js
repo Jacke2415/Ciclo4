@@ -26,3 +26,25 @@ module.exports.createVacaciones = async (req, res) => {
         res.status(409).json({ message: error.message});
     }
 }
+
+module.exports.update_vacaciones = (req, res) => {
+    const { estado,  cedula } = req.body;
+  
+
+    VacacionesData.updateOne(
+      { cedula },
+      {
+        $set: {
+          estado,
+          
+        },
+      }
+    )
+      .then((response) => {
+        res.status(200).json(response);
+      })
+      .catch((error) => {
+        res.status(400).json(error);
+      });
+  };
+

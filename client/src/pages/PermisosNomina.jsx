@@ -1,6 +1,6 @@
 import BuscarPermisos from "../components/User/UserNomina/BucarPermisos";
-import NavbarNomina from "../components/Nav_Bar/NavbarNomina";
 import TablaPermisos from "../components/User/UserNomina/TablaPermisos";
+import NavbarNomina from "../components/Nav_Bar/NavbarNomina";
 import Background from "../components/Login/Background";
 
 export default function PermisosNomina() {

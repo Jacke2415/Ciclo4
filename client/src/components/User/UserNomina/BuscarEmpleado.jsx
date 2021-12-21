@@ -1,75 +1,66 @@
 import React from "react";
 import axios from "axios";
-import { useEffect } from "react";
 import { useState } from "react";
 
-const Style = {
-  width: "18rem",
-};
-const baseUrl = "http://localhost:5000/signin/users/cedula";
 
-export default function BuscaEmpleado() {
-  const [cedula, setCedula] = useState("");
-  const [data, setData] = useState([]);
-  const peticionGet = async (cedula) => {
-    await axios.get(baseUrl).then((response) => {
-      setData(response.data);
-    });
+export default function BuscarEmpleado() {
+  const [cedula, setCedula]=useState("");
+  const [estado, setEstado]=useState("");  
+
+  const actualizarVacaciones = (n) => {
+    n.preventDefault();
+    axios
+      .patch("http://localhost:5000/vacaciones/Actualizar", {
+          cedula, estado,
+      })
+      .then((response) => {
+        window.location.reload(false);
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
-  console.log(data);
-  useEffect(() => {
-    peticionGet();
-  }, []);
 
   return (
     <>
-      <div className="container">
+      <form className="card" onSubmit={actualizarVacaciones}>
+        <h6>Gestionar Vacaciones</h6>
         <div className="row">
-          <div className="col-6">
-            <form className="card">
-              <div className="row-3 mb-2">
-                <label htmlFor="cedula" className="visually-hidden">
-                  No Identificacion
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="cedula"
-                  placeholder="No Identificación"
-                  value={cedula}
-                  onChange={(event) => {
-                    setCedula({ setCedula: event.target.value });
-                  }}
-                />
-              </div>
-
-              <div className="row-3">
-                <button type="submit" className="btn btn-primary mb-3">
-                  Buscar
-                </button>
-              </div>
-            </form>
+          
+          <div className="col-3">
+            <div className="form">
+              <input type="text" className="form-control"
+                id="cedula" placeholder="No Identificación"
+                value={cedula} onChange={(event) => {
+                  setCedula(event.target.value);}}/>
+            </div>
           </div>
-          <div className="col-6">
-            <div className="card-body">
-              <h5 className="card-title">Nombre: Kelly Rolon</h5>
-
-              <p className="card-text">
-                {" "}
-                Cargo: Contador <br /> Fecha Inicial: 01-01-2022 <br />
-                Fecha Final: 15-01-2022
-              </p>
-              <p className="card-text"> </p>
-              <button type="submit" className="btn btn-primary mb-3">
-                Aceptar
-              </button>
-              <button type="submit" className="btn btn-primary mb-3">
-                Rechazar
+          <div className="col">
+            <select
+              className="form-select mb-2" aria-label="Default select example"
+              id="estado" value={estado} onChange={(event) => {
+                setEstado(event.target.value );}}>
+              <option selected>Escoger</option>
+              <option value="Aceptada">Aceptar</option>
+              <option value="Rechazada">Rechazar</option>
+            </select>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-4">
+            <div className="d-grid gap-2">
+              <button
+                type="submit" className="btn btn-primary"
+                onClick={actualizarVacaciones}> Confirmar
               </button>
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </>
   );
 }
+
+    
+

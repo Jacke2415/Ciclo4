@@ -70,7 +70,7 @@ module.exports.createUser = async (req, res) => {
     cedula: req.body.cedula,
     password: req.body.password,
     fecha_nacimiento: req.body.fecha_nacimiento,
-    sexo: req.body.sexo, // Arreglar cuando este listo el button    
+    sexo: req.body.sexo,   
     telefono: req.body.telefono,
     direccion: req.body.direccion,
     email: req.body.email,

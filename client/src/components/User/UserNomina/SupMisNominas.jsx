@@ -1,5 +1,5 @@
 
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 
 
@@ -10,7 +10,7 @@ class SupMisNominas extends Component{
                     <div className="row">
                         <div className="col-6">
                             <div><br /></div>
-                            <h2>Creación de Nominas</h2>
+                            <h1>Creación de Nominas</h1>
                         </div>
                     </div>
                     <div className="row">
