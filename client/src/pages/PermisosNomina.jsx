@@ -7,6 +7,7 @@ export default function PermisosNomina (){
   return (
     <>
       <div className="container-lg">
+        <Background/>
         <div className="row">
           <div className="col">
             <NavbarNomina />

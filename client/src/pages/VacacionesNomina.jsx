@@ -2,6 +2,7 @@ import BuscarEmpleado from "../components/User/UserNomina/BuscarEmpleado";
 import TablaVacaciones from "../components/User/UserNomina/TablaVacaciones";
 import NavbarNomina from "../components/Nav_Bar/NavbarNomina.jsx";
 
+
 export default function VacacionesNomina() {
   return (
     <>

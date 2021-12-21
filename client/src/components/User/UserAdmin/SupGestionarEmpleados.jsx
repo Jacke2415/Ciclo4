@@ -13,7 +13,7 @@ class SupGestionarEmpleados extends Component{
                         </div>
                     </div>
                     <br />
-                    <div className="row">
+                   {/*  <div className="row">
                         <div className="col-3 align-center">
                             <Link to='' type="button" class="btn btn-primary">Crear Empleado</Link>
                         </div>
@@ -26,7 +26,7 @@ class SupGestionarEmpleados extends Component{
                         <div className="col-3">
                             <button type="button" class="btn btn-primary">Eliminar Empleado</button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </>
            

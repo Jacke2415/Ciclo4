@@ -12,18 +12,18 @@ class SupGestionarEmpleados extends Component {
             </div>
           </div>
           <br />
-          <div className="row">
+          {/* <div className="row">
             <div className="col-3 align-center">
-              <Link to="" type="button" class="btn btn-primary">
+              <Link to="" type="button" className="btn btn-primary">
                 Aceptar Vacaciones
               </Link>
             </div>
             <div className="col-3">
-              <button type="button" class="btn btn-primary">
+              <button type="button" className="btn btn-primary">
                 Rechazar Vacaciones
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </>
     );

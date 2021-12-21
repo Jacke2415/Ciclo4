@@ -9,12 +9,13 @@ import {
   registerFailure,
 } from "../../../redux/slices/auth";
 import axios from "axios";
-const Perfil = (props) => {
+const Perfil =  (props) => {
   const [user, setUser] = useState({});
   const [enabled, setEnabled] = useState(true);
   const { currentUser } = useSelector((state) => state.auth);
-  const [telefono, setTelefono] = useState(currentUser.telefono);
-  const [direccion, setDireccion] = useState(currentUser.direccion);
+  const [telefono, setTelefono] =  useState(currentUser.telefono);
+  const [direccion, setDireccion] =  useState(currentUser.direccion);
+  
   const handleGameClick = async () => {
     const data = {
       userData: {
@@ -40,10 +41,6 @@ const Perfil = (props) => {
     checkUser(dispatch);
   }, [dispatch]);
 
-  console.log("Dato preguntado");
-  console.log(user);
-  console.log("Dato respondido");
-  console.log(currentUser);
 
   return (
     <div className="content" style={{ position: "relative" }}>
@@ -117,7 +114,6 @@ const Perfil = (props) => {
                 <input
                   type="text"
                   className="form-control"
-                  disabled={enabled}
                   placeholder="Numero de Telefono"
                   value={telefono}
                   onChange={({ target }) => {

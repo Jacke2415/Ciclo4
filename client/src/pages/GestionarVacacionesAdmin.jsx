@@ -6,10 +6,10 @@ import Background from "../components/Login/Background";
 export default function GestionarVacacionesAdmin() {
   return (
     <>
-      <div className="container-md" style={{ padding: "9px" }}>
+      <Background/>
+      <div className="container-lg" style={{ padding: "9px" }}>
         <div className="row">
           <div className="col">
-            <Background />
             <NavbarAdmin />
           </div>
           <div className="col-10">
