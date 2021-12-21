@@ -41,6 +41,7 @@ const NavbarAdmin = () => {
       url: "/signin/administrador/generarReportes",
       svg: svgSalario(),
     },
+    
   ];
   return <DNavbar items={items} />;
 };

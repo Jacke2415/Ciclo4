@@ -26,6 +26,7 @@ import LiquidarNominaAdmin from "./pages/LiquidarNominaAdmin";
 import GestionarPermisosAdmin from './pages/GestionarPermisosAdmin';
 import GestionarVacacionesAdmin from './pages/GestionarVacacionesAdmin';
 import ReporteSalarioAdmin from './pages/ReporteSalarioAdmin.jsx';
+import EditarUsuario from './pages/EditarUsuario.jsx';
 
 function App() {
   const { currentUser } = useSelector((state) => state.auth);
@@ -113,6 +114,12 @@ function App() {
           path="/signin/administrador/perfilAdministrador"
           element={<PerfilUserAdmin />}
         />
+        <Route
+          path="/signin/administrador/gestionarEmpleado/editarUsuario"
+          element={<EditarUsuario />}
+        />
+
+
         <Route
           path="/signin/administrador/gestionarEmpleado"
           element={<GestinarEmpleadoAdmin />}

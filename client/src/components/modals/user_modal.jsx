@@ -1,5 +1,7 @@
 import { Modal, Container, Row, Col, Button } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from 'axios';
+
 
 export function EditUserModalByCedula(props) {
   const [show, setShow] = useState(false);
@@ -10,6 +12,23 @@ export function EditUserModalByCedula(props) {
   const HandleEditarUser = () => {};
   const HandleCrearUser = () => {};
 
+  const GetData = async () => {
+    const conditional = {
+      cedula: '1100110011'
+    }
+    try{
+      const respuesta = await axios.post('http://localhost:5000/users/cedula', conditional)
+      console.log("Respuesta consulta: \n", props)
+      setUser(respuesta.data);
+    }catch(error){
+      console.log("GetData Error: \n",error)
+    }
+
+
+  }
+  useEffect(() => {
+    GetData()
+  }, []);
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
       <Modal.Header closeButton>

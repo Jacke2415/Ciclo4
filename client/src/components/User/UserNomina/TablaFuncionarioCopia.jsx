@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Redirect} from "react";
 import MaterialTable from "material-table";
 //import { AddBox, ArrowDownward, Edit, Event, Remove, DeleteIcon} from "@material-ui/icons";
 //import { AddBox, ArrowDownward, Edit, Event, Remove, DeleteIcon} from "./TableIcons";
@@ -6,6 +6,8 @@ import tableIcons from "./TableIcons";
 //import { Avatar, Container, Grid, Table, Tooltip } from "@material-ui/core";
 import axios from "axios";
 import { EditUserModalByCedula } from "../../modals/user_modal.jsx";
+import editarUsuario from "../../../pages/EditarUsuario.jsx";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const columns = [
   { title: "Nombre", field: "nombre" },
@@ -36,8 +38,13 @@ const baseUrl = "http://localhost:5000/users";
 {nombre:'Luis', apellido:'Eduardo' , identificacion:1111111, contrato:"2021-0001", tipocontrato:'fijo', salario:200000} */
 
 export const TablaFuncionarioCopia = () => {
+  let navigate = useNavigate();
+  function handleSubmit(event) {
+    event.preventDefault();
+    navigate("", { replace: true });
+  }
   const [modalShow, setModalShow] = useState(false);
-
+  const [cedula, setCedula] = useState('1100110011');
   const [data, setData] = useState([]);
   const peticionGet = async () => {
     await axios.get(baseUrl).then((response) => {
@@ -72,11 +79,13 @@ export const TablaFuncionarioCopia = () => {
     <>
       <div>
         <br />
+
         <EditUserModalByCedula
       show={modalShow}
       onHide={() => setModalShow(false)}
       title="Editar Funcionario"
       tipo = "editar"
+      cedula = {cedula}
     />;
         <div class="container-md">
           <MaterialTable
@@ -97,7 +106,24 @@ export const TablaFuncionarioCopia = () => {
                         rowData.apellido
                     )
                   ) {
-                    setModalShow(true);
+                    /*   <Link to="signin/administrador/editarUsuario"/>  */
+                      
+                    navigate("editarUsuario", { 
+                        state: {
+                          message: 'holamundo'
+                        }
+                      })
+
+
+                  /*   <Navigate to="signin/administrador/editarUsuario" push={
+                      {
+                        cedula:rowData.Cedula,
+                        tipo: 'editar'
+                      }
+
+                    }/>
+                    navigate("signin/administrador/editarUsuario", { replace: true}); */
+                    {/* <Redirect to="signin/administrador/editarUsuario"/> */}
                   }
                 },
               },
