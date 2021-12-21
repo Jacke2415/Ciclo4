@@ -1,6 +1,7 @@
 import NavbarAdmin from "../components/Nav_Bar/NavbarAdmin";
 import { TablaFuncionarioCopia } from "../components/User/UserNomina/TablaFuncionarioCopia";
 import SupGestionarVacaciones from "../components/User/UserAdmin/SupGestionarVacaciones";
+import BuscarEmpleado from "../components/User/UserNomina/BuscarEmpleado";
 import Background from "../components/Login/Background";
 
 export default function GestionarVacacionesAdmin() {
@@ -15,7 +16,8 @@ export default function GestionarVacacionesAdmin() {
           <div className="col-10">
             <div className="row">
               <div className="col-12">
-                <SupGestionarVacaciones />
+                <h1>Gestionar Vacaciones - Administrador</h1>
+                <BuscarEmpleado />
               </div>
               <div className="col-12">
                 <TablaFuncionarioCopia />

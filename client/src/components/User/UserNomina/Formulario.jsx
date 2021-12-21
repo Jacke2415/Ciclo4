@@ -26,14 +26,16 @@ export default function Formulario() {
     dispatch(registerStart());
     try {
       const res = await axios.post("http://localhost:5000/users/signup", user);
-      dispatch(registerSuccess(res.data));
+      dispatch(registerSuccess(res.data))
+
     } catch (error) {
       console.log("dispatching register");
       console.log(error.response.data);
       dispatch(registerFailure(error.response.data));
     }
-  };
+  }
 
+  
   const createUser = (e) => {
     e.preventDefault();
     setError("");
@@ -72,7 +74,6 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, nombre: "" };
                                         });
-
                                     } */
                 }}
               />
@@ -103,7 +104,6 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, apellido: "" };
                                         });
-
                                     } */
                 }}
               />
@@ -113,7 +113,8 @@ export default function Formulario() {
           </div>
         </div>
         <div className="row">
-          <div className="col">
+          <div className="col"
+          style={{position: 'relative'}}>
             <select
               className="form-select mb-3"
               aria-label="Default select example"
@@ -150,7 +151,6 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, cedula: "" };
                                         });
-
                                     } */
                 }}
               />
@@ -181,7 +181,6 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, password: "" };
                                         });
-
                                     } */
                 }}
               />
@@ -302,7 +301,6 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, direccion: "" };
                                         });
-
                                     } */
                 }}
               />
@@ -332,7 +330,6 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, email: "" };
                                         });
-
                                     } */
                 }}
               />
@@ -358,7 +355,7 @@ export default function Formulario() {
               <label htmlFor="">Fecha De Ingreso</label>
             </div>
           </div>
-          <div className="col">
+          <div className="col" style={{position: 'relative'}}>
             <select
               className="form-select  mb-3"
               aria-label=" "
@@ -433,7 +430,6 @@ export default function Formulario() {
                                         setError((error) => {
                                             return { ...error, cargo: "" };
                                         });
-
                                     } */
                 }}
               />
@@ -444,7 +440,7 @@ export default function Formulario() {
         </div>
         <div className="row">
           <div className="col">
-            <div className="d-grid gap-2">
+            <div className="d-grid gap-2" style={{position: 'relative'}}>
               <button
                 type="submit"
                 className="btn btn-primary"

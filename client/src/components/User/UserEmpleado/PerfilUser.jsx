@@ -50,7 +50,7 @@ const Perfil = (props) => {
           <div className="d-flex flex-column align-items-center text-center p-3 py-5">
             <img
               className="rounded-circle mt-5"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF2psCzfbB611rnUhxgMi-lc2oB78ykqDGYb4v83xQ1pAbhPiB&usqp=CAU"
+              src="https://www.cheso.com.py/images/users/31330.png"
               alt=""
             />
             <span className="font-weight-bold">
@@ -128,10 +128,6 @@ const Perfil = (props) => {
                   type="text"
                   className="form-control"
                   placeholder="Direccion"
-                  value={direccion}
-                  onChange={({ target }) => {
-                    setDireccion(target.value);
-                  }}
                 />
               </div>
               <div className="col-md-12">

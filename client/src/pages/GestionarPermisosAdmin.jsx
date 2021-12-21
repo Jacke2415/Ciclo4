@@ -3,7 +3,7 @@ import "../public/css/PerfilUser.css";
 import NavbarAdmin from "../components/Nav_Bar/NavbarAdmin";
 import { TablaFuncionario } from "../components/User/UserNomina/TablaFuncionario";
 import SupGestionarPermisos from "../components/User/UserAdmin/SupGestionarPermisos";
-import Background from "../components/Login/Background";
+import BuscarPermisos from "../components/User/UserNomina/BucarPermisos";
 class GestionarPermisosAdmin extends React.Component {
   render() {
     return (
@@ -12,14 +12,15 @@ class GestionarPermisosAdmin extends React.Component {
         <div className="container-lg">
           <div className="row">
             <div className="col">
-              <Background/>
+              
               <NavbarAdmin />
             </div>
             <div className="col-10">
               <div className="container">
                 <div className="row">
                   <div className="col-12">
-                    <SupGestionarPermisos />
+                    <h1>Gestionar Permisos - Administrador</h1>
+                    <BuscarPermisos />
                   </div>
                 </div>
                 <div className="row">

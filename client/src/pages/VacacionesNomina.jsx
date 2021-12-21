@@ -2,7 +2,6 @@ import BuscarEmpleado from "../components/User/UserNomina/BuscarEmpleado";
 import TablaVacaciones from "../components/User/UserNomina/TablaVacaciones";
 import NavbarNomina from "../components/Nav_Bar/NavbarNomina.jsx";
 
-
 export default function VacacionesNomina() {
   return (
     <>
@@ -21,7 +20,7 @@ export default function VacacionesNomina() {
               <div className="row">
                 <div className="col-12">
                   <BuscarEmpleado />
-                </div>
+                </div><br/><br/>
                 <div className="col-12">
                   <TablaVacaciones />
                 </div>

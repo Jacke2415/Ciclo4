@@ -6,6 +6,7 @@ import Background from "../components/Login/Background";
 export default function PermisosNomina() {
   return (
     <>
+      
       <div className="container-lg">
         <Background />
         <div className="row">

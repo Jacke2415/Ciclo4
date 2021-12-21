@@ -8,7 +8,7 @@ class Panel extends React.Component {
 
         return (
             <>
-                <input className="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
+                <input className="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" style={{display:'none'}} />
                 <label for="menu-icon"></label>
                 <nav className="nav">
                     <ul className="pt-5">

@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
-p{
-    position: relative;
-    color: black;
-    font-weight: bold;
-}
 .area{
     background: #ffffff; 
     position: fixed; 
@@ -31,7 +26,7 @@ p{
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(0, 17, 255, 0.535);
+    background: rgba(0, 123, 255, 0.535);
     animation: animate 25s linear infinite;
     bottom: -150px;
     

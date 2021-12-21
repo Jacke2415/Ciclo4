@@ -82,7 +82,7 @@ export const TablaFuncionario = () => {
             options={{
               //selection: true,
               headerStyle: {
-                backgroundColor: "#6699CC",
+                backgroundColor: "#0d6fff",
                 color: "#FFF",
               },
               exportButton: true,

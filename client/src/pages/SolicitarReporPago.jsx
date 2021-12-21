@@ -9,6 +9,7 @@ export default function SolicitarReporPago() {
         <div className="container-lg">
           <div className="row">
             <div className="col">
+              <Background />
               <NavbarEmpleado />
             </div>
             <div className="col-10">
