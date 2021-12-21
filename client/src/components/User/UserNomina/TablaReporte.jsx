@@ -151,3 +151,4 @@ export const TablaReporte = () => {
     </>
   );
 };
+export default TablaReporte;

@@ -109,7 +109,7 @@ export default function Formulario() {
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col" style={{position:'relative'}}>
                         <select className="form-select mb-3" aria-label="Default select example"
                             id="tipo_identificacion" value={user.tipo_identificacion}  onChange={(event) => {
                                 setUser({ ...user, tipo_identificacion: event.target.value })
@@ -297,7 +297,7 @@ export default function Formulario() {
                         </div>
 
                     </div>
-                    <div class="col">
+                    <div class="col" style={{position:'relative'}}>
                         <select className="form-select  mb-3" aria-label=" "
                             id="tcontrato" value={user.tipo_contrato} onChange={(event) => {
                                 setUser({ ...user, tipo_contrato: event.target.value })
@@ -369,7 +369,7 @@ export default function Formulario() {
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div className="d-grid gap-2">
+                        <div className="d-grid gap-2" style={{position:'relative'}}>
                             <button type="submit"
                                 className="btn btn-primary" onClick={createUser}>Crear Empleado</button>
                         </div>
