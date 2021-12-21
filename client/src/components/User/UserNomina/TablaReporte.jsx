@@ -142,7 +142,7 @@ export const TablaReporte = () => {
             options={{
               /* selection: true, */
               headerStyle: {
-                backgroundColor: "#00113b",
+                backgroundColor: "#0d6fff",
                 color: "#FFF",
               },
               exportButton: true,

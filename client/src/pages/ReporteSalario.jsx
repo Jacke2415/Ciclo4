@@ -15,7 +15,7 @@ export default function ReporteSalario() {
           <div className="col-10">
             <div className="row">
               <div className="col-12">
-                <SupReporteSalario />
+                <h1>Reporte Salario</h1>
               </div>
               <div className="col-12">
                 <TablaReporte />
