@@ -12,4 +12,6 @@ router.post('/userID', Users.getUserID);
 
 router.delete('/:_id', Users.deleteUser);
 
+router.post('/cedula', Users.getUserOne);
+
 module.exports = router;

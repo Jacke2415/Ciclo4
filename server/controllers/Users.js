@@ -9,6 +9,20 @@ module.exports.test = (req, res) => {
   // console.log(token);
   res.send('Texto de prueba recibido desde la API. Id de usuario: ' + id);
 };
+
+
+module.exports.getUserOne = async (req, res) => {
+  
+  try {
+    const cedula = req.body.cedula;
+    console.log(cedula)
+    const UserOne = await UserData.find({cedula:cedula});
+    res.status(200).json(UserOne);
+  } catch (error) {
+      res.status(404).json({ message: error.message });
+  }
+};
+
 module.exports.editUser = async (req, res) => {
   try {
     const data = req.body.userData;
