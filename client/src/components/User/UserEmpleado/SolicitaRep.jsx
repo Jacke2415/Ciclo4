@@ -24,8 +24,8 @@ class SoliRep extends React.Component {
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-4">
-                                    <label class="labels">Identificacion</label>
-                                    <input type="text" className="form-control" placeholder="Numero de Telefono" value="" />
+                                    <label class="labels">N° Identificacion</label>
+                                    <input type="text" className="form-control" placeholder="N° Identificacion" value="" />
                                 </div>
                                 <div class="row mt-3">
                                     <div class="col-md-6">
