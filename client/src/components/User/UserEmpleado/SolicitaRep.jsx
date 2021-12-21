@@ -25,7 +25,7 @@ class SoliRep extends React.Component {
                             <div class="row mt-3">
                                 <div class="col-md-4">
                                     <label class="labels">Identificacion</label>
-                                    <input type="text" className="form-control" placeholder="Numero de Telefono" value="" />
+                                    <input type="text" className="form-control" placeholder="Numero de identificación" value="" />
                                 </div>
                                 <div class="row mt-3">
                                     <div class="col-md-6">
@@ -38,19 +38,16 @@ class SoliRep extends React.Component {
                             <div class="row-mt-5">
                                 <div class="col-md-5">
                                     <div class="boton">
-                                        <a type="button" class="btn btn-primary btn-lg" href="#">
+                                        <a type="button" class="btn btn-primary btn-lg">
                                             <span>Confirmar</span>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
             </div>
-
         );
     }
 }
