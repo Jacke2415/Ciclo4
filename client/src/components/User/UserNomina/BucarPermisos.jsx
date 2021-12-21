@@ -1,6 +1,7 @@
 import React from "react"
 import { useState } from "react";
 import axios from "axios";
+import { useEffect } from "react";
 
 const Style = {
     width: '18rem',
@@ -11,21 +12,36 @@ const BuscarPermisos = () =>{
     const [cedula, setCedula]=useState("");
     const [user, setUser] = useState({});
     
+  
     const onBuscar = (e) => {
         e.preventDefault();
         
         axios
-                .get('http://localhost:5000/users/cedula/${cedula}', user)
-                .then(() => {
-                    window.location.reload(false)
-                    console.log(user)
-                    alert(user)
-                })
-                .catch((error) => {
-                    console.log(error);
+          .get(`http://localhost:5000/users/cedula//${cedula}`)
+          .then(() => {
+            
+            swal("La inversión " + cedula + " fue borrada", {
+              icon: "success",
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+        
+        
+        /*axios
+            .get('http://localhost:5000/users/cedula/${cedula}', cedula)
+            .then(() => {
+                window.location.reload(false)
+                console.log(user)
+                alert(cedula)
+            })
+            .catch((error) => {
+                console.log(error);
                     
-                });
-    }            
+            });*/
+    }
+           
     return(
         <>
             <div className="card my-2">
