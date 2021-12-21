@@ -21,13 +21,7 @@ nav.main-menu.expanded {
 }
 
 .main-menu {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 1%,
-    rgba(3,3,108,1) 50%,
-    rgba(0, 17, 59, 1) 99%
-  );
+  background: #0d6fff;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -126,7 +120,7 @@ nav.main-menu li.active > a,
 .dropdown-menu > .active > a:focus,
 .no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
 .dashboard-page nav.dashboard-menu ul li.active a {
-  color: #00113b;
+  color: #000000;
   left: 0;
   top: 0;
   width: 91%;
