@@ -1,5 +1,7 @@
 import SoliRep from '../components/User/UserEmpleado/SolicitaRep.jsx';
 import NavbarEmpleado from '../components/Nav_Bar/NavbarEmpleado.jsx';
+import SolicitarReporte from '../components/User/UserEmpleado/SolicitarReporte';
+
 
 export default function CrearEmpleado() {
     return (
@@ -11,6 +13,7 @@ export default function CrearEmpleado() {
             </div>
             <div className="col-10">
               <SoliRep />
+            
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@
     "@material-ui/icons": "^4.11.2",
     "@mui/material": "^5.2.3",
     "@popperjs/core": "^2.11.0",
+    "@react-pdf/renderer": "^2.0.21",
     "@reduxjs/toolkit": "^1.7.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
