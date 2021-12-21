@@ -53,7 +53,7 @@ const SolicitarPer  = (props) => {
 
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-8">
                         <div className="card" style={{ "width: 18rem": "100", "padding: 10px": "10px" }}>
                             
                             <div className="card-body">
