@@ -6,12 +6,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 const columns=[
-    {title: "No Identificación", field:'cedula'    },
+    {title: "No Identificación", field:'cedula',  type: 'numeric'  },
     {title: "Tipo de Permiso", field:'tipoPermiso'},
     {title: "Asunto", field:'asunto'},
     {title:'Fecha Inicial', field:'fechaInicial'},
     {title:'Fecha Final', field:'fechaFinal'},
-    {title:'Dias de Permiso', field:'diasPermiso'},
+    {title:'Dias Permiso', field:'diasPermiso'},
     {title:'Estado Solicitud', field:'estado'}
 ];
 const baseUrl="http://localhost:5000/permisos"
@@ -23,6 +23,8 @@ const TablaPermisos = () =>{
             setData(response.data)
         })
     }
+
+
 
     useEffect(()=>{
         peticionGet();
@@ -36,23 +38,17 @@ const TablaPermisos = () =>{
                     data={data}
                     icons={tableIcons} 
                     actions={[
-                        
-                        
-                        
+                                                
                     ]}
 
-                        options={{
-                            actionsColumnIndex: -1,
-                            headerStyle: {
-                                backgroundColor: '#01579b',
-                                color: '#FFF',
-                                },
-                                //selection: true
-
-                            
-                            
-
-                        }}
+                    options={{
+                        /* selection: true, */
+                        headerStyle: {
+                          backgroundColor: "#00113b",
+                          color: "#FFF",
+                        },
+                        exportButton: true,
+                      }}
                         localization={{
                             header:{
                                 actions: 'Acciones'

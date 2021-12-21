@@ -16,9 +16,8 @@ const PermisosNomina = () => {
                             <div className="">
                                 <h1>Gestion Empleados - Permisos</h1>
                             </div>
-                            <br /><br /><br />
                             <BuscarPermisos/>
-                            <br /><br /><br /><br /><br /><br /><br /><br />
+                            <br /><br /><br /><br /><br /><br />
                             <TablaPermisos/>
                         </div> 
                     </div>
