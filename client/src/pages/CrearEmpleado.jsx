@@ -11,6 +11,7 @@ export default function CrearEmpleado() {
               <NavbarNomina />
             </div>
             <div className="col-10">
+              <h1>Formulario Creacion de Empleados</h1>
               <Formulario />
             </div>
           </div>
