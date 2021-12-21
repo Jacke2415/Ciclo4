@@ -3,6 +3,7 @@ import TablaVacaciones from "../components/User/UserNomina/TablaVacaciones";
 import NavbarNomina from "../components/Nav_Bar/NavbarNomina";
 
 
+
 export default function PermisosNomina (){
   return (
     <>

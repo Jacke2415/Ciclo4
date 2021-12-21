@@ -12,6 +12,7 @@ export default function CrearEmpleado() {
             </div>
             <div className="col-10">
               <SoliRep />
+            
             </div>
           </div>
         </div>

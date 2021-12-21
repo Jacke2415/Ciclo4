@@ -1,7 +1,7 @@
 //import '../../../public/css/Login.css'
 import NavbarNomina from "../components/Nav_Bar/NavbarNomina";
 import SupLiquidar from "../components/User/UserNomina/SupLiquidar";
-import { TablaFuncionarioCopia } from "../components/User/UserNomina/TablaFuncionarioCopia";
+import { TablaLiquidar } from "../components/User/UserNomina/TablaLiquidar";
 
 export default function CrearNomina() {
   return (
@@ -22,9 +22,10 @@ export default function CrearNomina() {
               </div>
             </div>
             <div className="row">
-              <div className="col-12">
-                <TablaFuncionarioCopia />
-              </div>
+            <div className="col-12">
+               <TablaLiquidar />
+            </div>
+
             </div>
           </div>
         </div>

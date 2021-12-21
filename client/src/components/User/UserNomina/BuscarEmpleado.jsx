@@ -1,54 +1,65 @@
-import React from "react"
+import React  from "react"
+import axios from "axios";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Style = {
   width: '18rem',
 };
+const baseUrl="http://localhost:5000/signin/users/cedula"
+const BuscarEmpleado = () =>{
+  const [cedula, setCedula] =useState(""); 
+  const [data, setData]=useState([ ]);
+    const peticionGet=async(cedula)=>{
+        await axios.get(baseUrl).then(response=>{
+            setData(response.data)
+        })
+    }
+    console.log(data);
+    useEffect(()=>{
+        peticionGet();
+    },[])
 
-export default function BuscarEmpleado (){
+    
     return(
-        <>
+      <>
         
+        <div className="container">
           <div className="row">
             <div className="col-6">
-              <form>
-                <div className="row mb-2 ">
-                  <label for="" className="col">No Identificación</label>
+              <form className="card">
+                
+                <div className="row-3 mb-2">
+                  <label htmlFor="cedula" className="visually-hidden">No Identificacion</label>
+                  <input type="text" className="form-control" id="cedula" placeholder="No Identificación" 
+                  value={cedula} onChange={(event) => {
+                    setCedula({ setCedula: event.target.value })}} />
+                  
                 </div>
-                <div className="row mb-3 ">
-                  <input type="text" className="form-control" id="cedula"/>
-                </div>
-                <div className="row mb-4 ">
-                  <button class="btn btn-primary" type="button">Buscar</button>
+              
+                <div className="row-3">
+                  <button type="submit" className="btn btn-primary mb-3">Buscar</button>
+                  
                 </div>
               </form>
             </div>
-          
-            <div className="col-6 ">
-              <table className="table-sm table-bordered border-light table-rounded">
-                <thead>
-                  <tr>
-                    <th>Nombre:</th> <td>Mark Gonzalez</td>
-                  </tr>
-                  <tr>
-                    <th>Cargo:</th> <td>Ingeniero de Sistemas</td>
-                  </tr>
-                  <tr>
-                    <th>Fecha Inical Vacaciones:</th> <td>16/01/2022</td>
-                  </tr>
-                  <tr>
-                    <th>Fecha Fin Vacaciones:</th> <td>30/01/2022</td>
-                  </tr>
-                  <tr>
-                    <td><button type="button" className="btn btn-primary">Aceptar</button></td> 
-                    <td><button type="button" className="btn btn-danger">Rechazar</button></td>
-                  </tr>
-                </thead>
-              </table> 
+            <div className="col-6">
+              <div className="card-body">
+                  <h5 className="card-title">Nombre: Kelly Rolon</h5>
+                  
+                  <p className="card-text"> Cargo: Contador <br /> Fecha Inicial: 01-01-2022 <br />
+                  Fecha Final: 15-01-2022
+                  </p>
+                  <p className="card-text"> </p>
+                  <button type="submit" className="btn btn-primary ">Aceptar</button>
+                  <button type="submit" className="btn btn-danger">Rechazar</button>
+              </div> 
             </div>
-          </div>  
-                
             
-        </>
+          </div>
+        </div>
+      </>  
+          
     )
 }
 
