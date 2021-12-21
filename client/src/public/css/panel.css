@@ -27,11 +27,11 @@
   transform: translateY(-50%);
 }
 
-[type="radio"]:checked,
+/* [type="radio"]:checked,
 [type="radio"]:not(:checked){
   position: absolute;
   left: -9999px;
-}
+} */
 
 .menu-icon:checked + label,
 .menu-icon:not(:checked) + label{

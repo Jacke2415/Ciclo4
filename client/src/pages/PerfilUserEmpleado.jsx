@@ -1,13 +1,15 @@
 import PerfilUser from '../components/User/UserEmpleado/PerfilUser.jsx';
-import Navbar from '../components/Nav_Bar/Navbar.jsx';
+import NavbarEmpleado from '../components/Nav_Bar/NavbarEmpleado.jsx';
+import Background from "../components/Login/Background";
 
 export default function CrearEmpleado() {
     return (
       <>
         <div className="container-lg">
+              <Background />
           <div className="row">
             <div className="col">
-              <Navbar />
+              <NavbarEmpleado />
             </div>
             <div className="col-10">
               <PerfilUser />

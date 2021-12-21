@@ -5,9 +5,9 @@ class SoliRep extends React.Component {
     render() {
 
         return (
-            <div class="container rounded bg-white mt-4 mb-1">
+            <div class="container rounded bg-white mt-4 mb-1" style={{position: 'relative'}}>
                 <div class="row">
-                    <div class="col-sd-5 border-right">
+                    <div class="col-md-8 border-right">
                         <div class="p-2 py-5">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h4 class="text-right">Solicitar Reportes de Pago</h4>
@@ -23,9 +23,9 @@ class SoliRep extends React.Component {
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <div class="col-md-12">
+                                <div class="col-md-4">
                                     <label class="labels">Identificacion</label>
-                                    <input type="text" className="form-control" placeholder="Numero de Telefono" value="" />
+                                    <input type="text" className="form-control" placeholder="Numero de identificación" value="" />
                                 </div>
                                 <div class="row mt-3">
                                     <div class="col-md-6">
@@ -38,19 +38,16 @@ class SoliRep extends React.Component {
                             <div class="row-mt-5">
                                 <div class="col-md-5">
                                     <div class="boton">
-                                        <a type="button" class="btn btn-primary btn-lg" href="#">
+                                        <a type="button" class="btn btn-primary btn-lg">
                                             <span>Confirmar</span>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
             </div>
-
         );
     }
 }

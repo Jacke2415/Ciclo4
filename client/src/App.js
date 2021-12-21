@@ -10,7 +10,7 @@ import Login from "./pages/Login";
 import LiquidarNomina from "./pages/LiquidarNomina";
 import CrearNomina from "./pages/CrearNomina";
 import CrearEmpleado from "./pages/CrearEmpleado";
-import VacacionesNomina from "./pages/VacacionesNomina";
+import VacacionesNomina from "./pages/VacacionesNomina.jsx";
 import PermisosNomina from "./pages/PermisosNomina";
 import ReporteSalario from "./pages/ReporteSalario";
 import Formulario from "../src/components/User/UserNomina/Formulario";
@@ -18,7 +18,7 @@ import PerfilUserNomina from "./pages/PerfilUserNomina";
 import PerfilUserEmpleado from './pages/PerfilUserEmpleado';
 import SoliRep from './pages/SolicitarReporPago'; 
 import SolicitarPermiso from './pages/SolicitarPermiso';
-import SolicitarVacaciones from './pages/SolicitaVaca';
+import SolicitarVacaciones from './pages/SolicitarVacaciones.jsx';
 import SolicitarCertificado from './pages/SolicitarCertificado'; 
 import PerfilUserAdmin from "./pages/PerfilUserAdmin";
 import GestinarEmpleadoAdmin from "./pages/GestionarEmpleadoAdmin";
@@ -26,6 +26,7 @@ import LiquidarNominaAdmin from "./pages/LiquidarNominaAdmin";
 import GestionarPermisosAdmin from './pages/GestionarPermisosAdmin';
 import GestionarVacacionesAdmin from './pages/GestionarVacacionesAdmin';
 import ReporteSalarioAdmin from './pages/ReporteSalarioAdmin.jsx';
+import EditarUsuario from './pages/EditarUsuario.jsx';
 
 function App() {
   const { currentUser } = useSelector((state) => state.auth);
@@ -113,6 +114,12 @@ function App() {
           path="/signin/administrador/perfilAdministrador"
           element={<PerfilUserAdmin />}
         />
+        <Route
+          path="/signin/administrador/gestionarEmpleado/editarUsuario"
+          element={<EditarUsuario />}
+        />
+
+
         <Route
           path="/signin/administrador/gestionarEmpleado"
           element={<GestinarEmpleadoAdmin />}

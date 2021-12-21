@@ -1,60 +1,82 @@
-import React from "react"
-
-const Style = {
-    width: '18rem',
-};
+import React  from "react"
+import axios from "axios";
+import { useState } from "react";
 
 
-const BuscarPermisos = () =>{
-    return(
-        <>
-            <div className="card my-2">
-                <div className="row">
-                    <div className="col-6">
-                    <div className="row mb-2 ">
-                        <label for="" className="col">No Identificación</label>
-                    </div>
-                    <div className="row mb-3 ">
-                        <input type="text" className="form-control" id="cedula"/>
-                    </div>
-                    <div className="row mb-4 ">
-                        <button class="btn btn-primary" type="button">Buscar</button>
-                    </div>
-                    </div>
-                
-                    <div className="col-6 ">
-                    <table className="table-sm table-bordered border-light table-rounded">
-                        <thead>
-                        <tr>
-                            <th>Nombre:</th> <td>Mark Gonzalez</td>
-                        </tr>
-                        <tr>
-                            <th>Cargo:</th> <td>Ingeniero de Sistemas</td>
-                        </tr>
-                        <tr>
-                            <th>Fecha Inical Vacaciones:</th> <td>16/01/2022</td>
-                        </tr>
-                        <tr>
-                            <th>Fecha Fin Vacaciones:</th> <td>30/01/2022</td>
-                        </tr>
-                        <tr>
-                            <th><select className="form-select form-select-sm" aria-label=".form-select-sm example">
-                                <option selected>Escoje Opcion</option>
-                                <option value="Remunerado">Remunerado</option>
-                                <option value="NoRemunerado">No Remunerado</option>
-                                </select></th> 
-                        </tr>
-                        <tr>
-                            <td><button type="button" className="btn btn-success">Aceptar</button></td> 
-                            <td><button type="button" className="btn btn-danger">Rechazar</button></td>
-                        </tr>
-                        </thead>
-                    </table> 
-                    </div>
-                </div>  
-            </div>      
-            
-        </>
-    )
+export default function BuscarPermisos() {
+  const [cedula, setCedula]=useState("");
+  const [estado, setEstado]=useState("");  
+
+  const actualizarPermiso = (n) => {
+    n.preventDefault();
+    axios
+      .patch("http://localhost:5000/permisos/Actualizar", {
+          cedula, estado,
+      })
+      .then((response) => {
+        window.location.reload(false);
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  return (
+    <>
+      <form className="card" onSubmit={actualizarPermiso}>
+        <h6>Gestionar Permisos</h6>
+        <div className="row">
+          
+          <div className="col-3">
+            <div className="form">
+              <input
+                type="text"
+                className="form-control"
+                id="cedula"
+                placeholder="No Identificación"
+                value={cedula}
+                onChange={(event) => {
+                  setCedula(event.target.value);
+                }}
+              />
+              
+            </div>
+          </div>
+          <div className="col">
+            <select
+              className="form-select mb-2"
+              aria-label="Default select example"
+              id="estado"
+              value={estado}
+              onChange={(event) => {
+                setEstado(event.target.value );
+              }}
+            >
+              <option selected>Escoger</option>
+              <option value="Aceptada">Aceptar</option>
+              <option value="Rechazada">Rechazar</option>
+            </select>
+          </div>
+          
+          
+          
+        </div>
+
+        <div className="row">
+          <div className="col-4">
+            <div className="d-grid gap-2">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                onClick={actualizarPermiso}
+              >
+                Confirmar
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </>
+  );
 }
-export default BuscarPermisos

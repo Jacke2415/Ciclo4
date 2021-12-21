@@ -2,7 +2,7 @@ import React from "react";
 import "../public/css/PerfilUser.css";
 import NavbarAdmin from "../components/Nav_Bar/NavbarAdmin";
 import PerfilUser from "../components/User/UserEmpleado/PerfilUser";
-
+import Background from "../components/Login/Background";
 class PerfilUserAdmin extends React.Component {
   render() {
     return (
@@ -10,6 +10,7 @@ class PerfilUserAdmin extends React.Component {
         <div className="container-lg">
           <div className="row">
             <div className="col">
+              <Background/>
               <NavbarAdmin />
             </div>
             <div className="col-10">

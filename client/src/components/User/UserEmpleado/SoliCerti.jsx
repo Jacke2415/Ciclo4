@@ -5,9 +5,9 @@ class SoliCerti extends React.Component {
     render() {
 
         return (
-            <div class="container rounded bg-white mt-4 mb-1">
+            <div class="container rounded bg-white mt-4 mb-1" style={{position: 'relative'}}>
                 <div class="row">
-                    <div class="col-sd-5 border-right">
+                    <div class="col-md-6 border-right">
                         <div class="p-2 py-5">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h4 class="text-right">Solicitar Certificado Laborales</h4>

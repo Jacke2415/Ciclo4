@@ -1,15 +1,17 @@
 import SoliVac from '../components/User/UserEmpleado/SolicitarVac.jsx';
-import Navbar from '../components/Nav_Bar/Navbar.jsx';
-
-export default function CrearEmpleado() {
+import NavbarEmpleado from '../components/Nav_Bar/NavbarEmpleado.jsx';
+import Background from "../components/Login/Background";
+export default function SolicitarVacaciones() {
     return (
       <>
+      <Background/>
         <div className="container-lg">
           <div className="row">
             <div className="col">
-              <Navbar />
+              <Background/>
+              <NavbarEmpleado />
             </div>
-            <div className="col-10">
+            <div className="col-10" >
               <SoliVac  />
             </div>
           </div>

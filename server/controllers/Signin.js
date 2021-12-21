@@ -1,0 +1,52 @@
+const UserData = require("../models/Users");
+const jwt = require("jsonwebtoken");
+
+// create json web token
+const maxAge = 1 * 24 * 60 * 60;
+const createToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: maxAge,
+  });
+};
+
+module.exports.Signin = async (req, res) => {
+  const { email, password } = req.body;    
+  try {
+    const user = await UserData.signin(email, password);
+    const userAll = await UserData.findOne({_id : user._id})
+    const rol = await userAll.tipo_usuario    
+    const token = createToken(user._id);    
+    res
+      .cookie('access_token', token, { httpOnly: true, maxAge: maxAge * 1000 })
+      .status(200)
+      .json({ message: 'su signin ha sido exitoso!!!', user, rol} );
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};
+
+module.exports.reviewUser = (req, res) => {
+  console.log("Revisar Usuario");
+  const token = req.cookies.access_token;
+  console.log(token);
+  if (token) {
+    jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+      if (err) {
+        console.log("error1");
+        res.status(401).json({ user: null });
+      } else {
+        console.log('hecho!!')
+        let user = await UserData.findById(decodedToken.id);
+        res
+          .status(200)
+          .json({ user });
+      }
+    });
+  } else {
+    console.log("error2");
+    res
+      .status(401)
+      .json({ user: null });
+  }
+};
+
