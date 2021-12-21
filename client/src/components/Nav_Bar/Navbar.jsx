@@ -12,7 +12,7 @@ const DNavbar = (props) => {
   };
 
   const menuitems = props.items;
-  console.log(menuitems);
+
   const items = () =>
     menuitems.map((item) => (
       <li>

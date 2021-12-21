@@ -15,8 +15,14 @@ class GestionarEmpleadoAdmin extends React.Component {
               <NavbarAdmin />
             </div>
             <div className="col-10">
-              <SupGestionarEmpleados />
-              <TablaFuncionarioCopia />
+              <div className="row">
+                <div className="col-12">
+                  <SupGestionarEmpleados />
+                </div>
+                <div className="col-12">
+                  <TablaFuncionarioCopia />
+                </div>
+              </div>
             </div>
           </div>
         </div>

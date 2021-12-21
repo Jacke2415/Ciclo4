@@ -5,6 +5,7 @@ import MaterialTable from "material-table";
 import tableIcons from "./TableIcons";
 //import { Avatar, Container, Grid, Table, Tooltip } from "@material-ui/core";
 import axios from "axios";
+import { EditUserModalByCedula } from "../../modals/user_modal.jsx";
 
 const columns = [
   { title: "Nombre", field: "nombre" },
@@ -35,6 +36,8 @@ const baseUrl = "http://localhost:5000/users";
 {nombre:'Luis', apellido:'Eduardo' , identificacion:1111111, contrato:"2021-0001", tipocontrato:'fijo', salario:200000} */
 
 export const TablaFuncionarioCopia = () => {
+  const [modalShow, setModalShow] = useState(false);
+
   const [data, setData] = useState([]);
   const peticionGet = async () => {
     await axios.get(baseUrl).then((response) => {
@@ -56,6 +59,8 @@ export const TablaFuncionarioCopia = () => {
     } catch (error) {}
   };
 
+
+
   useEffect(() => {
     peticionGet();
   }, []);
@@ -67,6 +72,12 @@ export const TablaFuncionarioCopia = () => {
     <>
       <div>
         <br />
+        <EditUserModalByCedula
+      show={modalShow}
+      onHide={() => setModalShow(false)}
+      title="Editar Funcionario"
+      tipo = "editar"
+    />;
         <div class="container-md">
           <MaterialTable
             title="Listado de Funcionarios"
@@ -77,13 +88,18 @@ export const TablaFuncionarioCopia = () => {
               {
                 icon: tableIcons.Edit,
                 tooltip: "Editar Funcionario",
-                onClick: (event, rowData) =>
-                  alert(
-                    "Editar al Funcionario: " +
-                      rowData.nombre +
-                      " " +
-                      rowData.apellido
-                  ),
+                onClick: (event, rowData) => {
+                  if (
+                    window.confirm(
+                      "Esta seguro de editar este usuario: " +
+                        rowData.nombre +
+                        " " +
+                        rowData.apellido
+                    )
+                  ) {
+                    setModalShow(true);
+                  }
+                },
               },
               {
                 icon: tableIcons.Delete,

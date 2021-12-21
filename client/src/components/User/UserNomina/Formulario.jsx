@@ -48,7 +48,7 @@ export default function Formulario() {
 
   return (
     <>
-      <form className="row" onSubmit={createUser}>
+      <form className="row" onSubmit={createUser} style={{position:'relative'}}>
         <h2>Informacion Empleado</h2>
         <div className="row">
           <div className="col">
