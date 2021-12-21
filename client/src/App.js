@@ -1,5 +1,5 @@
-import React from 'react';
-import './index.css';
+import React from "react";
+import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -15,39 +15,40 @@ import PermisosNomina from "./pages/PermisosNomina";
 import ReporteSalario from "./pages/ReporteSalario";
 import Formulario from "../src/components/User/UserNomina/Formulario";
 import PerfilUserNomina from "./pages/PerfilUserNomina";
-import PerfilUserEmpleado from './pages/PerfilUserEmpleado';
-import SoliRep from './pages/SolicitarReporPago'; 
-import SolicitarPermiso from './pages/SolicitarPermiso';
-import SolicitarVacaciones from './pages/SolicitarVacaciones.jsx';
-import SolicitarCertificado from './pages/SolicitarCertificado'; 
+import PerfilUserEmpleado from "./pages/PerfilUserEmpleado";
+import SoliRep from "./pages/SolicitarReporPago";
+import SolicitarPermiso from "./pages/SolicitarPermiso";
+import SolicitarVacaciones from "./pages/SolicitarVacaciones.jsx";
+import SolicitarCertificado from "./pages/SolicitarCertificado";
 import PerfilUserAdmin from "./pages/PerfilUserAdmin";
 import GestinarEmpleadoAdmin from "./pages/GestionarEmpleadoAdmin";
 import LiquidarNominaAdmin from "./pages/LiquidarNominaAdmin";
-import GestionarPermisosAdmin from './pages/GestionarPermisosAdmin';
-import GestionarVacacionesAdmin from './pages/GestionarVacacionesAdmin';
-import ReporteSalarioAdmin from './pages/ReporteSalarioAdmin.jsx';
-import EditarUsuario from './pages/EditarUsuario.jsx';
+import GestionarPermisosAdmin from "./pages/GestionarPermisosAdmin";
+import GestionarVacacionesAdmin from "./pages/GestionarVacacionesAdmin";
+import ReporteSalarioAdmin from "./pages/ReporteSalarioAdmin.jsx";
+import EditarUsuario from "./pages/EditarUsuario.jsx";
+import GraficoNomina from "./pages/GraficoNomina";
 
 function App() {
   const { currentUser } = useSelector((state) => state.auth);
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element= {<Navigate to='/signin' />}/>
+        <Route path="/" element={<Navigate to="/signin" />} />
         <Route
           path="/signin"
           element={
-            (currentUser === null) ? 
+            currentUser === null ? (
               <Login />
-            : (currentUser.rol === 2) ? 
+            ) : currentUser.rol === 2 ? (
               <Navigate to="/signin/administrador/perfilAdministrador" />
-            : (currentUser.rol === 1) ? 
+            ) : currentUser.rol === 1 ? (
               <Navigate to="/signin/userNomina/Perfil" />
-            : (currentUser.rol === 0) ? 
+            ) : currentUser.rol === 0 ? (
               <Navigate to="/signin/userEmpleado/perfilEmpleado" />
-            : 
+            ) : (
               <Login />
-            
+            )
           }
         />
 
@@ -75,6 +76,10 @@ function App() {
         <Route
           path="/signin/userNomina/crearNomina"
           element={<CrearNomina />}
+        />
+        <Route
+          path="/signin/userNomina/graficaNomina"
+          element={<GraficoNomina />}
         />
         <Route
           path="/signin/userNomina/liquidarNomina"
@@ -118,7 +123,10 @@ function App() {
           path="/signin/administrador/gestionarEmpleado/editarUsuario"
           element={<EditarUsuario />}
         />
-
+        <Route
+          path="/signin/administrador/graficaNomina"
+          element={<GraficoNomina />}
+        />
 
         <Route
           path="/signin/administrador/gestionarEmpleado"

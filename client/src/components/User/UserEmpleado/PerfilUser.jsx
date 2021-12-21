@@ -128,6 +128,7 @@ const Perfil = (props) => {
                   type="text"
                   className="form-control"
                   placeholder="Direccion"
+                  value={direccion}
                 />
               </div>
               <div className="col-md-12">

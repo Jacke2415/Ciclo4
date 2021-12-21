@@ -1,16 +1,15 @@
 //import '../../../public/css/Login.css'
 import NavbarAdmin from '../components/Nav_Bar/NavbarAdmin';
 import {Grafico} from '../components/Graphics/grafico.jsx';
-import Background from "../components/Login/Background";
 export default function GraficoNomina() {
-    const gdata = [2001000, 900000]
+    const gdata = [5, 20]
     const labels = ['Empleado mayor de', 'Empleado menor de']
     return (
       <>
+      
         <div className="container-lg">
           <div className="row">
             <div className="col">
-              <Background />
               <NavbarAdmin />
             </div>
             <div className="col-10">
@@ -20,7 +19,7 @@ export default function GraficoNomina() {
                       <h1>Grafico Nomina</h1>
                   </div>
                   <div className="col-12">
-                      <span> Descripcion aqui..</span>
+                      <span> Este grafico muestra la cantidad empleados mayor de 20000000 y menor de 10000000</span>
                   </div>
                   <div className="col-7">
                       <br/>

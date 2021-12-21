@@ -7,6 +7,7 @@ import {
   svgCreateEmpleado,
   svgGestionarPermisos,
   svgSalario,
+  svgGraficaNomina,
 } from "./LogosNavbar.jsx";
 
 const NavbarAdmin = () => {
@@ -40,6 +41,11 @@ const NavbarAdmin = () => {
       name: "Generar Reporte",
       url: "/signin/administrador/generarReportes",
       svg: svgSalario(),
+    },
+    {
+      name: "Grafica Nomina",
+      url: "/signin/administrador/graficaNomina",
+      svg: svgGraficaNomina(),
     },
     
   ];
