@@ -1,7 +1,7 @@
 //import '../../../public/css/Login.css'
 import NavbarAdmin from '../components/Nav_Bar/NavbarAdmin';
 import {Grafico} from '../components/Graphics/grafico.jsx';
-
+import Background from "../components/Login/Background";
 export default function GraficoNomina() {
     const gdata = [2001000, 900000]
     const labels = ['Empleado mayor de', 'Empleado menor de']
@@ -10,6 +10,7 @@ export default function GraficoNomina() {
         <div className="container-lg">
           <div className="row">
             <div className="col">
+              <Background />
               <NavbarAdmin />
             </div>
             <div className="col-10">

@@ -9,16 +9,13 @@ export default function CrearNomina() {
       <div className="container-lg">
         <div className="row">
           <div className="col">
+            
             <NavbarNomina />
           </div>
           <div className="col-10">
             <div className="row">
               <div className="col-12 d-flex flex-row">
                 <SupLiquidar />
-                <br />
-                <br />
-                <br />
-                <br />
                 <br />
                 <br />
                 <br />

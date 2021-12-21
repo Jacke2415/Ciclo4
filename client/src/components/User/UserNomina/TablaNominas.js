@@ -5,6 +5,41 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 
+const data = [
+  {
+    estado: "Pagada",
+    mes: "Enero",
+    tipo: "Mensual",
+    inicio: "01-01-2021",
+    final: "31-01-2021",
+    total: 2000000,
+  },
+  {
+    estado: "Pagada",
+    mes: "Febrero",
+    tipo: "Mensual",
+    inicio: "01-02-2021",
+    final: "28-02-2021",
+    total: 1800000,
+  },
+  {
+    estado: "Pagada",
+    mes: "Marzo",
+    tipo: "Mensual",
+    inicio: "01-03-2021",
+    final: "31-03-2021",
+    total: 2000000,
+  },
+  {
+    estado: "Pagada",
+    mes: "Abril",
+    tipo: "Mensual",
+    inicio: "01-04-2021",
+    final: "30-04-2021",
+    total: 1900000,
+  },
+];
+
 const columns = [
   { title: "Mes liquidado", field: "mes" },
   { title: "Tipo Liquidación", field: "tipoLiquidacion" },
@@ -31,10 +66,34 @@ export const TablaNominas = () => {
           columns={columns}
           data={data}
           icons={tableIcons}
+          actions={[
+            {
+              icon: tableIcons.Edit,
+              tooltip: "Editar Funcionario",
+              onClick: (event, rowData) =>
+                alert(
+                  "Editar al Funcionario: " +
+                    rowData.nombre +
+                    " " +
+                    rowData.apellido
+                ),
+            },
+            {
+              icon: tableIcons.Delete,
+              tooltip: "Eliminar Funcionario",
+              onClick: (event, rowData) =>
+                window.confirm(
+                  "Esta seguro de eliminar este funcionario: " +
+                    rowData.nombre +
+                    " " +
+                    rowData.apellido
+                ),
+            },
+          ]}
           options={{
             actionsColumnIndex: -1,
             headerStyle: {
-              backgroundColor: "#00113b",
+              backgroundColor: "#0d6fff",
               color: "#FFF",
             },
             //selection: true

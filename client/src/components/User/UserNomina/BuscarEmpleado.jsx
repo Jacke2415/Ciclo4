@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 const Style = {
-    width: '18rem',
+  width: '18rem',
 };
 const baseUrl="http://localhost:5000/signin/users/cedula"
 const BuscarEmpleado = () =>{
@@ -39,14 +39,14 @@ const BuscarEmpleado = () =>{
               </form>
             </div>
             <div className="col-6">
-              <div className="card-body">
+              <div className="card-body" style={{ padding: "5px"}}>
                   <h5 className="card-title">Nombre: Kelly Rolon</h5>
                   <p className="card-text"> Cargo: Contador <br /> Fecha Inicial: 01-01-2022 <br />
                   Fecha Final: 15-01-2022
                   </p>
                   <p className="card-text"> </p>
-                  <button type="submit" className="btn btn-primary mb-3">Aceptar</button>
-                  <button type="submit" className="btn btn-primary mb-3">Rechazar</button>
+                  <button type="submit" className="btn btn-primary ">Aceptar</button> &nbsp; &nbsp; &nbsp; &nbsp;
+                  <button type="submit" className="btn btn-danger">Rechazar</button>
               </div> 
             </div>            
           </div>
@@ -55,6 +55,7 @@ const BuscarEmpleado = () =>{
           
     )
 }
-export default BuscarEmpleado 
+export default BuscarEmpleado;
+
     
 

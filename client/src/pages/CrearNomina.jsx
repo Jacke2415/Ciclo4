@@ -9,6 +9,7 @@ export default function CrearNomina() {
         <div className="container-lg">
           <div className="row">
             <div className="col">
+              
               <NavbarNomina />
             </div>
             <div className="col-10">

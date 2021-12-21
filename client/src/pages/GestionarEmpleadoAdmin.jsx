@@ -11,6 +11,7 @@ class GestionarEmpleadoAdmin extends React.Component {
         <div className="container-lg">
           <div className="row">
             <div className="col-2">
+              
               <NavbarAdmin />
             </div>
             <div className="col-10">

@@ -3,8 +3,9 @@ import { useState } from "react";
 import axios from "axios";
 
 const Style = {
-    width: '18rem',
+  width: "18rem",
 };
+
 
 
 const BuscarPermisos = () =>{
@@ -62,7 +63,7 @@ const BuscarPermisos = () =>{
                         </tr>
                 
                         <tr>
-                            <td><button type="button" className="btn btn-success">Aceptar</button></td> 
+                            <td><button type="button" className="btn btn-primary">Aceptar</button></td> 
                             <td><button type="button" className="btn btn-danger">Rechazar</button></td>
                         </tr>
                         </thead>
