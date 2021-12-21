@@ -46,15 +46,31 @@ export default function SupLiquidar() {
               <select
                 className="form-select mb-2"
                 aria-label="Default select example"
-                id="estadoNomina"
-                value={nomina.estadoNomina}
+                id="mes"
+                value={nomina.mes}
                 /* onBlur= {handleBlur} */ onChange={(event) => {
-                  setNomina({ ...nomina, estadoNomina: event.target.value });
+                  setNomina({ ...nomina, mes: event.target.value });
                 }}
+
+               
               >
-                <option selected>Estado</option>
-                <option value="pagada">Pagada</option>
-                <option value="pendiente">Pendiente</option>
+                <option selected>Mes</option>
+                <option value="enero">Enero</option>
+                <option value="febrero">Febrero</option>
+                <option value="marzo">Marzo</option>
+                <option value="abril">Abril</option>
+                <option value="mayo">Mayo</option>
+                <option value="junio">Junio</option>
+                <option value="julio">Julio</option>
+                <option value="agosto">Agosto</option>
+                <option value="septiembre">Septiembre</option>
+                <option value="octubre">Octubre</option>
+                <option value="noviembre">Noviembre</option>
+                <option value="diciembre">Diciembre</option>
+
+
+
+
               </select>
             </div>
             <div className="col-3 p-1">

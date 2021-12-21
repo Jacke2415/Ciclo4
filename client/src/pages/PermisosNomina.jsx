@@ -1,13 +1,13 @@
 import BuscarPermisos from "../components/User/UserNomina/BucarPermisos";
-import TablaVacaciones from "../components/User/UserNomina/TablaVacaciones";
 import NavbarNomina from "../components/Nav_Bar/NavbarNomina";
+import TablaPermisos from "../components/User/UserNomina/TablaPermisos";
 import Background from "../components/Login/Background";
 
-export default function PermisosNomina (){
+export default function PermisosNomina() {
   return (
     <>
       <div className="container-lg">
-        <Background/>
+        <Background />
         <div className="row">
           <div className="col">
             <NavbarNomina />
@@ -24,7 +24,7 @@ export default function PermisosNomina (){
                   <BuscarPermisos />
                 </div>
                 <div className="col-12">
-                  <TablaVacaciones />
+                  <TablaPermisos />
                 </div>
               </div>
             </div>
@@ -33,4 +33,4 @@ export default function PermisosNomina (){
       </div>
     </>
   );
-};
+}

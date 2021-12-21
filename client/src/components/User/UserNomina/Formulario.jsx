@@ -50,8 +50,8 @@ export default function Formulario() {
     <>
       <form className="row" onSubmit={createUser}>
         <h2>Informacion Empleado</h2>
-        <div class="row">
-          <div class="col">
+        <div className="row">
+          <div className="col">
             <div className="form-floating mb-3">
               <input
                 type="text"
@@ -81,7 +81,7 @@ export default function Formulario() {
               <div className="text-danger">{error.nombre}</div>
             </div>
           </div>
-          <div class="col">
+          <div className="col">
             <div className="form-floating mb-3">
               <input
                 type="text"
@@ -112,8 +112,8 @@ export default function Formulario() {
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
+        <div className="row">
+          <div className="col">
             <select
               className="form-select mb-3"
               aria-label="Default select example"
@@ -129,7 +129,7 @@ export default function Formulario() {
               <option value="Pasaporte">Pasaporte</option>
             </select>
           </div>
-          <div class="col">
+          <div className="col">
             <div className="form-floating mb-3">
               <input
                 type="text"
@@ -159,8 +159,8 @@ export default function Formulario() {
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
+        <div className="row">
+          <div className="col">
             <div className="form-floating mb-3">
               <input
                 type="password"
@@ -205,8 +205,8 @@ export default function Formulario() {
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
+        <div className="row">
+          <div className="col">
             <div className="form-floating mb-3">
               <div
                 className="form-check form-check-inline"
@@ -244,7 +244,7 @@ export default function Formulario() {
               </div>
             </div>
           </div>
-          <div class="col">
+          <div className="col">
             <div className="form-floating mb-3">
               <input
                 type="text"
@@ -310,7 +310,7 @@ export default function Formulario() {
               <div className="text-danger">{error.direccion}</div>
             </div>
           </div>
-          <div class="col">
+          <div className="col">
             <div className="form-floating mb-3">
               <input
                 type="text"
@@ -341,8 +341,8 @@ export default function Formulario() {
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
+        <div className="row">
+          <div className="col">
             <div className="form-floating mb-3">
               <input
                 type="date"
@@ -358,7 +358,7 @@ export default function Formulario() {
               <label htmlFor="">Fecha De Ingreso</label>
             </div>
           </div>
-          <div class="col">
+          <div className="col">
             <select
               className="form-select  mb-3"
               aria-label=" "
@@ -376,8 +376,8 @@ export default function Formulario() {
             </select>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
+        <div className="row">
+          <div className="col">
             <div className="form-floating mb-3">
               <input
                 type="text"
@@ -412,7 +412,7 @@ export default function Formulario() {
               <div className="text-danger">{error.salario}</div>
             </div>
           </div>
-          <div class="col">
+          <div className="col">
             <div className="form-floating mb-3">
               <input
                 type="text"
@@ -442,8 +442,8 @@ export default function Formulario() {
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
+        <div className="row">
+          <div className="col">
             <div className="d-grid gap-2">
               <button
                 type="submit"

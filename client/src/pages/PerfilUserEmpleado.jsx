@@ -6,10 +6,10 @@ export default function CrearEmpleado() {
     return (
       <>
         <div className="container-lg">
+              <Background />
           <div className="row">
             <div className="col">
               <NavbarEmpleado />
-              <Background />
             </div>
             <div className="col-10">
               <PerfilUser />
