@@ -117,7 +117,7 @@ const Perfil = (props) => {
                 <input
                   type="text"
                   className="form-control"
-                  disabled={enabled}
+                  
                   placeholder="Numero de Telefono"
                   value={telefono}
                   onChange={({ target }) => {
@@ -131,6 +131,7 @@ const Perfil = (props) => {
                   type="text"
                   className="form-control"
                   placeholder="Direccion"
+                  
                   value={direccion}
                   onChange={({ target }) => {
                     setDireccion(target.value);

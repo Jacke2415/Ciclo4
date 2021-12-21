@@ -39,7 +39,7 @@ export default function BuscarEmpleado (){
                     <th>Fecha Fin Vacaciones:</th> <td>30/01/2022</td>
                   </tr>
                   <tr>
-                    <td><button type="button" className="btn btn-success">Aceptar</button></td> 
+                    <td><button type="button" className="btn btn-primary">Aceptar</button></td> 
                     <td><button type="button" className="btn btn-danger">Rechazar</button></td>
                   </tr>
                 </thead>

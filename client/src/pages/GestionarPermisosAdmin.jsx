@@ -3,7 +3,7 @@ import "../public/css/PerfilUser.css";
 import NavbarAdmin from "../components/Nav_Bar/NavbarAdmin";
 import { TablaFuncionario } from "../components/User/UserNomina/TablaFuncionario";
 import SupGestionarPermisos from "../components/User/UserAdmin/SupGestionarPermisos";
-import Background from "../components/Login/Background";
+
 class GestionarPermisosAdmin extends React.Component {
   render() {
     return (
@@ -12,7 +12,7 @@ class GestionarPermisosAdmin extends React.Component {
         <div className="container-lg">
           <div className="row">
             <div className="col">
-              <Background/>
+              
               <NavbarAdmin />
             </div>
             <div className="col-10">

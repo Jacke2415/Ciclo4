@@ -54,7 +54,7 @@ const BuscarPermisos = () => {
                 </tr>
                 <tr>
                   <td>
-                    <button type="button" className="btn btn-success">
+                    <button type="button" className="btn btn-primary">
                       Aceptar
                     </button>
                   </td>

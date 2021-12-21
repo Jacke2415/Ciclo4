@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
-p{
-    position: relative;
-    color: black;
-    font-weight: bold;
-}
 .area{
     background: #ffffff; 
     position: fixed; 
