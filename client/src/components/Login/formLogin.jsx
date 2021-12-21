@@ -24,7 +24,7 @@ const FormLogin = () => {
     console.log('final') */
         
     return(
-        <form className ="d-grid gap-2 col-2 min-auto" onSubmit = {loginUser}>
+        <form className ="d-grid gap-2 col-2 min-auto form" onSubmit = {loginUser}>
             <p><input 
             type="email" 
             className="form-control"

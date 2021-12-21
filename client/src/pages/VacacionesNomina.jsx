@@ -1,6 +1,6 @@
 import React from "react";
 import BuscarEmpleado from "../components/User/UserNomina/BuscarEmpleado";
-import  TablaVacaciones  from "../components/User/UserNomina/TablaVacaciones"
+import TablaVacaciones from "../components/User/UserNomina/TablaVacaciones";
 import NavbarNomina from "../components/Nav_Bar/NavbarNomina";
 
 const VacacionesNomina = () => {
@@ -24,9 +24,9 @@ const VacacionesNomina = () => {
                          </div>  
                     </div>
                 </div>
-            </div>
-            
-        </>
-    )
-}
-export default VacacionesNomina
+              </div>
+              
+    </>
+  );
+};
+export default VacacionesNomina;

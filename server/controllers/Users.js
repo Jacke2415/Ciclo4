@@ -49,14 +49,14 @@ module.exports.createUser = async (req, res) => {
   console.log(deducciones)
 
   const newUser = new UserData({
-    tipo_usuario: 2,
+    tipo_usuario: 0,
     nombre: req.body.nombre,
     apellido: req.body.apellido,
     tipo_identificacion: req.body.tipo_identificacion,
     cedula: req.body.cedula,
     password: req.body.password,
     fecha_nacimiento: req.body.fecha_nacimiento,
-    sexo: 'Femenino', // Arreglar cuando este listo el button    
+    sexo: req.body.sexo, // Arreglar cuando este listo el button    
     telefono: req.body.telefono,
     direccion: req.body.direccion,
     email: req.body.email,
@@ -115,3 +115,35 @@ module.exports.getUserOne = async (req, res) => {
   }
 };
 
+module.exports.getUsuariosActivos = async (req, res) => {
+  try {
+    const allActiveUsers = await UserData.find({estado: 'activo'})  
+    console.log('usuarios activos')
+    console.log(allActiveUsers)
+    res.status(200).json(allActiveUsers);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
+module.exports.getUsuariosFiltroSalario = async (req, res) => {
+  try {
+    const {value, valueSelect} = req.query;
+    if (valueSelect=="mayor"){
+      const allActiveUsers = await UserData.find({salario:{$gt:value}})  
+      console.log('usuarios activos')
+      console.log(allActiveUsers)
+     // res.status(200).json({params: value,params2:valueSelect});
+     res.status(200).json(allActiveUsers);
+    }else{
+      const allActiveUsers = await UserData.find({salario:{$lte:value}})  
+      console.log('usuarios activos')
+      console.log(allActiveUsers)
+      res.status(200).json(allActiveUsers);
+    }
+
+    
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};

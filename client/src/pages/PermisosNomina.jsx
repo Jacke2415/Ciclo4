@@ -1,7 +1,7 @@
 import React from "react";
 import BuscarPermisos from "../components/User/UserNomina/BucarPermisos";
-import  TablaVacaciones  from "../components/User/UserNomina/TablaVacaciones"
 import NavbarNomina from "../components/Nav_Bar/NavbarNomina";
+import TablaPermisos from "../components/User/UserNomina/TablaPermisos";
 
 const PermisosNomina = () => {
     return(
@@ -19,7 +19,7 @@ const PermisosNomina = () => {
                             <br /><br /><br />
                             <BuscarPermisos/>
                             <br /><br /><br /><br /><br /><br /><br /><br />
-                            <TablaVacaciones/>
+                            <TablaPermisos/>
                         </div> 
                     </div>
                 </div>

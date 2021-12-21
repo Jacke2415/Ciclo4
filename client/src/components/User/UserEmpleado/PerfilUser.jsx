@@ -55,8 +55,8 @@ const Perfil = (props) => {
               className="rounded-circle mt-5"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF2psCzfbB611rnUhxgMi-lc2oB78ykqDGYb4v83xQ1pAbhPiB&usqp=CAU" alt=""
             />
-            <span className="font-weight-bold">{currentUser.nombre} + {currentUser.apellido}</span>
-            <span className="text-black-50">amelly12 @bbb.com</span>
+            <span className="font-weight-bold">{currentUser.nombre}   {currentUser.apellido}</span>
+            <span className="text-black-50"></span>
             <span> </span>
           </div>
         </div>
@@ -117,7 +117,8 @@ const Perfil = (props) => {
                   type="text"
                   className="form-control"
                   placeholder="Numero de Telefono"
-                  value={telefono}
+                  disabled
+                  value={currentUser.telefono}
                   onChange={({target}) => {setTelefono(target.value)}}
                 />
               </div>
@@ -127,7 +128,8 @@ const Perfil = (props) => {
                   type="text"
                   className="form-control"
                   placeholder="Direccion"
-                  value={direccion}
+                  disabled
+                  value={currentUser.direccion}
                   onChange={({target}) => {setDireccion(target.value)}}
                 />
               </div>
