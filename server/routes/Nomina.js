@@ -2,6 +2,7 @@ const { Router } = require ("express");
 const Nomina = require ('../controllers/Nomina');
 
 
+
 const router = Router();
 
 router.get('/', Nomina.getNomina);
