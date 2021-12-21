@@ -43,6 +43,7 @@ module.exports.createNominaMensual = async (req, res) => {
     const fechaInicio = new Date(req.body.fechaInicio);
     const fechaFin = new Date(req.body.fechaFin);
 
+    const diaFin = fechaFin.getDate()
     const mesFin = fechaFin.getMonth() + 1;
     const yearFin = fechaFin.getFullYear();
 
@@ -61,8 +62,8 @@ module.exports.createNominaMensual = async (req, res) => {
             const cedula = value.cedula;
             const salario = value.salario;
             const deduccionesLegales = value.salario * 0.04;
-            const allVacaciones = await VacacionesData.find({ cedula: cedula })
-            const allPermisos = await PermisosData.find({ cedula: cedula })
+            const allVacaciones = await VacacionesData.find({ cedula: cedula });
+            const allPermisos = await PermisosData.find({ cedula: cedula });
 
             var deduccionesVacaciones = 0
             for (const [key, value] of Object.entries(allVacaciones)) {
@@ -87,10 +88,10 @@ module.exports.createNominaMensual = async (req, res) => {
                 apellido: apellido,
                 cedula: cedula,
                 salario: salario,
-                deducciones: deduccionesLegales,
-                vacaciones: deduccionesVacaciones,
-                permisos: deduccionesPermiso,
-                salarioLiquidado: liquidacion
+                deducciones: Math.round(deduccionesLegales),
+                vacaciones: Math.round(deduccionesVacaciones),
+                permisos: Math.round(deduccionesPermiso),
+                salarioLiquidado: Math.round(liquidacion)
             });
 
             await newLiquidacionMensual.save();
@@ -102,13 +103,17 @@ module.exports.createNominaMensual = async (req, res) => {
             tipoLiquidacion: tipoLiquidacion,
             fechaInicio: fechaInicio,
             fechaFin: fechaFin,
-            total: total
+            total: Math.round(total)
         });
         try {
             await newNomina.save();
-            res.status(201).json({ message: 'La creación de nomina fue exitosa' });
+            res
+                .status(201)
+                .json({ message: `La creación de la nomina de ${fechaNomina} fue exitosa!!` });
         } catch (error) {
-            res.status(409).json({ message: error.message });
+            res
+                .status(409)
+                .json({ message: error.message });
         }
     } else {
         res
@@ -163,16 +168,14 @@ module.exports.getLiquidacionNomina = async (req, res) => {
                 apellido: apellido,
                 cedula: cedula,
                 salario: salario,
-                deducciones: deduccionesLegales,
-                vacaciones: deduccionesVacaciones,
-                permisos: deduccionesPermiso,
-                salarioLiquidado: liquidacion
+                deducciones: Math.round(deduccionesLegales),
+                vacaciones: Math.round(deduccionesVacaciones),
+                permisos: Math.round(deduccionesPermiso),
+                salarioLiquidado: Math.round(liquidacion)
             });
 
-            //await newLiquidacionMensual.save();
             newLiquidacionesMensual.push(newLiquidacionMensual)
         }
-        console.log(newLiquidacionesMensual)
         res
             .status(200)
             .json({ newLiquidacionesMensual })
