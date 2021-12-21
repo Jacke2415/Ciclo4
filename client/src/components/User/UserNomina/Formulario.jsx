@@ -116,7 +116,7 @@ export default function Formulario() {
           </div>
         </div>
         <div class="row">
-          <div class="col">
+          <div class="col" style={{position: 'relative'}}>
             <select
               className="form-select mb-3"
               aria-label="Default select example"
@@ -361,7 +361,7 @@ export default function Formulario() {
               <label htmlFor="">Fecha De Ingreso</label>
             </div>
           </div>
-          <div class="col">
+          <div class="col" style={{position: 'relative'}}>
             <select
               className="form-select  mb-3"
               aria-label=" "
@@ -415,7 +415,7 @@ export default function Formulario() {
               <div className="text-danger">{error.salario}</div>
             </div>
           </div>
-          <div class="col">
+          <div class="col" >
             <div className="form-floating mb-3">
               <input
                 type="text"
@@ -447,7 +447,7 @@ export default function Formulario() {
         </div>
         <div class="row">
           <div class="col">
-            <div className="d-grid gap-2">
+            <div className="d-grid gap-2" style={{position: 'relative'}}>
               <button
                 type="submit"
                 className="btn btn-primary"

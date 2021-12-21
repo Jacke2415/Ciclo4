@@ -1,6 +1,6 @@
 //import '../../../public/css/Login.css'
 import SupReporteSalario from '../components/User/UserNomina/SupReporteSalario';
-import { TablaReporte } from '../components/User/UserNomina/TablaReporte';
+import TablaReporte from '../components/User/UserNomina/TablaReporte';
 import NavbarAdmin from '../components/Nav_Bar/NavbarAdmin';
 /* import { TablaNominas } from '../components/User/UserNomina/TablaNominas'; */
 
@@ -14,7 +14,7 @@ export default function CrearNomina() {
             <NavbarAdmin />
           </div>
           <div className="col-10">
-            <SupReporteSalario />
+            <h1>Reporte Salario</h1>
             <TablaReporte />
           </div>
         </div>
