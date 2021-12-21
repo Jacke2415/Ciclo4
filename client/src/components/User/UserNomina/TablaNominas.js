@@ -4,14 +4,7 @@ import tableIcons from "./TableIcons";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const columns = [
-  { title: "Estado", field: "estado" },
-  { title: "Mes Liquidado", field: "mes" },
-  { title: "Tipo Liquidación", field: "tipo" },
-  { title: "Fecha Inicio", field: "inicio" },
-  { title: "Fecha Final", field: "final" },
-  { title: "Total Nomina", field: "total", type: "numeric" },
-];
+
 const data = [
   {
     estado: "Pagada",

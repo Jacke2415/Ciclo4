@@ -44,14 +44,14 @@ const BuscarEmpleado = () =>{
               </form>
             </div>
             <div className="col-6">
-              <div className="card-body">
+              <div className="card-body" style={{ padding: "5px"}}>
                   <h5 className="card-title">Nombre: Kelly Rolon</h5>
                   
                   <p className="card-text"> Cargo: Contador <br /> Fecha Inicial: 01-01-2022 <br />
                   Fecha Final: 15-01-2022
                   </p>
                   <p className="card-text"> </p>
-                  <button type="submit" className="btn btn-primary ">Aceptar</button>
+                  <button type="submit" className="btn btn-primary ">Aceptar</button> &nbsp; &nbsp; &nbsp; &nbsp;
                   <button type="submit" className="btn btn-danger">Rechazar</button>
               </div> 
             </div>
@@ -62,6 +62,7 @@ const BuscarEmpleado = () =>{
           
     )
 }
+export default BuscarEmpleado;
 
     
 
