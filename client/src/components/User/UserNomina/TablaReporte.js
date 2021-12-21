@@ -63,7 +63,7 @@ export const TablaReporte = () => {
             options={{
               hidden: true,
               headerStyle: {
-                backgroundColor: "#6699CC",
+                backgroundColor: "#0d6fff",
                 color: "#FFF",
               },
               exportButton: true,

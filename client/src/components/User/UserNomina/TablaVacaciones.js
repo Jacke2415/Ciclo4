@@ -37,7 +37,7 @@ const TablaVacaciones = () => {
             options={{
               actionsColumnIndex: -1,
               headerStyle: {
-                backgroundColor: "#6699CC",
+                backgroundColor: "#0d6fff",
                 /* background:'linear-gradient(0deg, rgba(0,17,59,1) 15%, rgba(0,0,255,1) 50%, rgba(0,17,59,1) 90%)', */
                 color: "#FFF",
               },

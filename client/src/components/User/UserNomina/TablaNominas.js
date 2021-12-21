@@ -81,7 +81,7 @@ export const TablaNominas = () => {
           options={{
             actionsColumnIndex: -1,
             headerStyle: {
-              backgroundColor: "#00113b",
+              backgroundColor: "#0d6fff",
               color: "#FFF",
             },
             //selection: true
