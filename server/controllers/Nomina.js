@@ -41,7 +41,7 @@ module.exports.createNominaMensual = async (req, res) => {
         tipoLiquidacion: req.body.tipoLiquidacion,
         fechaInicio: req.body.fechaInicio,
         fechaFin: req.body.fechaFin,
-        //total: total
+        total: total
     });
     
     const allNomina = await NominaData.find()
@@ -52,7 +52,7 @@ module.exports.createNominaMensual = async (req, res) => {
                 .json({message: 'La nomina solicitada ya se encuentra generada!!'})
     }
     try {
-        /* await newNomina.save(); */ 
+        await newNomina.save(); 
         res.status(201).json(newNomina);
     } catch (error) {
         res.status(409).json({ message: error.message });

@@ -6,16 +6,16 @@ import axios from "axios";
 const columns = [
   { title: "Nombre", field: "nombre" },
   { title: "Apellido", field: "apellido" },
-  { title: "Identificación", field: "cedula", type: "numeric" },
+  { title: "Identificación", field: "cedula", type: "String" },
   { title: "Salario", field: "salario", type: "numeric" },
   { title: "Salud", field: "deducciones", type: "numeric" },
   { title: "Vacaciones", field: "vacaciones", type: "numeric" },
-  { title: "Días", field: "dias", type: "numeric" },
-  { title: "Total", field: "total", type: "numeric" }
+  { title: "Días", field: "permisos", type: "numeric" },
+  { title: "Total", field: "salarioLiquidado", type: "numeric" }
 
 ];
 
-const baseUrl = "http://localhost:5000/users";
+const baseUrl = "http://localhost:5000/nomina/liquidacion";
 
 
 
@@ -23,7 +23,9 @@ export const TablaLiquidar = () => {
   const [data, setData] = useState([]);
     const peticionGet = async () => {
         await axios.get(baseUrl).then(response => {
-            setData(response.data)
+      console.log("Este es un response: ")
+      console.log(response.data)
+            setData(response.data.newLiquidacionesMensual)
         })
     }
 
